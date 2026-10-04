@@ -2,7 +2,7 @@
 [ext_resource type="Script" path="res://game/gameplay/SharkPresenter.cs" id="Script"]
 [ext_resource type="Texture2D" path="res://assets/상어 애니메이션.png" id="Art"]
 [ext_resource type="Shader" path="res://game/gameplay/shark_separation.gdshader" id="Separation"]
-[ext_resource type="Texture2D" path="res://assets/상어 뼈.png" id="SkeletonArt"]
+[ext_resource type="Texture2D" path="res://assets/상어 뼈.png" id="SkeletonArt"]
 [sub_resource type="AtlasTexture" id="SkeletonCrop"]
 atlas = ExtResource("SkeletonArt")
 region = Rect2(100,400,1070,500)

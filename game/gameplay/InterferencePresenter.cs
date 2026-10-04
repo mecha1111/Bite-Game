@@ -26,7 +26,14 @@ public partial class InterferencePresenter : Node
 		if(_schedule.Any(item=>item.Time<0||!_styles.ContainsKey(item.Type)||!_effects.ContainsKey(item.Type)))throw new ArgumentException("간섭 CSV 종류/시점 오류");
 		if(!_durations.ContainsKey(songId))_durations[songId]=CustomMapRegistry.Find(songId)?.Duration ?? LocalCsv.Number(LocalCsv.Read("res://data/balance/songs.csv").Single(r=>r["song_id"]==songId)["duration_seconds"]);
 		double duration=_durations[songId];
-		if(_schedule.Any(item=>item.Time>=duration)||_schedule.GroupBy(item=>item.Time).Any(g=>g.Count()>1))throw new ArgumentException($"Interference starts overlap or exceed song duration: {songId}");
+		if(_schedule.Any(item=>item.Time>=duration))throw new ArgumentException($"Interference exceeds song duration: {songId}");
+		foreach(var group in _schedule.GroupBy(item=>item.Time).Where(g=>g.Count()>1))
+		{
+			// Player-generated climax permits one pressure/fake-rhythm role plus spatial distortion.
+			bool pair=CustomMapRegistry.Find(songId) is {Generated:true}&&group.Key>=duration*.8&&group.Count()==2
+				&&group.Any(e=>e.Type=="sardine")&&group.Any(e=>e.Type is "ship_horn" or "fishing_float");
+			if(!pair)throw new ArgumentException($"Unsupported simultaneous interference: {songId}");
+		}
 		_next=0;foreach(var effect in _effects.Values){effect.Reset();effect.Emitted+=ForwardEmission;}
 	}
 	/// <summary>Schedule and designer preview share the same trigger; caller supplies existing Song Clock time.</summary>

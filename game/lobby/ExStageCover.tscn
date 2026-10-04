@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://idiyhgj6hx3h"]
 
-[ext_resource type="Texture2D" uid="uid://8shicsylxp1a" path="res://assets/고요한 얕은 산호초 바다-1.png" id="Art0"]
-[ext_resource type="Texture2D" uid="uid://da28vd1c6r6io" path="res://assets/깊은 바다의 고요한 여백-2.png" id="Art1"]
-[ext_resource type="Texture2D" uid="uid://o01wi8xuuh0t" path="res://assets/심해 화산 분화구와 열수구-3.png" id="Art2"]
+[ext_resource type="Texture2D" uid="uid://8shicsylxp1a" path="res://assets/고요한 얕은 산호초 바다-1.png" id="Art0"]
+[ext_resource type="Texture2D" uid="uid://da28vd1c6r6io" path="res://assets/깊은 바다의 고요한 여백-2.png" id="Art1"]
+[ext_resource type="Texture2D" uid="uid://o01wi8xuuh0t" path="res://assets/심해 화산 분화구와 열수구-3.png" id="Art2"]
 [ext_resource type="Shader" uid="uid://0algvpgg45ns" path="res://game/lobby/card_color.gdshader" id="Grade"]
 
 [sub_resource type="ShaderMaterial" id="Grade"]

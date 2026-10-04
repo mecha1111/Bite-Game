@@ -18,6 +18,7 @@ config/icon="res://assets/아이콘.png"
 [autoload]
 
 UiAudio="*res://game/audio/UiAudio.tscn"
+MCPRuntime="*uid://ceeu6ys5qxciq"
 
 [debug]
 
@@ -36,6 +37,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Gamejam2"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/auto_reload/plugin.cfg", "res://addons/godot_mcp_editor/plugin.cfg", "res://addons/godot_mcp_runtime/plugin.cfg")
 
 [input]
 

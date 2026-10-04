@@ -33,7 +33,11 @@ public partial class CalibrationHud : CanvasLayer
         StartButton.Pressed += () => Act(calibration.BeginAudioCalibration);
         RepeatButton.Pressed += () => Act(calibration.BeginAudioCalibration);
         ApplyButton.Pressed += () => Act(calibration.ApplySuggestionAndBeginVisual);
-        SkipButton.Pressed += () => Act(calibration.SkipAudioWithDefaults);
+        SkipButton.Pressed += () => Act(() =>
+        {
+            if (calibration.Stage == CalibrationStage.Visual) calibration.SkipVisualWithDefaults();
+            else calibration.SkipAudioWithDefaults();
+        });
         ConfirmButton.Pressed += () => Act(calibration.BeginConfirmation);
         FinishButton.Pressed += () => Act(calibration.Finish);
         BuildVisualControls();
@@ -69,7 +73,7 @@ public partial class CalibrationHud : CanvasLayer
         StartButton.GetParent<Control>().Visible = stage == CalibrationStage.Entry;
         RepeatButton.GetParent<Control>().Visible = stage is CalibrationStage.CountIn or CalibrationStage.AudioSampling or CalibrationStage.AudioResult or CalibrationStage.ConfirmationResult;
         ApplyButton.GetParent<Control>().Visible = stage == CalibrationStage.AudioResult && _calibration.HasReliableEstimate;
-        SkipButton.GetParent<Control>().Visible = stage is CalibrationStage.Entry or CalibrationStage.CountIn or CalibrationStage.AudioSampling;
+        SkipButton.GetParent<Control>().Visible = stage is CalibrationStage.Entry or CalibrationStage.CountIn or CalibrationStage.AudioSampling or CalibrationStage.Visual;
         ConfirmButton.GetParent<Control>().Visible = stage == CalibrationStage.Visual;
         FinishButton.GetParent<Control>().Visible = stage == CalibrationStage.ConfirmationResult;
         if (_previousStage != stage)
@@ -90,7 +94,8 @@ public partial class CalibrationHud : CanvasLayer
         var actions = ApplyButton.GetParent().GetParent();
         actions.MoveChild(ApplyButton.GetParent(), stage == CalibrationStage.AudioResult ? 0 : 2);
         if (stage is CalibrationStage.Entry or CalibrationStage.CountIn) Meter.ErrorLabel.Text = "";
-        SetCaption(SkipButton, stage is CalibrationStage.CountIn or CalibrationStage.AudioSampling ? "기본값 사용" : "기본값으로 시작");
+        SetCaption(SkipButton, stage == CalibrationStage.Visual ? "기본값 사용하기"
+            : stage is CalibrationStage.CountIn or CalibrationStage.AudioSampling ? "기본값 사용" : "기본값으로 시작");
         UpdateInformation();
     }
     private static void SetCaption(Button button, string text)

@@ -74,6 +74,7 @@ public partial class RhythmController : Node
     private double _stoppedTimeSeconds;
     private double _songOffsetSeconds;
     private bool _hasFocus = true;
+    private Window? _focusWindow;
     private bool _silentPreview;
     private bool _resumeAudio;
     /// <summary>필수 의존성을 최초 실행 시 확인한다.</summary>
@@ -82,7 +83,13 @@ public partial class RhythmController : Node
         if (MusicPlayer == null) GD.PushError("RhythmController: Main Inspector에서 MusicPlayer를 연결하세요.");
         if (Chart == null) GD.PushError("RhythmController: Main Inspector에서 Chart Resource를 연결하세요.");
         // Headless에는 OS focus가 없으므로 notification 테스트와 무음 실행을 허용한다.
-        if (DisplayServer.GetName() != "headless") _hasFocus = GetWindow().HasFocus();
+        if (DisplayServer.GetName() != "headless")
+        {
+            _focusWindow = GetWindow();
+            _hasFocus = _focusWindow.HasFocus();
+            _focusWindow.FocusEntered += OnWindowFocusEntered;
+            _focusWindow.FocusExited += OnWindowFocusExited;
+        }
     }
     /// <summary>처음부터 재시작한다. Resource는 수정하지 않고 설정/데이터를 snapshot한다.</summary>
     public bool StartSong(double startSeconds = 0)
@@ -137,6 +144,7 @@ public partial class RhythmController : Node
         if (_silentPreview) GD.PushWarning("RhythmController: MusicPlayer Stream 없음. 무음 timing preview를 시작합니다.");
         IsRunning = true;
         _stoppedTimeSeconds = startSeconds;
+        RefreshWindowFocus();
         if (_hasFocus) BeginPlaybackAt(startSeconds, !_silentPreview);
         else { IsFocusPaused = true; _resumeAudio = !_silentPreview; PlaybackState = "Focus Paused"; }
         Log("Song Started: " + PlaybackState);
@@ -226,8 +234,23 @@ public partial class RhythmController : Node
     {
         if (!IsRunning || !IsManuallyPaused) return;
         IsManuallyPaused = false;
+        RefreshWindowFocus();
         if (_hasFocus) BeginPlaybackAt(_stoppedTimeSeconds, _resumeAudio);
         else { IsFocusPaused = true; PlaybackState = "Focus Paused"; }
+    }
+    private void RefreshWindowFocus()
+    {
+        if (_focusWindow != null && GodotObject.IsInstanceValid(_focusWindow))
+            _hasFocus = _focusWindow.HasFocus();
+    }
+    private void OnWindowFocusEntered() => _Notification((int)NotificationApplicationFocusIn);
+    private void OnWindowFocusExited() => _Notification((int)NotificationApplicationFocusOut);
+    public override void _ExitTree()
+    {
+        if (_focusWindow == null || !GodotObject.IsInstanceValid(_focusWindow)) return;
+        _focusWindow.FocusEntered -= OnWindowFocusEntered;
+        _focusWindow.FocusExited -= OnWindowFocusExited;
+        _focusWindow = null;
     }
     /// <summary>포커스 복귀는 수동 일시정지를 해제하지 않는다.</summary>
     public override void _Notification(int what)

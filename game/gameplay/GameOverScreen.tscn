@@ -11,7 +11,7 @@
 [sub_resource type="ShaderMaterial" id="StarvationDim"]
 shader = ExtResource("StarvationDim")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvsyq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4uls"]
 resource_local_to_scene = true
 shader = ExtResource("5_v4uls")
 shader_parameter/interior_mask = ExtResource("6_f26be")
@@ -88,11 +88,17 @@ custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
 
 [node name="SharkImage" parent="Content/SharkGauge" index="0"]
-material = SubResource("ShaderMaterial_kvsyq")
+material = SubResource("ShaderMaterial_v4uls")
 anchors_preset = 15
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Percentage" parent="Content/SharkGauge" index="1"]
 anchors_preset = 12
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "0%"
 
 [node name="LowerRule" type="ColorRect" parent="Content" unique_id=743835236]

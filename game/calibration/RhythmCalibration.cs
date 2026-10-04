@@ -79,6 +79,12 @@ public partial class RhythmCalibration : Node
     public double? PresentationBeatPhase => Stage is CalibrationStage.CountIn or CalibrationStage.AudioSampling or CalibrationStage.Visual or CalibrationStage.Confirmation
         && _rhythm.IsRunning ? Math.Max(0, _rhythm.SongTimeSeconds - CalibrationSession.VisualOffsetSeconds) / BeatSeconds % 1 : null;
     public void SkipAudioWithDefaults(){CalibrationSession.UserInputOffsetSeconds=0;BeginVisualCalibration();}
+    public void SkipVisualWithDefaults()
+    {
+        if (Stage != CalibrationStage.Visual) return;
+        CalibrationSession.VisualOffsetSeconds = 0;
+        Finish();
+    }
     public void BeginVisualCalibration() => StartTrack(CalibrationStage.Visual, 60, false);
     public void BeginConfirmation()
     {
@@ -121,6 +127,7 @@ public partial class RhythmCalibration : Node
         _rhythm.UserOffsetSeconds = targets ? CalibrationSession.UserInputOffsetSeconds : 0;
         SetStage(stage);
         if (!_rhythm.StartSong()) throw new InvalidOperationException("보정용 metronome 시작 실패");
+        GD.Print($"[CALIBRATION] Stage={stage} Playback={_rhythm.PlaybackState} WindowFocus={GetWindow().HasFocus()} FocusPaused={_rhythm.IsFocusPaused} ManualPaused={_rhythm.IsManuallyPaused} AudioPlaying={_music.Playing}");
     }
     /// <summary>예상 beat와 raw SongTime을 대응시킨다. 한 beat당 한 표본, echo는 상위 입력에서 제외한다.</summary>
     public bool Tap()

@@ -4,5 +4,5 @@ BITE v5 SINGLE-TARGET ONLY
 - One target = one wave_event_id = one judgment.
 - Phrase side alternates L/R.
 - Existing rings may overlap visually.
-- Camera is separate and sparse: WAVE_CLOSEUP / SHARK_CLOSEUP / PULLBACK.
+- Camera is separate and sparse: WAVE_CLOSEUP / SHARK_CLOSEUP / PULLBACK / SIDE_PAN / SECTION_TRANSITION.
 - Camera uses smooth easing + hold, never changes TargetTime.

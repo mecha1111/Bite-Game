@@ -53,6 +53,11 @@ public sealed class SatietyDrainProfile
         var custom=CustomMapRegistry.Find(song);
         var rows=LocalCsv.Read(custom!=null&&!string.IsNullOrEmpty(custom.SatietySectionsPath)?custom.SatietySectionsPath:"res://data/balance/satiety_sections.csv").Where(r=>r["song_id"]==song).ToArray();
         var sections=rows.Select(r=>new SatietyDrainSection(LocalCsv.Number(r["start_time_sec"]),LocalCsv.Number(r["end_time_sec"]),LocalCsv.Number(r["drain_multiplier"]),r["section_type"],r["section_id"])).ToArray();
+        return Create(duration,sections,prey,song);
+    }
+    /// <summary>Generator and runtime share the same scheduled gaps, late capture and outro drain rules.</summary>
+    public static SatietyDrainProfile Create(double duration,SatietyDrainSection[] sections,IReadOnlyList<PreyPhrase> prey,string song="generated")
+    {
         double through=0;
         foreach(var s in sections)
         {

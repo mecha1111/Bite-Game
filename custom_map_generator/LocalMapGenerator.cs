@@ -36,9 +36,10 @@ public static class LocalMapGenerator
                 playback.Stop();
             }
             var analysis=await Task.Run(()=>MusicAnalysis.Analyze(mono.ToArray(),duration));
-            status("리듬 생성 중");var targets=await Task.Run(()=>ChartGenerator.Compose(analysis));
-            status("연출 구성 중");await owner.ToSignal(owner.GetTree(),SceneTree.SignalName.ProcessFrame);
-            status("밸런스 조정 중");var files=SatietyAutoBalance.Compose(id,analysis,targets);
+            status("음악 타점·패턴 선정 중");var patterns=PatternModel.Load();var targets=await Task.Run(()=>ChartGenerator.Compose(analysis,patterns));
+            status("방해요소 구성 중");var interference=InterferenceGenerator.Compose(analysis,targets);
+            await owner.ToSignal(owner.GetTree(),SceneTree.SignalName.ProcessFrame);
+            status("포만감 계산·카메라 연출 중");var files=SatietyAutoBalance.Compose(id,analysis,targets,interference);
             DirAccess.MakeDirRecursiveAbsolute(folder);
             Write(folder+"/chart_v5.csv",files.Chart);Write(folder+"/camera_fx_v5.csv",files.Camera);Write(folder+"/interference.csv",files.Interference);Write(folder+"/satiety.csv",files.Satiety);
             using(var output=Godot.FileAccess.Open(folder+"/audio.mp3",Godot.FileAccess.ModeFlags.Write)){if(output==null)throw new InvalidOperationException("로컬 음악 저장 실패");output.StoreBuffer(bytes);}
@@ -50,7 +51,7 @@ public static class LocalMapGenerator
             }
             var map=new CustomMapDefinition{StageId=id,SongId=id,Title=tags.Title,Artist=tags.Artist,Album=tags.Album,Generated=true,Available=true,AudioPath=folder+"/audio.mp3",ChartPath=folder+"/chart_v5.csv",FxPath=folder+"/camera_fx_v5.csv",InterferencePath=folder+"/interference.csv",SatietySectionsPath=folder+"/satiety.csv",CoverPath=cover,EnvironmentProfile="song_1",Duration=duration,MusicBpm=analysis.Bpm,GameplayBpm=analysis.PulseBpm,DrainPerSecond=files.Drain};
             // Metadata is the commit marker; incomplete generations never appear as playable maps.
-            Write(folder+"/analysis.json",JsonSerializer.Serialize(new{analysis.Bpm,analysis.PulseBpm,analysis.Confidence,analysis.BpmCandidates,analysis.Beats,analysis.Downbeats,analysis.Sections,analysis.EnergyCurve,analysis.Changes,files.PerfectFinal,files.MixedFinal}));
+            Write(folder+"/analysis.json",JsonSerializer.Serialize(new{GeneratorVersion=2,GenerationOrder=new[]{"structure","targets","patterns","alternating_sides","interference","satiety","camera"},analysis.Bpm,analysis.PulseBpm,analysis.Confidence,analysis.BeatPhase,analysis.PulseChoices,analysis.BpmCandidates,analysis.Beats,analysis.Downbeats,analysis.Sections,analysis.EnergyCurve,analysis.Changes,Targets=targets,Interference=interference,Camera=CameraGenerator.Compose(analysis,targets,interference),files.PerfectFinal,files.MixedFinal}));
             Write(folder+"/metadata.json",JsonSerializer.Serialize(map));CustomMapRegistry.Reload();status("완료");return map;
         }
         catch{Delete(id);throw;}

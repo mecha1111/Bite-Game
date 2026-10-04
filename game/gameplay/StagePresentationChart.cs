@@ -36,7 +36,7 @@ public static class StagePresentationChart
             double N(string key)=>LocalCsv.Number(row[key]);
             double time=N("time_sec"),total=N("duration_sec"),hold=N("hold_sec"),move=(total-hold)/2;
             string type=row["event_type"],ease=row["ease"],side=row["target_side"];
-            if(time<0||time>=duration||move<=0||hold<0||type is not ("WAVE_CLOSEUP" or "SHARK_CLOSEUP" or "PULLBACK")||ease is not ("CUBIC_IN_OUT" or "SINE_IN_OUT")||side is not ("L" or "R" or "CENTER"))throw new ArgumentException("Invalid v5 camera event: "+path);
+            if(time<0||time>=duration||move<=0||hold<0||type is not ("WAVE_CLOSEUP" or "SHARK_CLOSEUP" or "PULLBACK" or "SIDE_PAN" or "SECTION_TRANSITION")||ease is not ("CUBIC_IN_OUT" or "SINE_IN_OUT")||side is not ("L" or "R" or "CENTER"))throw new ArgumentException("Invalid v5 camera event: "+path);
             double from=N("zoom_from"),to=N("zoom_to"),pan=N("pan_percent");
             if(from<=0||to<.85||to>1.25||Math.Abs(pan)>.35)throw new ArgumentException("Invalid v5 camera framing: "+path);
             events.Add(new(time,type,1,total,"cyan",side=="L"?"left":side=="R"?"right":"center")
