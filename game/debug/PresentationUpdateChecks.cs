@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using Godot;
 using Gamejam2.Gameplay;
@@ -25,21 +24,21 @@ public partial class PresentationUpdateChecks : Node
     {
         try
         {
+            await GeneratedMapTestFixture.Ensure(this);
             var router=GD.Load<PackedScene>("res://game/startup/Startup.tscn").Instantiate<SceneRouter>();router.SavePath="/private/tmp/bite-presentation-update.cfg";AddChild(router);router.GoToLobby();await Wait(.3);
             var lobby=router.ScreenHost!.GetChild<LobbyScreen>(0);
             Check(lobby.Catalog.Stages.Count==4,"main category preserves four standard stages");
             lobby.GetNode<Button>("Categories/Custom").EmitSignal(Button.SignalName.Pressed);await Wait(.6);
-            Check(lobby.CustomCategory&&lobby.Catalog.Stages.Count==3,"separate custom category reuses three cards");
+            Check(lobby.CustomCategory&&lobby.Catalog.Stages.Count==CustomMapRegistry.Maps.Count,"custom category dynamically lists generated maps");
             foreach(var map in CustomMapRegistry.Maps)
             {
                 using var audio=Gamejam2.Audio.SongAudio.Load(map.AudioPath);
                 GD.Print($"CUSTOM AUDIO {map.SongId} actual={audio.GetLength():F6} firstPassBpm={map.MusicBpm} available={map.Available}");
                 Check(Math.Abs(audio.GetLength()-map.Duration)<1,"provided custom MP3 duration "+map.SongId);
-                Check(map.AudioPath.StartsWith("res://custom_maps/")&&map.CoverPath.StartsWith("res://custom_maps/"),"isolated custom assets "+map.SongId);
+                Check(map.Generated&&map.AudioPath.StartsWith("user://custom_maps/")&&(map.CoverPath.Length==0||map.CoverPath.StartsWith("user://custom_maps/")),"isolated custom assets "+map.SongId);
                 if(!map.Available)Check(map.ChartPath==""&&!lobby.Catalog.Stages.Single(s=>s.SongId==map.SongId).IsAvailable,"missing supplied chart does not silently generate/fallback "+map.SongId);
                 lobby.Navigate(lobby.Catalog.Stages.ToList().FindIndex(s=>s.SongId==map.SongId)-lobby.SelectedIndex);await Wait(.6);await Capture(map.SongId+"-cover");
             }
-            Check(CustomMapRegistry.Find("custom_part_of_your_world")!.BackgroundPath=="","theatrical custom declares solid-black world");
             foreach(var size in new[]{new Vector2I(1920,1080),new(1600,900),new(1366,768),new(1280,720),new(2560,1440)})
             {
                 GetWindow().Size=size;await Wait(.1);await Capture("custom-menu-"+size.X);
@@ -103,12 +102,7 @@ public partial class PresentationUpdateChecks : Node
             foreach(var map in CustomMapRegistry.Maps)
             {
                 game.Environment.Apply(map.SongId);game.Environment.Present(0,true);
-                Check(map.BackgroundPath.Length==0?game.Environment.Background.SelfModulate==Colors.Black:game.Environment.Background.Texture.ResourcePath==map.BackgroundPath,"custom environment follows supplied art/black rule "+map.SongId);
-                if(map.BackgroundPath.Length==0)
-                {
-                    var shader=(ShaderMaterial)game.WorldWaterTreatment.Material;
-                    Check(shader.GetShaderParameter("preserve_black").AsSingle()==1&&shader.GetShaderParameter("fog_strength").AsSingle()==0&&!game.Environment.LeftParticles.Emitting&&!game.Environment.RightParticles.Emitting,"black world suppresses ambient fill without hiding HUD");
-                }
+                Check(game.Environment.Background.Texture!=null&&game.Environment.Background.SelfModulate!=Colors.Black,"generated map inherits its environment profile "+map.SongId);
                 await Capture(map.SongId+"-environment-fixture");
             }
             // Development-only simultaneous family gallery at normalized final size.
@@ -121,12 +115,8 @@ public partial class PresentationUpdateChecks : Node
             var tutorialIndicators=tutorial.GetNode<InterferenceIndicators>("InterferenceIndicators");foreach(string type in new[]{"ship_horn","fishing_float","whale","sardine"})tutorial.Interference.Trigger(type,10);tutorial.Interference.Present(11.24);
             foreach(var size in new[]{new Vector2I(1920,1080),new(1600,900),new(1366,768),new(1280,720),new(2560,1440)}){GetWindow().Size=size;await Wait(.1);tutorialIndicators.Present(11.24,false);await Capture("tutorial-"+size.X);var message=tutorial.GetNode<Control>("TutorialHud/MessageArea");foreach(var bubble in tutorialIndicators.GetNode<Control>("SafeArea").GetChildren().OfType<InterferenceBubble>())Check(bubble.Visible&&!bubble.GetGlobalRect().Intersects(message.GetGlobalRect()),"tutorial message remains safe "+bubble.EffectType+" "+size.X);}
             tutorial.StopGameplay();tutorial.QueueFree();await Wait(.1);
-            // Simulate removal of the sole manifest without moving user audio or destroying the module.
-            string manifest="res://custom_maps/registry/catalog.json",backup=manifest+".module-test";
-            var field=typeof(CustomMapRegistry).GetField("_maps",BindingFlags.NonPublic|BindingFlags.Static)!;
-            Check(DirAccess.RenameAbsolute(manifest,backup)==Error.Ok,"temporarily disable optional manifest");
-            try{field.SetValue(null,null);Check(CustomMapRegistry.Maps.Count==0,"removed custom module becomes empty registry");foreach(string id in new[]{"song_1","song_2","song_3","song_4"})Check(GameplayData.Load(id).Phrases.Count>0,"main chart loads without custom module "+id);}
-            finally{DirAccess.RenameAbsolute(backup,manifest);field.SetValue(null,null);}
+            CustomMapRegistry.Reload();Check(CustomMapRegistry.Maps.All(m=>m.Generated),"registry discovers only player-created maps");
+            foreach(string id in new[]{"song_1","song_2","song_3","song_4"})Check(GameplayData.Load(id).Phrases.Count>0,"main chart loads independently of local maps "+id);
             GD.Print("PRESENTATION UPDATE VERIFIED "+_checks);GetTree().Quit();
         }
         catch(Exception e){GD.PushError(e.ToString());GetTree().Quit(1);}

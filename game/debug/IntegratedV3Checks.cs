@@ -45,9 +45,9 @@ public partial class IntegratedV3Checks : Node
             main.Combo.UpdateCombo(27,main.Rhythm.SongTimeSeconds,RhythmJudgment.Perfect);main.Combo.Present(main.Rhythm.SongTimeSeconds+.05);
             Check(main.Combo.Visible&&main.Combo.Number.Text=="27"&&main.Combo.Number.GetThemeFontSize("font_size")==96&&main.Combo.GetNode<Label>("Caption").Text=="COMBO","H redesigned large combo number / small label");
             await Capture("main-combo-interference");main.StopGameplay();main.QueueFree();await Frames();
-            var custom=Spawn("custom_under_the_sea");await Frames();
-            Check(custom.RunState==GameplayScreen.GameplayRunState.Playing&&custom.Data.Phrases.Count==137&&custom.Data.ChartPath.EndsWith("custom_under_the_sea_chart_v3.csv"),"C Under the Sea loads dense v3 chart in normal Gameplay");
-            await Capture("under-the-sea");custom.StopGameplay();custom.QueueFree();await Frames();
+            var map=await GeneratedMapTestFixture.Ensure(this);var custom=Spawn(map.SongId);await Frames();
+            Check(custom.RunState==GameplayScreen.GameplayRunState.Playing&&custom.Data.Phrases.Count>0&&custom.Data.ChartPath==map.ChartPath,"C generated local chart loads in normal Gameplay");
+            await Capture("generated-custom-map");custom.StopGameplay();custom.QueueFree();await Frames();
             var lobby=GD.Load<PackedScene>("res://game/lobby/Lobby.tscn").Instantiate<LobbyScreen>();AddChild(lobby);await Frames();
             lobby._Input(new InputEventKey{PhysicalKeycode=Key.E,Pressed=true});Check(lobby.CustomCategory,"G E switches to Custom");
             await ToSignal(GetTree().CreateTimer(.30),SceneTreeTimer.SignalName.Timeout);await Capture("custom-category");

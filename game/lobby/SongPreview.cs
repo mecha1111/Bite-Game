@@ -40,6 +40,11 @@ public partial class SongPreview : Node
         _fade.TweenProperty(incoming,"volume_linear",volume,CrossfadeSeconds);
         if(old!=null){_fade.TweenProperty(old,"volume_linear",0.0,CrossfadeSeconds);_fade.Chain().TweenCallback(Callable.From(old.Stop));}
     }
+    public void StopPreview()
+    {
+        _fade?.Kill();_pending=null;_current=null;SongId="";
+        PlayerA.Stop();PlayerB.Stop();
+    }
     public void FadeOut(Action completed)
     {
         _leaving=true;_pending=null;_fade?.Kill();_fade=CreateTween().SetParallel();

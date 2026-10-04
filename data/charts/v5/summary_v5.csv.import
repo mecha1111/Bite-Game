@@ -1,9 +1,19 @@
 [remap]
 
-importer="keep"
+importer="csv_translation"
+type="Translation"
+uid="uid://dtubbwggxly4v"
 
 [deps]
 
+files=["res://data/charts/v5/summary_v5.targets.translation", "res://data/charts/v5/summary_v5.multi.translation", "res://data/charts/v5/summary_v5.camera.translation", "res://data/charts/v5/summary_v5.chart.translation", "res://data/charts/v5/summary_v5.camera.translation"]
+
 source_file="res://data/charts/v5/summary_v5.csv"
+dest_files=["res://data/charts/v5/summary_v5.targets.translation", "res://data/charts/v5/summary_v5.multi.translation", "res://data/charts/v5/summary_v5.camera.translation", "res://data/charts/v5/summary_v5.chart.translation", "res://data/charts/v5/summary_v5.camera.translation"]
 
 [params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

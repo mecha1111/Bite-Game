@@ -1,9 +1,19 @@
 [remap]
 
-importer="keep"
+importer="csv_translation"
+type="Translation"
+uid="uid://drpti4tun16tv"
 
 [deps]
 
+files=["res://data/balance/interference.type.translation", "res://data/balance/interference.time.translation", "res://data/balance/interference.optional.translation"]
+
 source_file="res://data/balance/interference.csv"
+dest_files=["res://data/balance/interference.type.translation", "res://data/balance/interference.time.translation", "res://data/balance/interference.optional.translation"]
 
 [params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

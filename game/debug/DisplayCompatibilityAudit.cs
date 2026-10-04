@@ -58,7 +58,7 @@ public partial class DisplayCompatibilityAudit:Node
   Check(g.GetNode<Control>("Composition/SharkAnchor").GlobalPosition.IsEqualApprox(new Vector2(960,1080)),name+" shark bottom-center");
   var bg=g.Environment.Background.GetGlobalRect();
   Check(bg.Position.X<=0&&bg.Position.Y<=0&&bg.End.X>=1920&&bg.End.Y>=1080,name+" background cover");
-  if(g.SongId!="custom_part_of_your_world")Check(g.Environment.Background.Texture!=null,name+" background texture loaded");
+  Check(g.Environment.Background.Texture!=null,name+" background texture loaded");
   if(g.Presentation.WorldCamera!=null)Check(g.Gauge.GetCanvasLayerNode()?.Layer==3&&g.SettingsButton.GetCanvasLayerNode()?.Layer==3,name+" fixed HUD layer");else Check(g is TutorialGameplayScreen,name+" intentionally camera-free");
   foreach(var b in Walk(g).OfType<InterferenceBubble>())Check(b.Initialized,name+" bubble "+b.EffectType);
  }
@@ -91,7 +91,7 @@ public partial class DisplayCompatibilityAudit:Node
     var indicators=g.GetNode<InterferenceIndicators>("InterferenceIndicators");g.Interference.Initialize(g.SongId,Array.Empty<(string,double)>());foreach(var type in new[]{"whale","fishing_float","ship_horn","sardine"})g.Interference.Trigger(type,10);g.Interference.Present(11);indicators.Present(11,false);var bubbles=Walk(indicators).OfType<InterferenceBubble>().ToArray();Check(bubbles.All(b=>b.Visible),"four animated indicators visible "+prefix);Check(!bubbles.Single(b=>b.EffectType=="ship_horn").GetGlobalRect().Intersects(bubbles.Single(b=>b.EffectType=="fishing_float").GetGlobalRect()),"indicator top-left no overlap "+prefix);await Capture(prefix+"-indicators",g);indicators.Stop();
     g.Result.ShowResult(new GameplayResult("Hear the Tide",880,800,20,7,6,0,21,33));g.Result.Reveal();await Wait();Root(g.Result,"Result "+prefix);Check(g.Result.Gauge.Percentage.GetGlobalRect().Position.Y>=g.Result.Gauge.SharkImage.GetGlobalRect().End.Y,"Result percent below art "+prefix);Check(g.Result.Gauge.SharkImage.Size.X>400,"Result shark anchor "+prefix);await Capture(prefix+"-result",g.Result);g.Result.HideResult();g.GameOver.ShowStarvation();g.GameOver.Reveal();await Wait();Root(g.GameOver,"GameOver "+prefix);await Capture(prefix+"-gameover",g.GameOver);
    }
-   foreach(string id in new[]{"stage_2","stage_3","stage_4","custom_shark_pool","custom_part_of_your_world","custom_under_the_sea"})
+   foreach(string id in new[]{"stage_2","stage_3","stage_4"}.Concat(Gamejam2.Data.CustomMapRegistry.Maps.Where(m=>m.Generated&&m.Available).Select(m=>m.StageId)))
    {router.GoToLobby();if(id.StartsWith("custom_"))router.ScreenHost!.GetChild<LobbyScreen>(0).SelectCategory(true);router.GoToGameplay(id);await Wait();var g=router.ScreenHost!.GetChild<GameplayScreen>(0);Check(g.RunState==GameplayScreen.GameplayRunState.Playing,id+" resource entry");g.SuspendForSettings();g.SetProcess(false);World(g,id);g.Combo.UpdateCombo(27,0);g.Combo.Present(1);await Capture("1280-"+id,g);}
    System.IO.File.WriteAllText(_out+"/snapshots.json",JsonSerializer.Serialize(_snapshots));System.IO.File.WriteAllText(_out+"/checks.json",JsonSerializer.Serialize(_checks));GD.Print("DISPLAY AUDIT COMPLETE "+_checks.Count+" checks / "+_snapshots.Count+" screens");GetTree().Quit();
   }catch(Exception e){GD.PushError(e.ToString());GetTree().Quit(1);}

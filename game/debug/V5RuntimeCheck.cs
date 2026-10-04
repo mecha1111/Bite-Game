@@ -19,7 +19,7 @@ public partial class V5RuntimeCheck:Node
             await ToSignal(GetTree(),SceneTree.SignalName.ProcessFrame);
             Check(game.Rhythm.IsRunning&&game.Data.ChartPath.EndsWith("stage1_hear_the_tide_chart_v5.csv"),"Stage 1 v5 starts");
             Check(game.Data.TargetCount==64,"Stage 1 target count 64");
-            var custom=GameplayData.Load("custom_under_the_sea");Check(custom.TargetCount==139,"Under the Sea target count 139");
+            var map=await GeneratedMapTestFixture.Ensure(this);var custom=GameplayData.Load(map.SongId);Check(custom.TargetCount>0,"generated map has targets");
             Check(game.Data.Phrases.Concat(custom.Phrases).All(p=>p.TargetEvents.Length==1),"single target only");
             Check(game.Data.Phrases.Zip(game.Data.Phrases.Skip(1),(a,b)=>a.FromLeft!=b.FromLeft).All(v=>v),"phrase side alternation");
             var first=game.Data.Phrases[0];game.Signals.Present(first.TargetSeconds);

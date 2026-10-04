@@ -2,7 +2,6 @@
 
 ## 작업 상태
 
-현재 실행 파일을 기준으로 수정했다. 이 문서는 **전체 작업 완료 보고가 아니다**. `BITE_CustomMaps_v1` 및 6개 first-pass prey/camera CSV는 프로젝트·Downloads·Desktop에서 발견되지 않았다. 음원/아트만 확인됐다. 패키지 경로를 요청했으며, 차트 타점을 임의 생성하거나 다른 곡으로 fallback하지 않았다. 커스텀 3곡은 preview/cover를 사용할 수 있지만 Gameplay 시작은 chart 연결 전 차단한다. 자동 실행/음원 파형 검사를 사람의 청취 승인으로 표현하지 않는다.
 
 ## 1–3. Result 복구
 
@@ -30,35 +29,9 @@
 - prey와 interference의 살아 있는 ring 모두 적용. **WavePulse.Origin/CurrentRadius/StartedAt, chart TargetTime, Song Clock, input windows/offset/resolve**는 변경하지 않는다. 실제 inspector/test에서 origin/radius/target/clock 불변을 비교했다.
 - Sardine SFX 구조 유지, configuration은 `interference_effects.csv`의 duration=5, interval=.5, emissions=10. 종료 후에도 다른 Large ring을 잘라내지 않는다. 기존 band 검사 대신 current curve/5초 종료 검사로 갱신했다.
 
-## 11–14. removable module
+## Local Custom Maps
 
-- Root **`res://custom_maps/`**: `audio/`, `assets/`, `registry/catalog.json`, 준비된 `charts/`, `camera_fx/`, `data/`.
-- Core의 유일한 optional-content entry **`game/data/CustomMapRegistry.cs`**. JSON manifest가 없으면 empty registry. Core tscn/tres가 custom map resource를 직접 preload하지 않는다. 공유 GameplayData/Environment/StagePresentationChart/SongPreview/StageCard가 registry definition만 조회.
-- 기존 Lobby 카드/arrow/preview를 재사용. scene-authored `Lobby.tscn/Categories/Main`, `/Custom`로 **메인 4곡과 커스텀 3곡을 별도 목록**으로 표시. category가 기존 Catalog를 변경하지 않고 다른 Resource 목록을 선택한다. missing module이면 Custom button 숨김. 키보드/마우스 모두 연결.
-- gameplay→Lobby는 custom category로 복귀할 수 있고 Settings calibration/tutorial replay의 category context도 유지.
-- 저장은 **`custom_map_progress` section, custom StageId별 최고 rank string**. 메인 progress/unlock/FC/AP 배열에 쓰지 않는다. 더 낮은 rank로 downgrade하지 않는다.
-- 테스트에서 manifest를 임시 비활성화→registry empty→main 4곡 chart load 성공→원본 복원. 실제 custom root를 삭제하지 않고 removal 경로를 검증했다.
-
-## 15–18. custom songs / 차트 상태
-
-| Song | actual AudioStream duration | first-pass Music BPM (미확정) | 실제 prey count / 조정 |
-|---|---:|---:|---|
-| 냉탕에 상어 | 219.103485s | 117.19 | supplied chart 미연결; 후보 52는 user 정보 |
-| 저곳으로 | 216.201004s | 133.93 | supplied chart 미연결; 후보 48는 user 정보 |
-| Under the Sea | 195.163712s | 133.93 | supplied chart 미연결; 후보 64는 user 정보 |
-
-아직 final BPM/Gameplay BPM/TargetTime/StartTime/기아 균형을 확정하지 않았다. **청취 후 수동 이동한 타깃 없음**. 최종 chart 경로도 없는 상태이며 registry `Available=false, ChartPath="", FxPath=""`로 명확하게 차단한다.
-
-음원은 각각 `custom_maps/audio/shark_pool.mp3`, `part_of_your_world.mp3`, `under_the_sea.mp3` (제공 원본 MP3 바이트를 이동, 재인코딩 없음). Godot의 실제 decode length 및 Music bus preview를 사용.
-
-아트 inspection 결과:
-- 냉탕: `shark_pool_cover.png`는 OCEAN VIBES/SUPER BITE 종이 포스터. `shark_pool_background.png`는 빈 coral environment. 각각 cover/gameplay 역할.
-- 저곳: `part_of_your_world_cover.png`는 검정 바탕 인물 menu art. Gameplay **black rule** (`BackgroundPath=""`), custom black flag만 world fog/ray/ambient particles를 끄고 preserve_black uniform으로 color/light pulse가 빈 배경을 채우지 않게 한다. shark/waves는 읽히도록 유지. 다른 바다 art 삽입 없음.
-- Under the Sea: `under_the_sea_cover.png`는 인어 인물/바다, `_background.png`는 인물이 없는 ocean. menu/gameplay로 각각 분리.
-
-## 19–21. custom FX 상태
-
-제공 camera CSV가 없으므로 final custom FX timeline을 발명하지 않았다. registry의 FxPath가 연결되면 기존 cached presentation loader가 같은 Song Clock으로 읽는다. First-pass CSV schema 및 실제 타점/강도/slow push 등 type conversion은 패키지를 받은 뒤 확인해야 한다. current code에 지원되지 않는 type은 명확한 data error이며 silently 무시하지 않는다. .45 important reading / .35 Whale-current intensity reduction과 fixed HUD는 shared presentation 그대로 사용한다.
+CustomMapRegistry now loads only generated metadata from `user://custom_maps/<MapId>/`. The Custom category remains available when empty, with 아직 만든 커스텀 맵이 없습니다. and 내 음악 추가. The local generator, shared gameplay loaders, camera/interference/Satiety data and custom progress remain separate from Main Stage progression. No bundled music or pre-authored custom maps ship.
 
 ## 22–27. interference bubbles
 
@@ -102,4 +75,3 @@ HUD는 기존 WORLD z≤3 → shader composite z4 → HUD z≥5가 유지된다.
 | EX Deep Current (rerun) | 131.683258s | 46 / 0 | 0 | 38.32ms | 42.99ms |
 
 Logs: `artifacts/presentation-update/full-song-1.log`–`full-song-4.log` (initial EX warning retained), `ex-rerun/full-song-4.log` (final run). Headless CoreAudio full-song checks verify runtime timing/flow, not human listening/art-direction judgment. Separate rendered UI/current/heavy scene captures are retained. Custom environment-only fixtures use the shared environment on a frozen main-scene test; they are explicitly **not custom-song Gameplay passes**.
-- **Required missing input:** BITE_CustomMaps_v1 package path / 6 CSV. 전달되면 root 안에 보관하고 schema 변환→no-overlap/target-first 검증→곡별 Satiety budget→실제 3곡 실행→전후 audition record / 인간 청취 tuning. 그 전까지 Custom Gameplay 미완료이며 final timing/art direction 승인도 pending.

@@ -6,27 +6,15 @@ using Godot;
 using Gamejam2.Lobby;
 using Gamejam2.Save;
 namespace Gamejam2.Data;
-/// <summary>The only core dependency on optional custom content. Missing module means no custom category.</summary>
+/// <summary>Player-created maps are discovered from user://; no bundled map catalog is loaded.</summary>
 public static class CustomMapRegistry
 {
-    private const string Manifest="res://custom_maps/registry/catalog.json";
     private static CustomMapDefinition[]? _maps;
     public static IReadOnlyList<CustomMapDefinition> Maps=>_maps??=Read();
     public static void Reload()=>_maps=null;
     private static CustomMapDefinition[] Read()
     {
-        if(!FileAccess.FileExists(Manifest))return Array.Empty<CustomMapDefinition>();
-        var maps=JsonSerializer.Deserialize<CustomMapDefinition[]>(FileAccess.GetFileAsString(Manifest),new JsonSerializerOptions{PropertyNameCaseInsensitive=true})??Array.Empty<CustomMapDefinition>();
-        if(maps.Any(m=>!m.SongId.StartsWith("custom_")||!m.StageId.StartsWith("custom_")||!m.AudioPath.StartsWith("res://custom_maps/")||!m.CoverPath.StartsWith("res://custom_maps/"))||maps.Select(m=>m.SongId).Distinct().Count()!=maps.Length)throw new ArgumentException("Invalid custom registry namespace/paths.");
-        foreach(var map in maps)
-        {
-            if(string.IsNullOrWhiteSpace(map.ChartPath)||!FileAccess.FileExists(map.ChartPath))
-            {
-                map.Available=false;
-                GD.PushError($"Custom Map '{map.SongId}' cannot play: missing prey ChartPath '{map.ChartPath}' in {Manifest}. Supply the authored chart before enabling this entry.");
-            }
-        }
-        var all=maps.ToList();
+        var all=new List<CustomMapDefinition>();
         using var directory=DirAccess.Open("user://custom_maps");
         if(directory!=null)foreach(string id in directory.GetDirectories().Where(id=>id.StartsWith("custom_local_")&&!id.Contains("..")))
         {

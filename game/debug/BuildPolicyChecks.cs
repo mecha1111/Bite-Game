@@ -46,9 +46,9 @@ public partial class BuildPolicyChecks : Node
             Check(lobby.Cards.GetChildren().OfType<StageCard>().Where(c=>c.Visible).All(c=>!c.LockOverlay.Visible),"fresh custom category has no lock overlays");
             foreach(var map in CustomMapRegistry.Maps)GD.Print($"CUSTOM READINESS {map.StageId}: unlocked={CustomMapRegistry.IsUnlocked(map.StageId)} chart={map.ChartPath} playable={map.Available}");
             await Capture("release-custom-category");s.Open();await Wait(.4);await Capture("release-settings");
-            ProgressService.RecordStageResult("song_1",true,true,true);CustomMapRegistry.Record("custom_under_the_sea",true,true,true);SaveStore.Write("progress","tutorial_completed",true);SaveStore.Flush();
+            var fixtureMap=await GeneratedMapTestFixture.Ensure(this);ProgressService.RecordStageResult("song_1",true,true,true);CustomMapRegistry.Record(fixtureMap.SongId,true,true,true,1100);SaveStore.Write("progress","tutorial_completed",true);SaveStore.Flush();
             s.ResetProgressButton.EmitSignal(Button.SignalName.Pressed);s.ConfirmResetButton.EmitSignal(Button.SignalName.Pressed);await Wait(.05);
-            Check(CustomMapRegistry.BestRank("custom_under_the_sea")=="none"&&CustomMapRegistry.Maps.All(m=>CustomMapRegistry.IsUnlocked(m.StageId))&&!TutorialGameplayScreen.HasCompleted,"progress reset clears custom achievements without relocking customs");
+            Check(CustomMapRegistry.BestRank(fixtureMap.StageId)=="none"&&CustomMapRegistry.Maps.All(m=>CustomMapRegistry.IsUnlocked(m.StageId))&&!TutorialGameplayScreen.HasCompleted,"progress reset clears custom achievements without relocking customs");
             s.CloseImmediately();router.GoToTitle();await Wait(.1);router.ScreenHost.GetChild<TitleScreen>(0).StartButton.EmitSignal(Button.SignalName.Pressed);await Wait(.1);
             Check(router.ScreenHost.GetChild(0) is LobbyScreen,"release next Start after reset skips Tutorial with saved calibration");
             router.GoToTutorial(true);Check(router.ScreenHost.GetChild(0) is LobbyScreen,"direct Tutorial route centrally disabled in exports");

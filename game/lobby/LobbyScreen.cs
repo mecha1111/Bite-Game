@@ -43,7 +43,7 @@ public partial class LobbyScreen : Control
     public bool CustomCategory {get;private set;}
     private Tween? _categoryTween;
     private Vector2 _cardsOrigin;
-    public void SelectCategory(bool custom)=>Category(custom&&Gamejam2.Data.CustomMapRegistry.Maps.Count>0);
+    public void SelectCategory(bool custom)=>Category(custom);
     private bool Available(string id)=>Gamejam2.Data.CustomMapRegistry.IsUnlocked(id)||(!Gamejam2.Data.CustomMapRegistry.IsCustom(id)&&ProgressService.IsUnlocked(id));
     private void Category(bool custom)
     {
@@ -78,7 +78,7 @@ public partial class LobbyScreen : Control
     {
         _preview=GetNode<SongPreview>("SongPreview");_mainCatalog=Catalog;_cardsOrigin=Cards.Position;
         GetNode<Button>("Categories/Main").Pressed+=()=>Category(false);
-        var customButton=GetNode<Button>("Categories/Custom");customButton.Visible=Gamejam2.Data.CustomMapRegistry.Maps.Count>0;customButton.Pressed+=()=>Category(true);
+        var customButton=GetNode<Button>("Categories/Custom");customButton.Visible=true;customButton.Pressed+=()=>Category(true);
         var cards = Cards.GetChildren().OfType<StageCard>().ToList();
         while (cards.Count < Catalog.Stages.Count)
         { var card = CardScene.Instantiate<StageCard>(); Cards.AddChild(card); cards.Add(card); }
@@ -95,7 +95,7 @@ public partial class LobbyScreen : Control
         var cards = Cards.GetChildren().OfType<StageCard>().ToArray();
         for (int index = 0; index < cards.Length; index++)
         { cards[index].Visible = index < Catalog.Stages.Count; if (index < Catalog.Stages.Count) cards[index].Bind(Catalog.Stages[index], Available(Catalog.Stages[index].StageId)); }
-        Arrange(false); TransitionEnvironment(false, 0); if(Catalog.Stages.Count>0)_preview.Select(Catalog.Stages[SelectedIndex].SongId);
+        Arrange(false); TransitionEnvironment(false, 0); if(Catalog.Stages.Count>0)_preview.Select(Catalog.Stages[SelectedIndex].SongId);else _preview.StopPreview();
     }
     /// <summary>화면 밖에서 wrap하지 않는다. 연타는 현재 tween의 pose에서 새 목표로 이동한다.</summary>
     public void Navigate(int direction)
@@ -133,8 +133,9 @@ public partial class LobbyScreen : Control
             else { _tween!.TweenProperty(card, "position", target, TransitionSeconds); _tween.TweenProperty(card, "scale", scale, TransitionSeconds); }
         }
         UpdateInteraction();
-        PositionLabel.Text = $"{SelectedIndex + 1} / {Catalog.Stages.Count}";
-        if (Catalog.Stages.Count == 0) return;
+        PositionLabel.Text = Catalog.Stages.Count==0 ? "0 / 0" : $"{SelectedIndex + 1} / {Catalog.Stages.Count}";
+        if (Catalog.Stages.Count == 0)
+        { Information.Text = "아직 만든 커스텀 맵이 없습니다."; return; }
         var data = Catalog.Stages[SelectedIndex];
         Information.Text = !data.IsAvailable?"준비 중인 곡입니다":Available(data.StageId)
             ? "Enter / Space 또는 카드를 눌러 시작" : "아직 잠겨 있는 곡입니다";
@@ -152,6 +153,7 @@ public partial class LobbyScreen : Control
     private void RestoreCardFocus()
     {
         if (!IsInsideTree() || !MenuInputEnabled) return;
+        if(CustomCategory&&Catalog.Stages.Count==0){_addMusic?.GrabFocus();return;}
         var card = Cards.GetChildren().OfType<StageCard>().ElementAtOrDefault(SelectedIndex);
         if (card != null && !card.SelectButton.Disabled) card.SelectButton.GrabFocus();
         else if (!RightArrow.Disabled) RightArrow.GrabFocus();
@@ -165,13 +167,13 @@ public partial class LobbyScreen : Control
         for (int i = 0; i < layers.Length; i++)
         {
             if (i < Catalog.Stages.Count && layers[i] is TextureRect texture) texture.Texture = Catalog.Stages[i].BackgroundTexture;
-            Color tint = new(1, 1, 1, i == SelectedIndex ? BackdropOpacity : 0);
+            Color tint = new(1, 1, 1, i < Catalog.Stages.Count && i == SelectedIndex ? BackdropOpacity : 0);
             if (animate) _environmentTween!.TweenProperty(layers[i], "modulate", tint, TransitionSeconds);
             else layers[i].Modulate = tint;
         }
         // These three authored ambience presets are presentation previews, not song/gameplay rules.
         var emitters = Ambience.GetChildren().OfType<CpuParticles2D>().ToArray();
-        for (int i = 0; i < emitters.Length; i++) emitters[i].Emitting = i == SelectedIndex;
+        for (int i = 0; i < emitters.Length; i++) emitters[i].Emitting = i < Catalog.Stages.Count && i == SelectedIndex;
         if (!animate) return;
         _rippleTween?.Kill();
         TransitionMaterial.SetShaderParameter("direction", direction);

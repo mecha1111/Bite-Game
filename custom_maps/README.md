@@ -1,5 +1,5 @@
-# Optional custom content
+# Local Custom Maps
 
-Remove this folder to disable custom maps without changing main stages. All maps are always unlocked. Performance records use custom_map_progress.
+CustomMapRegistry discovers player-created metadata in `user://custom_maps/<MapId>/`. No pre-authored maps, music, covers or charts are bundled. The empty catalog is retained only as an explicit record that no bundled entries exist.
 
-Current source: supplied BITE Integrated Musical Charts v3. Original CSV target timestamps are preserved in charts/. camera_fx/*_v3.csv uses those musical landmarks; data/*_satiety_sections_v3.csv applies scheduled-gap drain. Registry is the only core module dependency. 저곳으로 intentionally has a solid-black gameplay background.
+The local MP3 workflow lives in `res://custom_map_generator/`. Audio analysis produces chart, camera FX, interference and Satiety files in the player library. The Custom category stays available when empty and offers 내 음악 추가. Removing repository content never removes player maps or their progress.

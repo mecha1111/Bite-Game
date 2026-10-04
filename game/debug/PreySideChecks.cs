@@ -11,7 +11,7 @@ public partial class PreySideChecks : Node
     {
         try
         {
-            foreach(string song in new[]{"song_1","song_2","song_3","song_4","custom_shark_pool","custom_part_of_your_world","custom_under_the_sea"})
+            foreach(string song in new[]{"song_1","song_2","song_3","song_4"}.Concat(Gamejam2.Data.CustomMapRegistry.Maps.Where(m=>m.Generated&&m.Available).Select(m=>m.SongId)))
             {
                 var data=GameplayData.Load(song);var times=data.Phrases.SelectMany(p=>p.TargetEvents.Select(t=>t.TargetTime)).ToArray();
                 var sequence=new PreySideSequence();sequence.Prepare(data);

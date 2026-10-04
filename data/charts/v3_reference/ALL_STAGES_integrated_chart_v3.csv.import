@@ -1,9 +1,19 @@
 [remap]
 
-importer="keep"
+importer="csv_translation"
+type="Translation"
+uid="uid://u2xjhjieoaud"
 
 [deps]
 
+files=["res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.event.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.start.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.target.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.side.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.pattern.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.accent.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.accent.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.gameplay.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.pulse.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.source.translation"]
+
 source_file="res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.csv"
+dest_files=["res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.event.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.start.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.target.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.side.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.pattern.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.accent.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.accent.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.gameplay.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.pulse.translation", "res://data/charts/v3_reference/ALL_STAGES_integrated_chart_v3.source.translation"]
 
 [params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

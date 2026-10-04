@@ -6,8 +6,6 @@ CURRENT SOURCE AUDIO
 - Stage 3 Predator's Pulse: 3.mp3
 - EX Deep Current: 4.mp3
 - Custom Shark In a Pool: latest uploaded Shark In a Pool MP3
-- Custom Part of Your World: latest uploaded 저곳으로 MP3
-- Custom Under the Sea: latest uploaded Under the Sea MP3
 
 AUTHORING RULES
 1. Target-first: Bite target is selected before prey start time.

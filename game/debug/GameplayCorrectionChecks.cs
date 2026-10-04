@@ -72,7 +72,7 @@ public partial class GameplayCorrectionChecks : Node
             gameplay.Interference.Trigger("sardine",time+2);gameplay.Interference.Present(time+3);gameplay.Presentation.Present(time+3);
             Check(gameplay.Interference.GetEffect("sardine").IsActive&&gameplay.Interference.GetEffect("sardine").Vortex!.Strength>0,"G non-Ship-Horn vortex works");
             Check(data.Phrases.Take(10).Zip(data.Phrases.Skip(1).Take(9),(a,b)=>a.FromLeft!=b.FromLeft).All(v=>v)&&phrase.TargetEvents.Length==3,"ten phrases strictly alternate; rapid response stays one side/phrase");
-            foreach(var id in new[]{"song_1","song_2","song_3","song_4","custom_shark_pool","custom_part_of_your_world","custom_under_the_sea"})
+            foreach(var id in new[]{"song_1","song_2","song_3","song_4"}.Concat(Gamejam2.Data.CustomMapRegistry.Maps.Where(m=>m.Generated&&m.Available).Select(m=>m.SongId)))
             {var d=GameplayData.Load(id);Check(d.Phrases.Take(10).Zip(d.Phrases.Skip(1).Take(9),(a,b)=>a.FromLeft!=b.FromLeft).All(v=>v),"direction sequence "+id);}
             await Remove(gameplay);GD.Print("REQUESTED A-G AND SIDE SEQUENCE PASSED; stopping.");GetTree().Quit();
         }
