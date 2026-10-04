@@ -1,0 +1,15 @@
+id,start,end,patterns,side,left_from,left_to,right,silhouette,wave_from,wave_to,interference,intensity,message
+NormalVision,0,8,m1,alternate,1,1,1,1,0.25,0.25,,0,초록 파동에 맞춰 물어보세요.
+DifferentMovement,8,15,m2,alternate,1,1,1,1,0.25,0.28,,0,물고기마다 움직임이 달라요.
+NoticeWaves,15,22,s1,alternate,1,1,1,1,0.28,0.32,,0,움직임에 파동이 함께해요.
+Coexistence,22,28,m1;m2,alternate,1,1,1,1,0.32,0.35,,0,물고기와 파동을 함께 느껴보세요.
+InterferenceIntro,28,34,s1,alternate,1,1,1,1,0.35,0.35,ship_horn,0.25,모든 파동이 먹이는 아니에요.
+SightedNoise,34,40,m2,alternate,1,1,1,1,0.35,0.4,ship_horn,0.35,먹이의 리듬을 따라가세요.
+RightEyeLoss,40,45,m1,right,1,1,0,1,0.4,0.45,,0,
+WaveDiscovery,45,50,m1,right,1,1,0,1,0.45,0.55,ship_horn,0.3,파동을 잘 들어보세요.
+WavePatterns,50,58,m2;s1,right,1,0.9,0,1,0.55,0.65,ship_horn,0.45,익숙한 리듬이 느껴지나요?
+LeftEyeFade,58,65,b1,alternate,0.9,0.65,0,0.9,0.65,0.7,fishing_float,0.4,시야가 흐려져도 리듬은 남아요.
+SenseInversion,65,75,b1;m2,alternate,0.65,0.35,0,0.7,0.7,0.8,fishing_float,0.55,파동을 따라 물어보세요.
+SensoryHunting,75,82,s1,alternate,0.35,0.15,0,0.5,0.8,0.85,whale,0.45,잡음 사이에서 먹이를 느껴보세요.
+FullBlindness,82,90,b1,alternate,0.15,0,0,0.3,0.85,1,whale;fishing_float,0.65,감각이 더 선명해집니다.
+FinalExam,90,101.8,ex1,alternate,0,0,0,0,1,1,ship_horn;whale;fishing_float,0.8,이제 파동만으로 사냥해보세요.

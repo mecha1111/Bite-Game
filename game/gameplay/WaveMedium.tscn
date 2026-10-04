@@ -1,0 +1,4 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://game/gameplay/WavePulse.tscn" id="Pulse"]
+[node name="WaveMedium" instance=ExtResource("Pulse")]
+WaveType = 1

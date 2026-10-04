@@ -1,0 +1,8 @@
+﻿song_id,targets,multi_target_phrases,camera_events,chart_file,camera_file
+custom_part_of_your_world,77,0,28,charts/custom_part_of_your_world_chart_v5.csv,camera_fx/custom_part_of_your_world_camera_fx_v5.csv
+custom_shark_in_a_pool,136,0,31,charts/custom_shark_in_a_pool_chart_v5.csv,camera_fx/custom_shark_in_a_pool_camera_fx_v5.csv
+custom_under_the_sea,139,0,28,charts/custom_under_the_sea_chart_v5.csv,camera_fx/custom_under_the_sea_camera_fx_v5.csv
+stage1_hear_the_tide,64,0,20,charts/stage1_hear_the_tide_chart_v5.csv,camera_fx/stage1_hear_the_tide_camera_fx_v5.csv
+stage2_hidden_current,73,0,20,charts/stage2_hidden_current_chart_v5.csv,camera_fx/stage2_hidden_current_camera_fx_v5.csv
+stage3_predators_pulse,95,0,26,charts/stage3_predators_pulse_chart_v5.csv,camera_fx/stage3_predators_pulse_camera_fx_v5.csv
+stage4_deep_current_ex,73,0,18,charts/stage4_deep_current_ex_chart_v5.csv,camera_fx/stage4_deep_current_ex_camera_fx_v5.csv

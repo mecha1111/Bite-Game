@@ -1,0 +1,675 @@
+[gd_scene format=3 uid="uid://du6pgqdteoro3"]
+
+[ext_resource type="Script" uid="uid://5qoayywokxwd" path="res://game/title/TitleScreen.cs" id="1"]
+[ext_resource type="Theme" uid="uid://c85qicd3ooe8f" path="res://game/ui/BiteTheme.tres" id="2"]
+[ext_resource type="Texture2D" path="res://assets/4ff6ea2cd4be1af1.png" id="3_tmn7i"]
+[ext_resource type="Texture2D" uid="uid://b1i1b6ostfyar" path="res://game/title/Logo.png" id="4_d5w6s"]
+[ext_resource type="Texture2D" uid="uid://dloh4mhtm3l2v" path="res://game/title/가로형 청록 픽셀 버튼 배경-3.png" id="5_oruqi"]
+[ext_resource type="Texture2D" uid="uid://mljehpio6us1" path="res://game/title/strat/픽셀 상어 지느러미와 물보라-3.png" id="6_l1drb"]
+[ext_resource type="Texture2D" uid="uid://e6la1quso1dg" path="res://game/title/setting/투명 배경 픽셀 기어 아이콘-2.png" id="7_h3abx"]
+[ext_resource type="Texture2D" uid="uid://cn3uqj7t0x0mt" path="res://game/title/exit/픽셀아트 출구문과 오른쪽 화살표-2.png" id="8_wt0ut"]
+[ext_resource type="Texture2D" uid="uid://dmd2resfqfj8g" path="res://game/title/bubble.png" id="Bubble"]
+[ext_resource type="Curve" path="res://game/title/bubble_wobble.tres" id="BubbleWobble"]
+[ext_resource type="Script" uid="uid://de6ag3tho5xi4" path="res://game/title/TitleMenuGroup.cs" id="GroupBehavior"]
+[ext_resource type="Texture2D" uid="uid://dfauucl16i4wk" path="res://game/title/bubble_near.png" id="NearBubble"]
+[ext_resource type="Shader" uid="uid://xdddmy5o6hc5" path="res://game/title/underwater_light.gdshader" id="WaterLight"]
+
+[sub_resource type="ShaderMaterial" id="WaterMaterial"]
+shader = ExtResource("WaterLight")
+shader_parameter/strength = 0.012
+shader_parameter/refraction_strength = 0.00055
+shader_parameter/refraction_speed = 0.18
+shader_parameter/brightness = 0.68
+shader_parameter/saturation = 0.65
+shader_parameter/highlight_softening = 0.18
+shader_parameter/ui_focus_strength = 0.14
+shader_parameter/vignette_strength = 0.10
+shader_parameter/lower_depth_strength = 0.06
+shader_parameter/depth_tint = Vector3(0.90, 0.96, 1.0)
+shader_parameter/speed = 0.12
+shader_parameter/ray_opacity = 0.008
+shader_parameter/ray_speed = 0.09
+shader_parameter/ray_drift = 0.03
+shader_parameter/ray_width_scale = 1.0
+shader_parameter/caustic_strength = 0.006
+shader_parameter/caustic_speed = 0.18
+
+[sub_resource type="Gradient" id="BubbleFade"]
+offsets = PackedFloat32Array(0, 0.15, 0.75, 1)
+colors = PackedColorArray(0.8, 0.96, 1, 0, 0.8, 0.96, 1, 0.95, 0.8, 0.96, 1, 0.65, 0.8, 0.96, 1, 0)
+
+[sub_resource type="StyleBoxEmpty" id="Invisible"]
+
+[node name="Title" type="Control" unique_id=1244186301 node_paths=PackedStringArray("StartButton", "SettingsButton", "ExitButton", "Logo", "LogoHitArea")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2")
+script = ExtResource("1")
+StartButton = NodePath("StartGroup/HitButton")
+SettingsButton = NodePath("SettingGroup/HitButton")
+ExitButton = NodePath("ExitGroup/HitButton")
+Logo = NodePath("Logo")
+LogoHitArea = NodePath("LogoHitArea")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=738536757]
+material = SubResource("WaterMaterial")
+position = Vector2(960, 540)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_tmn7i")
+
+[node name="AmbientEffects" type="Node2D" parent="." unique_id=1345741211]
+
+[node name="BubbleParticlesLeftFar" type="CPUParticles2D" parent="AmbientEffects" unique_id=122964244]
+modulate = Color(1, 1, 1, 0.45)
+texture_filter = 1
+position = Vector2(170, 1020)
+texture = ExtResource("Bubble")
+lifetime = 7.0
+preprocess = 3.0
+randomness = 0.45
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(25, 10)
+direction = Vector2(0, -1)
+spread = 7.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 35.0
+initial_velocity_max = 50.0
+tangential_accel_min = -2.0
+tangential_accel_max = 2.0
+tangential_accel_curve = ExtResource("BubbleWobble")
+scale_amount_min = 0.9
+scale_amount_max = 1.4
+color_ramp = SubResource("BubbleFade")
+
+[node name="BubbleParticlesRightFar" type="CPUParticles2D" parent="AmbientEffects" unique_id=982050766]
+modulate = Color(1, 1, 1, 0.45)
+texture_filter = 1
+position = Vector2(1715, 1020)
+texture = ExtResource("Bubble")
+lifetime = 7.0
+preprocess = 3.0
+randomness = 0.45
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(25, 10)
+direction = Vector2(0, -1)
+spread = 7.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 35.0
+initial_velocity_max = 50.0
+tangential_accel_min = -2.0
+tangential_accel_max = 2.0
+tangential_accel_curve = ExtResource("BubbleWobble")
+scale_amount_min = 0.9
+scale_amount_max = 1.4
+color_ramp = SubResource("BubbleFade")
+
+[node name="BubbleParticlesLeftMid" type="CPUParticles2D" parent="AmbientEffects" unique_id=1068746052]
+modulate = Color(1, 1, 1, 0.65)
+texture_filter = 1
+position = Vector2(255, 1030)
+amount = 3
+texture = ExtResource("Bubble")
+lifetime = 6.0
+preprocess = 3.0
+randomness = 0.45
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(25, 10)
+direction = Vector2(0, -1)
+spread = 9.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 65.0
+tangential_accel_min = -2.0
+tangential_accel_max = 2.0
+tangential_accel_curve = ExtResource("BubbleWobble")
+scale_amount_min = 1.6
+scale_amount_max = 2.4
+color_ramp = SubResource("BubbleFade")
+
+[node name="BubbleParticlesRightMid" type="CPUParticles2D" parent="AmbientEffects" unique_id=2017254784]
+modulate = Color(1, 1, 1, 0.65)
+texture_filter = 1
+position = Vector2(1635, 1030)
+amount = 3
+texture = ExtResource("Bubble")
+lifetime = 6.0
+preprocess = 3.0
+randomness = 0.45
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(25, 10)
+direction = Vector2(0, -1)
+spread = 9.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 65.0
+tangential_accel_min = -2.0
+tangential_accel_max = 2.0
+tangential_accel_curve = ExtResource("BubbleWobble")
+scale_amount_min = 1.6
+scale_amount_max = 2.4
+color_ramp = SubResource("BubbleFade")
+
+[node name="BubbleParticlesLeftNear" type="CPUParticles2D" parent="AmbientEffects" unique_id=1469188763]
+modulate = Color(1, 1, 1, 0.8)
+z_index = 5
+texture_filter = 1
+position = Vector2(60, 1040)
+amount = 2
+texture = ExtResource("NearBubble")
+lifetime = 5.5
+preprocess = 2.0
+randomness = 0.5
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(12, 8)
+direction = Vector2(0, -1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 65.0
+initial_velocity_max = 85.0
+tangential_accel_min = -3.0
+tangential_accel_max = 3.0
+tangential_accel_curve = ExtResource("BubbleWobble")
+scale_amount_min = 1.8
+scale_amount_max = 2.8
+color_ramp = SubResource("BubbleFade")
+
+[node name="BubbleParticlesRightNear" type="CPUParticles2D" parent="AmbientEffects" unique_id=74030979]
+modulate = Color(1, 1, 1, 0.8)
+z_index = 5
+texture_filter = 1
+position = Vector2(1860, 1040)
+amount = 2
+texture = ExtResource("NearBubble")
+lifetime = 5.5
+preprocess = 2.0
+randomness = 0.5
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(12, 8)
+direction = Vector2(0, -1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 65.0
+initial_velocity_max = 85.0
+tangential_accel_min = -3.0
+tangential_accel_max = 3.0
+tangential_accel_curve = ExtResource("BubbleWobble")
+scale_amount_min = 1.8
+scale_amount_max = 2.8
+color_ramp = SubResource("BubbleFade")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1365208685]
+position = Vector2(960, 279.24)
+scale = Vector2(0.529, 0.529)
+texture = ExtResource("4_d5w6s")
+
+[node name="StartGroup" type="Control" parent="." unique_id=2058173559 node_paths=PackedStringArray("Background", "Icon", "Caption", "HitButton")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 125.0
+offset_bottom = 125.0
+mouse_filter = 2
+script = ExtResource("GroupBehavior")
+Background = NodePath("start-button")
+Icon = NodePath("start-icon")
+Caption = NodePath("start-text")
+HitButton = NodePath("HitButton")
+
+[node name="start-button" type="Sprite2D" parent="StartGroup" unique_id=642902025]
+scale = Vector2(0.2172775, 0.21727748)
+texture = ExtResource("5_oruqi")
+
+[node name="start-icon" type="Sprite2D" parent="StartGroup" unique_id=1129025473]
+position = Vector2(-126.99994, -10)
+scale = Vector2(0.11527626, 0.11527626)
+texture = ExtResource("6_l1drb")
+
+[node name="TextBacking0" type="Label" parent="StartGroup" unique_id=145735806]
+layout_mode = 0
+offset_left = -307.0
+offset_top = -27.0
+offset_right = 377.0
+offset_bottom = 28.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="TextBacking1" type="Label" parent="StartGroup" unique_id=1742290846]
+layout_mode = 0
+offset_left = -295.0
+offset_top = -27.0
+offset_right = 389.0
+offset_bottom = 28.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="TextBacking2" type="Label" parent="StartGroup" unique_id=1528520396]
+layout_mode = 0
+offset_left = -301.0
+offset_top = -33.0
+offset_right = 383.0
+offset_bottom = 22.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="TextBacking3" type="Label" parent="StartGroup" unique_id=456579166]
+layout_mode = 0
+offset_left = -301.0
+offset_top = -21.0
+offset_right = 383.0
+offset_bottom = 34.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="TextBacking4" type="Label" parent="StartGroup" unique_id=1273835530]
+layout_mode = 0
+offset_left = -307.0
+offset_top = -33.0
+offset_right = 377.0
+offset_bottom = 22.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="TextBacking5" type="Label" parent="StartGroup" unique_id=1480891265]
+layout_mode = 0
+offset_left = -295.0
+offset_top = -33.0
+offset_right = 389.0
+offset_bottom = 22.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="TextBacking6" type="Label" parent="StartGroup" unique_id=1222539788]
+layout_mode = 0
+offset_left = -307.0
+offset_top = -21.0
+offset_right = 377.0
+offset_bottom = 34.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="TextBacking7" type="Label" parent="StartGroup" unique_id=139528298]
+layout_mode = 0
+offset_left = -295.0
+offset_top = -21.0
+offset_right = 389.0
+offset_bottom = 34.0
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "시작"
+horizontal_alignment = 1
+
+[node name="start-text" type="Label" parent="StartGroup" unique_id=1627269607]
+layout_mode = 0
+offset_left = -301.0
+offset_top = -27.0
+offset_right = 383.0
+offset_bottom = 28.0
+theme_type_variation = &"TitleMenuText"
+text = "시작"
+horizontal_alignment = 1
+
+[node name="HitButton" type="Button" parent="StartGroup" unique_id=745467781]
+layout_mode = 0
+offset_left = -303.0
+offset_top = -64.0
+offset_right = 385.0
+offset_bottom = 62.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../SettingGroup/HitButton")
+focus_next = NodePath("../../SettingGroup/HitButton")
+focus_previous = NodePath(".")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Invisible")
+theme_override_styles/pressed = SubResource("Invisible")
+theme_override_styles/hover = SubResource("Invisible")
+theme_override_styles/disabled = SubResource("Invisible")
+theme_override_styles/focus = SubResource("Invisible")
+
+[node name="SettingGroup" type="Control" parent="." unique_id=2020369814 node_paths=PackedStringArray("Background", "Icon", "Caption", "HitButton")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 261.48
+offset_bottom = 261.48
+mouse_filter = 2
+script = ExtResource("GroupBehavior")
+Background = NodePath("setting-button")
+Icon = NodePath("setting-icon")
+Caption = NodePath("setting-text")
+HitButton = NodePath("HitButton")
+
+[node name="setting-button" type="Sprite2D" parent="SettingGroup" unique_id=348229393]
+scale = Vector2(0.2172775, 0.21727747)
+texture = ExtResource("5_oruqi")
+
+[node name="setting-icon" type="Sprite2D" parent="SettingGroup" unique_id=2083312340]
+position = Vector2(-128.9999, -0.47994)
+scale = Vector2(0.11527626, 0.11527626)
+texture = ExtResource("7_h3abx")
+
+[node name="TextBacking0" type="Label" parent="SettingGroup" unique_id=627060679]
+layout_mode = 0
+offset_left = -308.0
+offset_top = -25.48
+offset_right = 376.0
+offset_bottom = 29.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="TextBacking1" type="Label" parent="SettingGroup" unique_id=1042850408]
+layout_mode = 0
+offset_left = -296.0
+offset_top = -25.48
+offset_right = 388.0
+offset_bottom = 29.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="TextBacking2" type="Label" parent="SettingGroup" unique_id=190259965]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -31.48
+offset_right = 382.0
+offset_bottom = 23.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="TextBacking3" type="Label" parent="SettingGroup" unique_id=1824476370]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -19.48
+offset_right = 382.0
+offset_bottom = 35.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="TextBacking4" type="Label" parent="SettingGroup" unique_id=740010460]
+layout_mode = 0
+offset_left = -308.0
+offset_top = -31.48
+offset_right = 376.0
+offset_bottom = 23.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="TextBacking5" type="Label" parent="SettingGroup" unique_id=1334027562]
+layout_mode = 0
+offset_left = -296.0
+offset_top = -31.48
+offset_right = 388.0
+offset_bottom = 23.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="TextBacking6" type="Label" parent="SettingGroup" unique_id=28985092]
+layout_mode = 0
+offset_left = -308.0
+offset_top = -19.48
+offset_right = 376.0
+offset_bottom = 35.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="TextBacking7" type="Label" parent="SettingGroup" unique_id=1016482958]
+layout_mode = 0
+offset_left = -296.0
+offset_top = -19.48
+offset_right = 388.0
+offset_bottom = 35.52
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "설정"
+horizontal_alignment = 1
+
+[node name="setting-text" type="Label" parent="SettingGroup" unique_id=1901755902]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -25.48
+offset_right = 382.0
+offset_bottom = 29.52
+theme_type_variation = &"TitleMenuText"
+text = "설정"
+horizontal_alignment = 1
+
+[node name="HitButton" type="Button" parent="SettingGroup" unique_id=109407793]
+layout_mode = 0
+offset_left = -304.0
+offset_top = -66.0
+offset_right = 384.0
+offset_bottom = 63.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../StartGroup/HitButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../ExitGroup/HitButton")
+focus_next = NodePath("../../ExitGroup/HitButton")
+focus_previous = NodePath("../../StartGroup/HitButton")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Invisible")
+theme_override_styles/pressed = SubResource("Invisible")
+theme_override_styles/hover = SubResource("Invisible")
+theme_override_styles/disabled = SubResource("Invisible")
+theme_override_styles/focus = SubResource("Invisible")
+
+[node name="ExitGroup" type="Control" parent="." unique_id=1410004570 node_paths=PackedStringArray("Background", "Icon", "Caption", "HitButton")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 397.48004
+offset_bottom = 397.48004
+mouse_filter = 2
+script = ExtResource("GroupBehavior")
+Background = NodePath("exit-button")
+Icon = NodePath("exit-icon")
+Caption = NodePath("exit-text")
+HitButton = NodePath("HitButton")
+
+[node name="exit-button" type="Sprite2D" parent="ExitGroup" unique_id=1571138258]
+scale = Vector2(0.2172775, 0.21727747)
+texture = ExtResource("5_oruqi")
+
+[node name="exit-icon" type="Sprite2D" parent="ExitGroup" unique_id=1968772995]
+position = Vector2(-126, 1.51996)
+scale = Vector2(0.11527626, 0.11527626)
+texture = ExtResource("8_wt0ut")
+
+[node name="TextBacking0" type="Label" parent="ExitGroup" unique_id=1500640499]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -26.48004
+offset_right = 382.0
+offset_bottom = 28.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="TextBacking1" type="Label" parent="ExitGroup" unique_id=1623296419]
+layout_mode = 0
+offset_left = -290.0
+offset_top = -26.48004
+offset_right = 394.0
+offset_bottom = 28.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="TextBacking2" type="Label" parent="ExitGroup" unique_id=525629448]
+layout_mode = 0
+offset_left = -296.0
+offset_top = -32.48004
+offset_right = 388.0
+offset_bottom = 22.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="TextBacking3" type="Label" parent="ExitGroup" unique_id=511289931]
+layout_mode = 0
+offset_left = -296.0
+offset_top = -20.48004
+offset_right = 388.0
+offset_bottom = 34.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="TextBacking4" type="Label" parent="ExitGroup" unique_id=200365869]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -32.48004
+offset_right = 382.0
+offset_bottom = 22.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="TextBacking5" type="Label" parent="ExitGroup" unique_id=447327674]
+layout_mode = 0
+offset_left = -290.0
+offset_top = -32.48004
+offset_right = 394.0
+offset_bottom = 22.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="TextBacking6" type="Label" parent="ExitGroup" unique_id=1961055462]
+layout_mode = 0
+offset_left = -302.0
+offset_top = -20.48004
+offset_right = 382.0
+offset_bottom = 34.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="TextBacking7" type="Label" parent="ExitGroup" unique_id=255053526]
+layout_mode = 0
+offset_left = -290.0
+offset_top = -20.48004
+offset_right = 394.0
+offset_bottom = 34.51996
+theme_type_variation = &"TitleMenuText"
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+theme_override_constants/outline_size = 0
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="exit-text" type="Label" parent="ExitGroup" unique_id=215719725]
+layout_mode = 0
+offset_left = -296.0
+offset_top = -26.48004
+offset_right = 388.0
+offset_bottom = 28.51996
+theme_type_variation = &"TitleMenuText"
+text = "나가기"
+horizontal_alignment = 1
+
+[node name="HitButton" type="Button" parent="ExitGroup" unique_id=1984548568]
+layout_mode = 0
+offset_left = -298.0
+offset_top = -64.0
+offset_right = 390.0
+offset_bottom = 62.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../SettingGroup/HitButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../../SettingGroup/HitButton")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Invisible")
+theme_override_styles/pressed = SubResource("Invisible")
+theme_override_styles/hover = SubResource("Invisible")
+theme_override_styles/disabled = SubResource("Invisible")
+theme_override_styles/focus = SubResource("Invisible")
+
+[node name="LogoHitArea" type="Control" parent="." unique_id=543870101]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -470.0
+offset_top = 54.0
+offset_right = 462.0
+offset_bottom = 487.0

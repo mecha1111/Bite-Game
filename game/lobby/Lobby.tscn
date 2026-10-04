@@ -1,0 +1,433 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/lobby/LobbyScreen.cs" id="Script"]
+[ext_resource type="Script" path="res://game/lobby/SongPreview.cs" id="PreviewScript"]
+[ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
+[ext_resource type="PackedScene" path="res://game/lobby/StageCard.tscn" id="Card"]
+[ext_resource type="Resource" path="res://game/lobby/stages.tres" id="Catalog"]
+[ext_resource type="PackedScene" path="res://game/lobby/NavigationArrow.tscn" id="Arrow"]
+[ext_resource type="PackedScene" path="res://game/lobby/BackButtonGroup.tscn" id="Button"]
+[ext_resource type="Resource" path="res://game/lobby/stage_1.tres" id="Stage1"]
+[ext_resource type="Resource" path="res://game/lobby/stage_2.tres" id="Stage2"]
+[ext_resource type="Resource" path="res://game/lobby/stage_3.tres" id="Stage3"]
+[ext_resource type="Resource" path="res://game/lobby/stage_4.tres" id="Stage4"]
+[ext_resource type="PackedScene" path="res://game/lobby/ExStageCover.tscn" id="ExCover"]
+
+[ext_resource type="Shader" path="res://game/title/underwater_light.gdshader" id="LightShader"]
+[ext_resource type="Shader" path="res://game/lobby/transition_ripple.gdshader" id="Ripple"]
+[ext_resource type="Texture2D" path="res://game/title/bubble.png" id="Bubble"]
+[ext_resource type="Texture2D" path="res://game/lobby/speck.png" id="Speck"]
+[ext_resource type="Texture2D" path="res://assets/고요한 얕은 산호초 바다-1.png" id="Env1"]
+[ext_resource type="Texture2D" path="res://assets/깊은 바다의 고요한 여백-2.png" id="Env2"]
+[ext_resource type="Texture2D" path="res://assets/심해 화산 분화구와 열수구-3.png" id="Env3"]
+[sub_resource type="StyleBoxEmpty" id="CategoryClear"]
+
+[sub_resource type="ShaderMaterial" id="RippleMaterial"]
+resource_local_to_scene = true
+shader = ExtResource("Ripple")
+shader_parameter/progress = 1.0
+shader_parameter/strength = 0.12
+[sub_resource type="Gradient" id="ParticleFade"]
+offsets = PackedFloat32Array(0,0.15,0.75,1)
+colors = PackedColorArray(1,1,1,0,1,1,1,1,1,1,1,0.6,1,1,1,0)
+[sub_resource type="ShaderMaterial" id="Water1"]
+resource_local_to_scene = true
+shader = ExtResource("LightShader")
+shader_parameter/strength = 0.006
+shader_parameter/ray_opacity = 0.045
+shader_parameter/caustic_strength = 0.003
+[sub_resource type="ShaderMaterial" id="Water2"]
+resource_local_to_scene = true
+shader = ExtResource("LightShader")
+shader_parameter/strength = 0.006
+shader_parameter/ray_opacity = 0.008
+shader_parameter/caustic_strength = 0.003
+[sub_resource type="ShaderMaterial" id="Water3"]
+resource_local_to_scene = true
+shader = ExtResource("LightShader")
+shader_parameter/strength = 0.006
+shader_parameter/ray_opacity = 0.012
+shader_parameter/caustic_strength = 0.003
+
+[node name="Lobby" type="Control" node_paths=PackedStringArray("Cards","FocusAnchor","Information","PositionLabel","TitleButton","LeftArrow","RightArrow","EnvironmentLayers","TransitionBubbles","Ambience")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 1
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+Catalog = ExtResource("Catalog")
+CardScene = ExtResource("Card")
+Cards = NodePath("Composition/Cards")
+FocusAnchor = NodePath("Composition/CardOrigin")
+Information = NodePath("Composition/Information")
+PositionLabel = NodePath("Composition/PositionLabel")
+TitleButton = NodePath("Composition/BackGroup/HitButton")
+LeftArrow = NodePath("Composition/LeftArrow")
+RightArrow = NodePath("Composition/RightArrow")
+EnvironmentLayers = NodePath("Composition/EnvironmentLayers")
+TransitionMaterial = SubResource("RippleMaterial")
+TransitionBubbles = NodePath("Composition/TransitionEffects/BubbleBurst")
+Ambience = NodePath("Composition/AmbientEffects")
+TransitionSeconds = 0.34
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.003, 0.025, 0.06, 1)
+
+[node name="Composition" type="Control" parent="."]
+mouse_filter = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="EnvironmentLayers" type="Control" parent="Composition"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="Environment1" type="TextureRect" parent="Composition/EnvironmentLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("Env1")
+material = SubResource("Water1")
+modulate = Color(1,1,1,0.25)
+expand_mode = 1
+stretch_mode = 6
+[node name="Environment2" type="TextureRect" parent="Composition/EnvironmentLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("Env2")
+material = SubResource("Water2")
+modulate = Color(1,1,1,0)
+expand_mode = 1
+stretch_mode = 6
+[node name="Environment3" type="TextureRect" parent="Composition/EnvironmentLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("Env3")
+material = SubResource("Water3")
+modulate = Color(1,1,1,0)
+expand_mode = 1
+stretch_mode = 6
+[node name="EnvironmentEX" parent="Composition/EnvironmentLayers" instance=ExtResource("ExCover")]
+modulate = Color(0.94,0.98,1,0)
+custom_minimum_size = Vector2(0,0)
+
+[node name="AmbientEffects" type="Node2D" parent="Composition"]
+[node name="CoralBubbles" type="CPUParticles2D" parent="Composition/AmbientEffects"]
+emitting = true
+position = Vector2(160,1030)
+modulate = Color(1,1,1,0.42)
+texture_filter = 1
+amount = 4
+lifetime = 6.0
+texture = ExtResource("Bubble")
+emission_shape = 3
+emission_rect_extents = Vector2(80,10)
+direction = Vector2(0,-1)
+spread = 12.0
+gravity = Vector2(0,0)
+initial_velocity_min = 30.0
+initial_velocity_max = 45.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(0.65,0.95,1,1)
+color_ramp = SubResource("ParticleFade")
+randomness = 0.5
+lifetime_randomness = 0.25
+[node name="DeepSpecks" type="CPUParticles2D" parent="Composition/AmbientEffects"]
+emitting = false
+position = Vector2(1780,990)
+modulate = Color(1,1,1,0.23)
+texture_filter = 1
+amount = 5
+lifetime = 6.0
+texture = ExtResource("Speck")
+emission_shape = 3
+emission_rect_extents = Vector2(80,10)
+direction = Vector2(0,-1)
+spread = 12.0
+gravity = Vector2(0,0)
+initial_velocity_min = 8.0
+initial_velocity_max = 14.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(0.45,0.75,0.9,1)
+color_ramp = SubResource("ParticleFade")
+randomness = 0.5
+lifetime_randomness = 0.25
+[node name="VentEmbers" type="CPUParticles2D" parent="Composition/AmbientEffects"]
+emitting = false
+position = Vector2(1700,1000)
+modulate = Color(1,1,1,0.36)
+texture_filter = 1
+amount = 6
+lifetime = 6.0
+texture = ExtResource("Speck")
+emission_shape = 3
+emission_rect_extents = Vector2(80,10)
+direction = Vector2(0,-1)
+spread = 12.0
+gravity = Vector2(0,0)
+initial_velocity_min = 25.0
+initial_velocity_max = 40.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(1,0.46,0.15,1)
+color_ramp = SubResource("ParticleFade")
+randomness = 0.5
+lifetime_randomness = 0.25
+
+[node name="PositionLabel" type="Label" parent="Composition"]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 946.0
+offset_right = 1060.0
+offset_bottom = 982.0
+mouse_filter = 2
+theme_type_variation = &"SecondaryText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardOrigin" type="Control" parent="Composition"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -560.00000
+offset_top = -310.00000
+offset_right = -560.00000
+offset_bottom = -310.00000
+mouse_filter = 2
+
+[node name="Cards" type="Control" parent="Composition"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Stage1" parent="Composition/Cards" instance=ExtResource("Card")]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 230.0
+offset_right = 1520.0
+offset_bottom = 860.0
+mouse_filter = 2
+Data = ExtResource("Stage1")
+z_index = 2
+
+[node name="Stage2" parent="Composition/Cards" instance=ExtResource("Card")]
+layout_mode = 0
+offset_left = 1490.0
+offset_top = 230.0
+offset_right = 2610.0
+offset_bottom = 860.0
+mouse_filter = 2
+Data = ExtResource("Stage2")
+scale = Vector2(0.86, 0.86)
+PreviewSelected = false
+
+[node name="Stage3" parent="Composition/Cards" instance=ExtResource("Card")]
+layout_mode = 0
+offset_left = 2580.0
+offset_top = 230.0
+offset_right = 3700.0
+offset_bottom = 860.0
+mouse_filter = 2
+Data = ExtResource("Stage3")
+scale = Vector2(0.86, 0.86)
+PreviewSelected = false
+
+[node name="LeftArrow" parent="Composition" instance=ExtResource("Arrow")]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -740.00000
+offset_top = -51.00000
+offset_right = -628.00000
+offset_bottom = 61.00000
+mouse_filter = 0
+Direction = -1
+disabled = true
+
+z_index = 10
+
+[node name="RightArrow" parent="Composition" instance=ExtResource("Arrow")]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 628.00000
+offset_top = -51.00000
+offset_right = 740.00000
+offset_bottom = 61.00000
+mouse_filter = 0
+Direction = 1
+
+z_index = 10
+
+[node name="Icon" parent="Composition/RightArrow" index="0"]
+flip_h = true
+
+[node name="Information" type="Label" parent="Composition"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 883.0
+offset_right = 1540.0
+offset_bottom = 927.0
+mouse_filter = 2
+theme_type_variation = &"SecondaryText"
+text = "선택한 곡으로 시작하세요"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackGroup" parent="Composition" instance=ExtResource("Button")]
+layout_mode = 1
+anchor_left = 0
+anchor_right = 0
+anchor_top = 0
+anchor_bottom = 0
+offset_left = 100.00000
+offset_top = 60.00000
+offset_right = 196.00000
+offset_bottom = 156.00000
+mouse_filter = 2
+
+z_index = 10
+
+[node name="TransitionEffects" type="Control" parent="Composition"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+z_index = 3
+[node name="Ripple" type="ColorRect" parent="Composition/TransitionEffects"]
+offset_left = 400.0
+offset_top = 230.0
+offset_right = 1520.0
+offset_bottom = 860.0
+mouse_filter = 2
+material = SubResource("RippleMaterial")
+[node name="BubbleBurst" type="CPUParticles2D" parent="Composition/TransitionEffects"]
+emitting = false
+position = Vector2(1510,785)
+texture_filter = 1
+amount = 6
+lifetime = 0.9
+one_shot = true
+explosiveness = 0.85
+texture = ExtResource("Bubble")
+direction = Vector2(-0.25,-1)
+spread = 25.0
+gravity = Vector2(0,0)
+emission_shape = 3
+emission_rect_extents = Vector2(22,45)
+initial_velocity_min = 75.0
+initial_velocity_max = 120.0
+scale_amount_min = 1.5
+scale_amount_max = 3.0
+color = Color(0.6,0.95,1,0.65)
+color_ramp = SubResource("ParticleFade")
+
+[node name="SongPreview" type="Node" parent="." node_paths=PackedStringArray("PlayerA", "PlayerB")]
+script = ExtResource("PreviewScript")
+PlayerA = NodePath("PlayerA")
+PlayerB = NodePath("PlayerB")
+
+[node name="PlayerA" type="AudioStreamPlayer" parent="SongPreview"]
+bus = &"Music"
+volume_db = -80.0
+
+[node name="PlayerB" type="AudioStreamPlayer" parent="SongPreview"]
+bus = &"Music"
+volume_db = -80.0
+
+[node name="Stage4" parent="Composition/Cards" instance=ExtResource("Card")]
+layout_mode = 0
+mouse_filter = 2
+scale = Vector2(0.86,0.86)
+offset_left = 3670.0
+offset_top = 230.0
+offset_right = 4790.0
+offset_bottom = 860.0
+PreviewSelected = false
+Data = ExtResource("Stage4")
+
+[node name="Categories" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -410.0
+offset_top = 30.0
+offset_right = 410.0
+offset_bottom = 102.0
+theme_override_constants/separation = 24
+alignment = 1
+[node name="Main" type="Button" parent="Categories"]
+custom_minimum_size = Vector2(350,64)
+theme_override_styles/normal = SubResource("CategoryClear")
+theme_override_styles/hover = SubResource("CategoryClear")
+theme_override_styles/pressed = SubResource("CategoryClear")
+theme_override_styles/focus = SubResource("CategoryClear")
+theme_override_font_sizes/font_size = 32
+text = "Q  MAIN STAGES"
+self_modulate = Color(0.6, 1, 1, 1)
+[node name="Custom" type="Button" parent="Categories"]
+custom_minimum_size = Vector2(350,64)
+theme_override_styles/normal = SubResource("CategoryClear")
+theme_override_styles/hover = SubResource("CategoryClear")
+theme_override_styles/pressed = SubResource("CategoryClear")
+theme_override_styles/focus = SubResource("CategoryClear")
+theme_override_font_sizes/font_size = 32
+text = "CUSTOM MAPS  E"
+self_modulate = Color(0.46, 0.63, 0.75, 1)
+
+[node name="SelectedAccent" type="ColorRect" parent="Categories/Main"]
+visible = true
+anchor_left = 0.12
+anchor_top = 1.0
+anchor_right = 0.88
+anchor_bottom = 1.0
+offset_top = -3.0
+mouse_filter = 2
+color = Color(0.24, 0.9, 1, 0.85)
+
+[node name="SelectedAccent" type="ColorRect" parent="Categories/Custom"]
+visible = false
+anchor_left = 0.12
+anchor_top = 1.0
+anchor_right = 0.88
+anchor_bottom = 1.0
+offset_top = -3.0
+mouse_filter = 2
+color = Color(0.24, 0.9, 1, 0.85)

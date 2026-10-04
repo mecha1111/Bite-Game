@@ -1,0 +1,8 @@
+song_id,start_time_sec,environment_song_id,transition_style,transition_duration_sec
+song_4,0.000000,song_1,crossfade,0.8
+song_4,12.492,song_3,pressure,0.45
+song_4,36.926,song_1,caustic_blend,0.75
+song_4,62.16,song_2,crossfade,0.85
+song_4,69.637,song_3,pressure,0.45
+song_4,92.201,song_2,crossfade,0.9
+song_4,104.35,song_1,caustic_blend,0.65

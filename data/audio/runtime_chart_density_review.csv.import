@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/audio/runtime_chart_density_review.csv"
+
+[params]

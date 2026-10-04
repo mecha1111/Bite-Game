@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/audio/p0_chart_reference.csv"
+
+[params]

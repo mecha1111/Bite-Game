@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://stbq7xqib2uv"
+
+[deps]
+
+files=["res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.start.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.target.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.side.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.pattern.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.accent.translation"]
+
+source_file="res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.csv"
+dest_files=["res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.start.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.target.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.side.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.pattern.translation", "res://assets/BITE_CustomMaps_v1/custom_shark_pool_prey_chart_v1.accent.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

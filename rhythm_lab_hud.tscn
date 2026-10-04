@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cnfmemr2crtng"]
+
+[ext_resource type="Script" path="res://dev/rhythm_lab/RhythmLabHud.cs" id="1_ijy06"]
+
+[node name="RhythmLabHud" type="CanvasLayer" unique_id=626503963 node_paths=PackedStringArray("StatusLabel", "GridLabel", "FeedbackLabel")]
+script = ExtResource("1_ijy06")
+StatusLabel = NodePath("Panel/Content/Status")
+GridLabel = NodePath("Panel/Content/Grid")
+FeedbackLabel = NodePath("Panel/Content/Feedback")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=2079247789]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 650.0
+offset_bottom = 470.0
+mouse_filter = 2
+
+[node name="Content" type="VBoxContainer" parent="Panel" unique_id=1179840921]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Status" type="Label" parent="Panel/Content" unique_id=72311577]
+layout_mode = 2
+text = "리듬 실험실"
+autowrap_mode = 2
+
+[node name="Grid" type="Label" parent="Panel/Content" unique_id=156899478]
+layout_mode = 2
+text = "현재 패턴"
+autowrap_mode = 2
+
+[node name="Feedback" type="Label" parent="Panel/Content" unique_id=1291028621]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "—"

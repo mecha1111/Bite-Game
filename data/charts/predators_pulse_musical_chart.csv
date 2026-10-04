@@ -1,0 +1,50 @@
+song_id,index,start_time_sec,target_time_sec,side,pattern_id,game_bpm,pulse_duration_sec,timing_grid,nearest_musical_beat_sec,optional_section_id,optional_notes
+song_3,0,14.282185153846,16.128339,L,m1,130.0,0.461538461538,phrase_curated_attack_candidate,16.182692,rise,straight anticipation; low-band attack candidate; listening pending
+song_3,1,18.926629153846,20.772783,L,m1,130.0,0.461538461538,phrase_curated_attack_candidate,20.798077,rise,straight anticipation; low-band attack candidate; listening pending
+song_3,2,23.591029153846,25.437183,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,25.413462,rise,offbeat response; high-band attack candidate; listening pending
+song_3,3,28.180598153846,30.026752,R,m3,130.0,0.461538461538,phrase_curated_attack_candidate,30.028846,rise,broken response; high-band attack candidate; listening pending
+song_3,4,32.795110153846,34.641264,L,b1,130.0,0.461538461538,phrase_curated_attack_candidate,34.644231,rise,isolated phrase weight; low-band attack candidate; listening pending
+song_3,5,36.037741153846,37.883895,L,s1,130.0,0.461538461538,phrase_curated_attack_candidate,37.875000,drive_a,quick percussion motif; low-band attack candidate; listening pending
+song_3,6,38.337514153846,40.183668,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,40.182692,drive_a,offbeat response; high-band attack candidate; listening pending
+song_3,7,41.101233153846,42.947387,R,m3,130.0,0.461538461538,phrase_curated_attack_candidate,42.951923,drive_a,broken response; high-band attack candidate; listening pending
+song_3,8,43.410983153846,45.257137,L,s2,130.0,0.461538461538,phrase_curated_attack_candidate,45.259615,drive_a,paired percussion motif; high-band attack candidate; listening pending
+song_3,9,46.488988153846,48.335142,L,s1,130.0,0.461538461538,phrase_curated_attack_candidate,48.375000,drive_a,quick percussion motif; low-band attack candidate; listening pending
+song_3,10,48.948398153846,50.794552,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,50.798077,drive_a,offbeat response; high-band attack candidate; listening pending
+song_3,11,51.717106153846,53.563260,R,m3,130.0,0.461538461538,phrase_curated_attack_candidate,53.567308,drive_a,broken response; high-band attack candidate; listening pending
+song_3,12,54.485813153846,56.331967,L,s2,130.0,0.461538461538,phrase_curated_attack_candidate,56.336538,drive_a,paired percussion motif; high-band attack candidate; listening pending
+song_3,13,56.795564153846,58.641718,L,m2,130.0,0.461538461538,phrase_curated_attack_candidate,58.644231,drive_a,offbeat response; high-band attack candidate; listening pending
+song_3,14,59.933432153846,61.779586,R,b1,130.0,0.461538461538,phrase_curated_attack_candidate,61.759615,drive_a,isolated phrase weight; low-band attack candidate; listening pending
+song_3,15,62.342956153846,64.189110,L,s1,130.0,0.461538461538,phrase_curated_attack_candidate,64.182692,drive_a,quick percussion motif; low-band attack candidate; listening pending
+song_3,16,65.106675153846,66.952829,R,m3,130.0,0.461538461538,phrase_curated_attack_candidate,66.951923,drive_a,broken response; high-band attack candidate; listening pending
+song_3,17,67.406448153846,69.252602,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,69.259615,drive_a,offbeat response; high-band attack candidate; listening pending
+song_3,18,70.644090153846,72.490244,L,s2,130.0,0.461538461538,phrase_curated_attack_candidate,72.490385,drive_a,paired percussion motif; high-band attack candidate; listening pending
+song_3,19,72.948852153846,74.795006,L,m3,130.0,0.461538461538,phrase_curated_attack_candidate,74.798077,drive_a,broken response; high-band attack candidate; listening pending
+song_3,20,75.727536153846,77.573690,R,b1,130.0,0.461538461538,phrase_curated_attack_candidate,77.567308,drive_a,isolated phrase weight; low-band attack candidate; listening pending
+song_3,21,78.451346153846,80.297500,R,s1,130.0,0.461538461538,phrase_curated_attack_candidate,80.336538,drive_a,quick percussion motif; low-band attack candidate; listening pending
+song_3,22,80.796017153846,82.642171,L,m2,130.0,0.461538461538,phrase_curated_attack_candidate,82.644231,drive_a,offbeat response; high-band attack candidate; listening pending
+song_3,23,83.564725153846,85.410879,L,m3,130.0,0.461538461538,phrase_curated_attack_candidate,85.413462,drive_a,broken response; high-band attack candidate; listening pending
+song_3,24,86.348398153846,88.194552,R,b1,130.0,0.461538461538,phrase_curated_attack_candidate,88.182692,drive_a,isolated phrase weight; low-band attack candidate; listening pending
+song_3,25,91.466766153846,93.312920,L,b1,130.0,0.461538461538,phrase_curated_attack_candidate,93.259615,bridge,isolated phrase weight; low-band attack candidate; listening pending
+song_3,26,97.857242153846,99.703396,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,99.721154,bridge,offbeat response; high-band attack candidate; listening pending
+song_3,27,104.372434153846,106.218588,L,m1,130.0,0.461538461538,phrase_curated_attack_candidate,106.182692,bridge,straight anticipation; low-band attack candidate; listening pending
+song_3,28,110.797831153846,112.643985,L,s2,130.0,0.461538461538,phrase_curated_attack_candidate,112.644231,drive_b,paired percussion motif; high-band attack candidate; listening pending
+song_3,29,113.566539153846,115.412693,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,115.413462,drive_b,offbeat response; high-band attack candidate; listening pending
+song_3,30,115.876289153846,117.722443,R,m3,130.0,0.461538461538,phrase_curated_attack_candidate,117.721154,drive_b,broken response; high-band attack candidate; listening pending
+song_3,31,118.799645153846,120.645799,L,s1,130.0,0.461538461538,phrase_curated_attack_candidate,120.605769,drive_b,quick percussion motif; low-band attack candidate; listening pending
+song_3,32,121.643183153846,123.489337,L,s2,130.0,0.461538461538,phrase_curated_attack_candidate,123.490385,drive_b,paired percussion motif; high-band attack candidate; listening pending
+song_3,33,123.908035153846,125.754189,R,b1,130.0,0.461538461538,phrase_curated_attack_candidate,125.798077,drive_b,isolated phrase weight; low-band attack candidate; listening pending
+song_3,34,126.716652153846,128.562806,L,m3,130.0,0.461538461538,phrase_curated_attack_candidate,128.567308,drive_b,broken response; high-band attack candidate; listening pending
+song_3,35,129.490348153846,131.336502,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,131.336538,drive_b,offbeat response; high-band attack candidate; listening pending
+song_3,36,131.795110153846,133.641264,R,s2,130.0,0.461538461538,phrase_curated_attack_candidate,133.644231,drive_b,paired percussion motif; high-band attack candidate; listening pending
+song_3,37,134.563818153846,136.409972,L,m3,130.0,0.461538461538,phrase_curated_attack_candidate,136.413462,drive_b,broken response; high-band attack candidate; listening pending
+song_3,38,137.367446153846,139.213600,L,s1,130.0,0.461538461538,phrase_curated_attack_candidate,139.182692,drive_b,quick percussion motif; low-band attack candidate; listening pending
+song_3,39,139.642276153846,141.488430,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,141.490385,drive_b,offbeat response; high-band attack candidate; listening pending
+song_3,40,142.410983153846,144.257137,R,m3,130.0,0.461538461538,phrase_curated_attack_candidate,144.259615,drive_b,broken response; high-band attack candidate; listening pending
+song_3,41,145.214611153846,147.060765,L,s2,130.0,0.461538461538,phrase_curated_attack_candidate,147.028846,drive_b,paired percussion motif; high-band attack candidate; listening pending
+song_3,42,147.489441153846,149.335595,L,m2,130.0,0.461538461538,phrase_curated_attack_candidate,149.336538,drive_b,offbeat response; high-band attack candidate; listening pending
+song_3,43,150.487627153846,152.333781,R,m3,130.0,0.461538461538,phrase_curated_attack_candidate,152.336538,drive_b,broken response; high-band attack candidate; listening pending
+song_3,44,153.266312153846,155.112466,R,s1,130.0,0.461538461538,phrase_curated_attack_candidate,155.105769,drive_b,quick percussion motif; low-band attack candidate; listening pending
+song_3,45,155.950212153846,157.796366,L,b1,130.0,0.461538461538,phrase_curated_attack_candidate,157.759615,drive_b,isolated phrase weight; low-band attack candidate; listening pending
+song_3,46,164.555654153846,166.401808,L,b1,130.0,0.461538461538,phrase_curated_attack_candidate,166.413462,outro_hits,isolated phrase weight; low-band attack candidate; listening pending
+song_3,47,172.268126153846,174.114280,R,m2,130.0,0.461538461538,phrase_curated_attack_candidate,174.144231,outro_hits,offbeat response; high-band attack candidate; listening pending
+song_3,48,177.935246153846,179.781400,L,b1,130.0,0.461538461538,phrase_curated_attack_candidate,179.798077,outro_hits,isolated phrase weight; low-band attack candidate; listening pending

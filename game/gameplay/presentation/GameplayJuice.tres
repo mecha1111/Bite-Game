@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GameplayJuiceProfile" format=3]
+[ext_resource type="Script" path="res://game/gameplay/GameplayJuiceProfile.cs" id="Script"]
+[resource]
+script = ExtResource("Script")
+HitCameraImpulse = 0.0
+MissDimStrength = 0.07
+SatietyGaugePulseStrength = 0.16
+InterferenceRefractionStrength = 0.0002
+ExTransitionDuration = 0.6
+DirectionCueDuration = 0.24
+LowSatietyRatio = 0.23
+PauseEaseSeconds = 0.25

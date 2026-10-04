@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/charts/v3_reference/chart_summary_v3.csv"
+
+[params]

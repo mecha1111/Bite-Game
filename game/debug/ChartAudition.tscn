@@ -1,0 +1,108 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/debug/ChartAudition.cs" id="Script"]
+[ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
+[node name="ChartAudition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.025, 0.065, 0.11, 1)
+[node name="Panel" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -760.0
+offset_top = -420.0
+offset_right = 760.0
+offset_bottom = 420.0
+[node name="Header" type="Label" parent="Panel"]
+offset_right = 1520.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 42
+text = "CHART AUDITION · 개발용 청취 검토"
+[node name="Song" type="OptionButton" parent="Panel"]
+offset_top = 85.0
+offset_right = 650.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 30
+[node name="Details" type="Label" parent="Panel"]
+offset_top = 175.0
+offset_right = 1520.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 2
+text = "Pattern / Side / Start / Target / Section"
+[node name="Position" type="Label" parent="Panel"]
+offset_top = 510.0
+offset_right = 1520.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 32
+text = "SongTime / Target / TimingError"
+[node name="Previous" type="Button" parent="Panel"]
+offset_top = 590.0
+offset_right = 240.0
+offset_bottom = 650.0
+focus_mode = 0
+text = "← 이전 목표"
+[node name="Replay" type="Button" parent="Panel"]
+offset_left = 265.0
+offset_top = 590.0
+offset_right = 650.0
+offset_bottom = 650.0
+focus_mode = 0
+text = "앞 2초 ~ 뒤 1초 재생"
+[node name="Next" type="Button" parent="Panel"]
+offset_left = 675.0
+offset_top = 590.0
+offset_right = 915.0
+offset_bottom = 650.0
+focus_mode = 0
+text = "다음 목표 →"
+[node name="Earlier" type="Button" parent="Panel"]
+offset_top = 675.0
+offset_right = 240.0
+offset_bottom = 735.0
+focus_mode = 0
+text = "−10 ms"
+[node name="Later" type="Button" parent="Panel"]
+offset_left = 265.0
+offset_top = 675.0
+offset_right = 505.0
+offset_bottom = 735.0
+focus_mode = 0
+text = "+10 ms"
+[node name="Save" type="Button" parent="Panel"]
+offset_left = 530.0
+offset_top = 675.0
+offset_right = 820.0
+offset_bottom = 735.0
+focus_mode = 0
+text = "목표 CSV 저장"
+[node name="Approve" type="Button" parent="Panel"]
+offset_left = 845.0
+offset_top = 675.0
+offset_right = 1175.0
+offset_bottom = 735.0
+focus_mode = 0
+text = "청취 승인 (Y)"
+[node name="Status" type="Label" parent="Panel"]
+offset_top = 775.0
+offset_right = 1520.0
+offset_bottom = 840.0
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 2
+text = "청취 미승인"
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"

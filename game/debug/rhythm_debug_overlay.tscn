@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/debug/RhythmDebugOverlay.cs" id="1"]
+[node name="RhythmDebugOverlay" type="CanvasLayer" node_paths=PackedStringArray("DetailsLabel")]
+script = ExtResource("1")
+DetailsLabel = NodePath("Details")
+[node name="Details" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 110.0
+offset_right = 600.0
+offset_bottom = 380.0
+mouse_filter = 2
+text = "리듬 개발 정보"

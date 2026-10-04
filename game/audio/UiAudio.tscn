@@ -1,0 +1,7 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/audio/UiAudio.cs" id="Script"]
+[node name="UiAudio" type="Node" node_paths=PackedStringArray("Player")]
+script = ExtResource("Script")
+Player = NodePath("Click")
+[node name="Click" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

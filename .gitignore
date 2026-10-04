@@ -1,0 +1,12 @@
+.godot/
+bin/
+obj/
+.vs/
+.vscode/
+builds/
+exports/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+artifacts/

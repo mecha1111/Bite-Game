@@ -1,0 +1,96 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/SharkPresenter.cs" id="Script"]
+[ext_resource type="Texture2D" path="res://assets/상어 애니메이션.png" id="Art"]
+[ext_resource type="Shader" path="res://game/gameplay/shark_separation.gdshader" id="Separation"]
+[ext_resource type="Texture2D" path="res://assets/상어 뼈.png" id="SkeletonArt"]
+[sub_resource type="AtlasTexture" id="SkeletonCrop"]
+atlas = ExtResource("SkeletonArt")
+region = Rect2(100,400,1070,500)
+[sub_resource type="ShaderMaterial" id="Separation"]
+shader = ExtResource("Separation")
+shader_parameter/rim_strength = 0.18
+shader_parameter/shadow_strength = 0.24
+[sub_resource type="AtlasTexture" id="F0"]
+atlas = ExtResource("Art")
+region = Rect2(0,0,256,256)
+[sub_resource type="AtlasTexture" id="F1"]
+atlas = ExtResource("Art")
+region = Rect2(256,0,256,256)
+[sub_resource type="AtlasTexture" id="F2"]
+atlas = ExtResource("Art")
+region = Rect2(512,0,256,256)
+[sub_resource type="AtlasTexture" id="F3"]
+atlas = ExtResource("Art")
+region = Rect2(768,0,256,256)
+[sub_resource type="AtlasTexture" id="F4"]
+atlas = ExtResource("Art")
+region = Rect2(1024,0,256,256)
+[sub_resource type="AtlasTexture" id="F5"]
+atlas = ExtResource("Art")
+region = Rect2(1280,0,256,256)
+[sub_resource type="AtlasTexture" id="F6"]
+atlas = ExtResource("Art")
+region = Rect2(1536,0,256,256)
+[sub_resource type="AtlasTexture" id="F7"]
+atlas = ExtResource("Art")
+region = Rect2(1792,0,256,256)
+[sub_resource type="AtlasTexture" id="F8"]
+atlas = ExtResource("Art")
+region = Rect2(2048,0,256,256)
+[sub_resource type="AtlasTexture" id="F9"]
+atlas = ExtResource("Art")
+region = Rect2(2304,0,256,256)
+[sub_resource type="AtlasTexture" id="F10"]
+atlas = ExtResource("Art")
+region = Rect2(2560,0,256,256)
+[sub_resource type="AtlasTexture" id="F11"]
+atlas = ExtResource("Art")
+region = Rect2(2816,0,256,256)
+[sub_resource type="AtlasTexture" id="F12"]
+atlas = ExtResource("Art")
+region = Rect2(3072,0,256,256)
+[sub_resource type="AtlasTexture" id="F13"]
+atlas = ExtResource("Art")
+region = Rect2(3328,0,256,256)
+[sub_resource type="AtlasTexture" id="F14"]
+atlas = ExtResource("Art")
+region = Rect2(3584,0,256,256)
+[sub_resource type="AtlasTexture" id="F15"]
+atlas = ExtResource("Art")
+region = Rect2(3840,0,256,256)
+[sub_resource type="AtlasTexture" id="F16"]
+atlas = ExtResource("Art")
+region = Rect2(4096,0,256,256)
+[sub_resource type="AtlasTexture" id="F17"]
+atlas = ExtResource("Art")
+region = Rect2(4352,0,256,256)
+[sub_resource type="AtlasTexture" id="F18"]
+atlas = ExtResource("Art")
+region = Rect2(4608,0,256,256)
+[sub_resource type="AtlasTexture" id="F19"]
+atlas = ExtResource("Art")
+region = Rect2(4864,0,256,256)
+[sub_resource type="SpriteFrames" id="Frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("F0")}], "loop": true, "name": &"idle", "speed": 1.0}, {"frames": [{"duration": 1.0, "texture": SubResource("F0")}, {"duration": 1.0, "texture": SubResource("F1")}, {"duration": 1.0, "texture": SubResource("F2")}, {"duration": 1.0, "texture": SubResource("F3")}, {"duration": 1.0, "texture": SubResource("F4")}, {"duration": 1.0, "texture": SubResource("F5")}, {"duration": 1.0, "texture": SubResource("F6")}, {"duration": 1.0, "texture": SubResource("F7")}, {"duration": 1.0, "texture": SubResource("F8")}, {"duration": 1.0, "texture": SubResource("F9")}, {"duration": 1.0, "texture": SubResource("F10")}, {"duration": 1.0, "texture": SubResource("F11")}, {"duration": 1.0, "texture": SubResource("F12")}, {"duration": 1.0, "texture": SubResource("F13")}, {"duration": 1.0, "texture": SubResource("F14")}, {"duration": 1.0, "texture": SubResource("F15")}, {"duration": 1.0, "texture": SubResource("F16")}, {"duration": 1.0, "texture": SubResource("F17")}, {"duration": 1.0, "texture": SubResource("F18")}, {"duration": 1.0, "texture": SubResource("F19")}], "loop": false, "name": &"bite", "speed": 55.555556}]
+[node name="Shark" type="Node2D" node_paths=PackedStringArray("Art","MouthImpact","Skeleton")]
+texture_filter = 1
+script = ExtResource("Script")
+Art = NodePath("Art")
+Skeleton = NodePath("Skeleton")
+MouthImpact = NodePath("Art/MouthImpact")
+FrameMouthCenters = PackedVector2Array(127,207,127,205,127,206,127,166,127,126,127,117,128,101,128,95,128,95,128,131,128,175,128,181,128,187,128,186,128,185,128,191,128,197,128,201,127,204,127,207)
+BiteDurationSeconds = 0.36
+[node name="Art" type="AnimatedSprite2D" parent="."]
+offset = Vector2(0,-128)
+scale = Vector2(1.92,1.92)
+sprite_frames = SubResource("Frames")
+animation = &"idle"
+material = SubResource("Separation")
+[node name="MouthImpact" type="Marker2D" parent="Art"]
+position = Vector2(-1,-49)
+
+[node name="Skeleton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0,-132)
+scale = Vector2(0.48,0.48)
+texture = SubResource("SkeletonCrop")

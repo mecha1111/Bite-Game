@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StageData" format=3]
+[ext_resource type="Script" path="res://game/lobby/StageData.cs" id="Data"]
+[ext_resource type="Texture2D" path="res://assets/심해 화산 분화구와 열수구-3.png" id="Art"]
+[resource]
+script = ExtResource("Data")
+StageId = "stage_3"
+SongId = "song_3"
+DisplayName = "Predator's Pulse"
+BackgroundTexture = ExtResource("Art")
+UnlockRequirement = "stage_2"
+OptionalDescription = "열수 분화구"
+
+ScenePath = "res://game/gameplay/Gameplay.tscn"

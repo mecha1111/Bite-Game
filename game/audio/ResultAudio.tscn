@@ -1,0 +1,10 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/audio/ResultAudio.cs" id="Script"]
+[node name="ResultAudio" type="Node" node_paths=PackedStringArray("Entrance","Fill")]
+script = ExtResource("Script")
+Entrance = NodePath("Entrance")
+Fill = NodePath("GaugeFill")
+[node name="Entrance" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+[node name="GaugeFill" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

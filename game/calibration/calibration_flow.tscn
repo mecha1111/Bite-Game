@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://game/calibration/CalibrationFlow.cs" id="1"]
+[ext_resource type="Script" path="res://game/calibration/RhythmCalibration.cs" id="2"]
+[node name="CalibrationFlow" type="Node" node_paths=PackedStringArray("Calibration")]
+script = ExtResource("1")
+Calibration = NodePath("RhythmCalibration")
+[node name="RhythmCalibration" type="Node" parent="."]
+script = ExtResource("2")

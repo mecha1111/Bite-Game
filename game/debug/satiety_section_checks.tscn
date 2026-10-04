@@ -1,0 +1,4 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/debug/SatietySectionChecks.cs" id="Script"]
+[node name="SatietySectionChecks" type="Node"]
+script = ExtResource("Script")

@@ -1,0 +1,364 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://game/audio/GameplayAudio.tscn" id="AudioCues"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/GameplayJuice.tscn" id="Juice"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/StagePresentation.tscn" id="StagePresentation"]
+[ext_resource type="Shader" path="res://game/gameplay/world_water.gdshader" id="WorldWater"]
+[ext_resource type="Script" path="res://game/ui/UiFocusFeedback.cs" id="FocusFeedback"]
+[ext_resource type="Resource" path="res://game/rhythm/InputCaptureWindows.tres" id="CapturePolicy"]
+[ext_resource type="Script" path="res://game/gameplay/GameplayScreen.cs" id="Screen"]
+[ext_resource type="Script" path="res://game/rhythm/RhythmController.cs" id="Rhythm"]
+[ext_resource type="Script" path="res://game/rhythm/RhythmChart.cs" id="Chart"]
+[ext_resource type="Script" path="res://game/gameplay/SignalPresenter.cs" id="Signals"]
+[ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
+[ext_resource type="PackedScene" path="res://game/gameplay/Shark.tscn" id="Shark"]
+[ext_resource type="PackedScene" path="res://game/gameplay/SatietyGauge.tscn" id="SatietyGauge"]
+[ext_resource type="PackedScene" path="res://game/gameplay/JudgmentFeedback.tscn" id="JudgmentFeedback"]
+[ext_resource type="PackedScene" path="res://game/gameplay/SettingsIcon.tscn" id="SettingsIcon"]
+[ext_resource type="PackedScene" path="res://game/settings/SettingsPopup.tscn" id="Settings"]
+[ext_resource type="PackedScene" path="res://game/gameplay/Environment.tscn" id="Environment"]
+[ext_resource type="Script" path="res://game/gameplay/RhythmSignalLane.cs" id="Lane"]
+[ext_resource type="PackedScene" path="res://game/gameplay/RhythmSignalSlot.tscn" id="Slot"]
+[ext_resource type="PackedScene" path="res://game/gameplay/ResumeCountdown.tscn" id="Countdown"]
+[ext_resource type="PackedScene" path="res://game/gameplay/ResultScreen.tscn" id="Result"]
+[ext_resource type="PackedScene" path="res://game/gameplay/GameOverScreen.tscn" id="GameOver"]
+[ext_resource type="Script" path="res://game/gameplay/InterferencePresenter.cs" id="Interference"]
+[ext_resource type="PackedScene" path="res://game/gameplay/InterferenceShipHorn.tscn" id="ShipHorn"]
+[ext_resource type="PackedScene" path="res://game/gameplay/InterferenceFishingFloat.tscn" id="FishingFloat"]
+[ext_resource type="PackedScene" path="res://game/gameplay/InterferenceWhale.tscn" id="Whale"]
+[ext_resource type="PackedScene" path="res://game/gameplay/InterferenceSardine.tscn" id="Sardine"]
+[ext_resource type="PackedScene" path="res://game/gameplay/ComboFeedback.tscn" id="Combo"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/InterferenceIndicators.tscn" id="Indicators"]
+[sub_resource type="ShaderMaterial" id="WorldWater"]
+resource_local_to_scene = true
+shader = ExtResource("WorldWater")
+[sub_resource type="Resource" id="Chart"]
+script = ExtResource("Chart")
+[node name="Gameplay" type="Control" node_paths=PackedStringArray("Rhythm","Music","Shark","Signals","Gauge","Feedback","SettingsButton","Combo","Countdown","Result","Environment","StandaloneSettings","Interference","GameOver","WorldWaterTreatment","UnavailableLayer","UnavailableBack","Juice","AudioCues","Presentation")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 1
+theme = ExtResource("Theme")
+script = ExtResource("Screen")
+AudioCues = NodePath("GameplayAudio")
+Presentation = NodePath("StagePresentation")
+Juice = NodePath("GameplayJuice")
+Rhythm = NodePath("RhythmController")
+Music = NodePath("MusicPlayer")
+Shark = NodePath("Composition/SharkAnchor/Shark")
+Signals = NodePath("SignalPresenter")
+Gauge = NodePath("Composition/SatietyGauge")
+Feedback = NodePath("Composition/JudgmentAnchor/JudgmentFeedback")
+SettingsButton = NodePath("SettingsButton/HitButton")
+Combo = NodePath("Composition/ComboAnchor/Combo")
+Countdown = NodePath("ResumeCountdown")
+Result = NodePath("ResultLayer")
+GameOver = NodePath("GameOverLayer")
+Environment = NodePath("EnvironmentBackground")
+StandaloneSettings = NodePath("SettingsPopup")
+Interference = NodePath("InterferencePresenter")
+WorldWaterTreatment = NodePath("WorldWaterTreatment")
+UnavailableLayer = NodePath("UnavailableLayer")
+UnavailableBack = NodePath("UnavailableLayer/Back")
+[node name="EnvironmentBackground" parent="." instance=ExtResource("Environment")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+z_index = 0
+[node name="Composition" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="SharkAnchor" type="Control" parent="Composition"]
+z_index = 1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_right = 0.0
+offset_top = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+[node name="LeftSignalLane" type="Control" parent="Composition"]
+z_index = 3
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -860.0
+offset_right = -860.0
+offset_top = -20.0
+offset_bottom = -20.0
+scale = Vector2(1,1)
+mouse_filter = 2
+script = ExtResource("Lane")
+[node name="Slot01" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 0.0
+offset_right = 0.0
+offset_top = 0.0
+offset_bottom = 0.0
+[node name="Slot02" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 95.0
+offset_right = 95.0
+offset_top = 22.5
+offset_bottom = 22.5
+[node name="Slot03" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 190.0
+offset_right = 190.0
+offset_top = 45.0
+offset_bottom = 45.0
+[node name="Slot04" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 285.0
+offset_right = 285.0
+offset_top = 67.5
+offset_bottom = 67.5
+[node name="Slot05" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 380.0
+offset_right = 380.0
+offset_top = 90.0
+offset_bottom = 90.0
+[node name="Slot06" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 475.0
+offset_right = 475.0
+offset_top = 112.5
+offset_bottom = 112.5
+[node name="Slot07" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 570.0
+offset_right = 570.0
+offset_top = 135.0
+offset_bottom = 135.0
+[node name="Slot08" parent="Composition/LeftSignalLane" instance=ExtResource("Slot")]
+offset_left = 665.0
+offset_right = 665.0
+offset_top = 270.0
+offset_bottom = 270.0
+[node name="Slot09" parent="Composition/LeftSignalLane" node_paths=PackedStringArray("OriginAnchor") instance=ExtResource("Slot")]
+offset_left = 860.0
+offset_right = 860.0
+offset_top = 464.0
+offset_bottom = 464.0
+OriginAnchor = NodePath("../../SharkAnchor/BiteTargetAnchor")
+
+[node name="Slot10" parent="Composition/LeftSignalLane" node_paths=PackedStringArray("OriginAnchor") instance=ExtResource("Slot")]
+offset_left = 860.0
+offset_right = 860.0
+offset_top = 464.0
+offset_bottom = 464.0
+OriginAnchor = NodePath("../../SharkAnchor/BiteTargetAnchor")
+
+[node name="RightSignalLane" type="Control" parent="Composition"]
+z_index = 3
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 860.0
+offset_right = 860.0
+offset_top = -20.0
+offset_bottom = -20.0
+scale = Vector2(-1,1)
+mouse_filter = 2
+script = ExtResource("Lane")
+[node name="Slot01" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 0.0
+offset_right = 0.0
+offset_top = 0.0
+offset_bottom = 0.0
+[node name="Slot02" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 95.0
+offset_right = 95.0
+offset_top = 22.5
+offset_bottom = 22.5
+[node name="Slot03" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 190.0
+offset_right = 190.0
+offset_top = 45.0
+offset_bottom = 45.0
+[node name="Slot04" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 285.0
+offset_right = 285.0
+offset_top = 67.5
+offset_bottom = 67.5
+[node name="Slot05" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 380.0
+offset_right = 380.0
+offset_top = 90.0
+offset_bottom = 90.0
+[node name="Slot06" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 475.0
+offset_right = 475.0
+offset_top = 112.5
+offset_bottom = 112.5
+[node name="Slot07" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 570.0
+offset_right = 570.0
+offset_top = 135.0
+offset_bottom = 135.0
+[node name="Slot08" parent="Composition/RightSignalLane" instance=ExtResource("Slot")]
+offset_left = 665.0
+offset_right = 665.0
+offset_top = 270.0
+offset_bottom = 270.0
+[node name="Slot09" parent="Composition/RightSignalLane" node_paths=PackedStringArray("OriginAnchor") instance=ExtResource("Slot")]
+offset_left = 860.0
+offset_right = 860.0
+offset_top = 464.0
+offset_bottom = 464.0
+OriginAnchor = NodePath("../../SharkAnchor/BiteTargetAnchor")
+
+[node name="Slot10" parent="Composition/RightSignalLane" node_paths=PackedStringArray("OriginAnchor") instance=ExtResource("Slot")]
+offset_left = 860.0
+offset_right = 860.0
+offset_top = 464.0
+offset_bottom = 464.0
+OriginAnchor = NodePath("../../SharkAnchor/BiteTargetAnchor")
+
+[node name="InterferenceAnchor" type="Control" parent="Composition"]
+z_index = 2
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -80.0
+offset_bottom = -80.0
+mouse_filter = 2
+[node name="Effects" type="Node2D" parent="Composition/InterferenceAnchor"]
+[node name="ShipHorn" parent="Composition/InterferenceAnchor/Effects" instance=ExtResource("ShipHorn")]
+[node name="FishingFloat" parent="Composition/InterferenceAnchor/Effects" instance=ExtResource("FishingFloat")]
+[node name="Whale" parent="Composition/InterferenceAnchor/Effects" instance=ExtResource("Whale")]
+[node name="Sardine" parent="Composition/InterferenceAnchor/Effects" instance=ExtResource("Sardine")]
+[node name="BiteTargetAnchor" type="Control" parent="Composition/SharkAnchor"]
+offset_top = -96.0
+offset_bottom = -96.0
+mouse_filter = 2
+[node name="JudgmentAnchor" type="Control" parent="Composition"]
+z_index = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_right = 0.0
+offset_top = -190.0
+offset_bottom = -190.0
+mouse_filter = 2
+[node name="ComboAnchor" type="Control" parent="Composition"]
+z_index = 5
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -270.0
+offset_right = -270.0
+offset_top = 260.0
+offset_bottom = 260.0
+mouse_filter = 2
+[node name="Shark" parent="Composition/SharkAnchor" instance=ExtResource("Shark")]
+[node name="JudgmentFeedback" parent="Composition/JudgmentAnchor" instance=ExtResource("JudgmentFeedback")]
+[node name="Combo" parent="Composition/ComboAnchor" instance=ExtResource("Combo")]
+[node name="SatietyGauge" parent="Composition" instance=ExtResource("SatietyGauge")]
+z_index = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -480.0
+offset_right = 480.0
+offset_top = -35.0
+offset_bottom = 285.0
+[node name="SettingsButton" parent="." instance=ExtResource("SettingsIcon")]
+z_index = 5
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_right = -64.0
+offset_top = 48.0
+offset_bottom = 176.0
+[node name="RhythmController" type="Node" parent="." node_paths=PackedStringArray("MusicPlayer")]
+script = ExtResource("Rhythm")
+MusicPlayer = NodePath("../MusicPlayer")
+Chart = SubResource("Chart")
+EnableDebugLogging = false
+CaptureWindows = ExtResource("CapturePolicy")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+[node name="SignalPresenter" type="Node" parent="." node_paths=PackedStringArray("LeftLane","RightLane")]
+script = ExtResource("Signals")
+LeftLane = NodePath("../Composition/LeftSignalLane")
+RightLane = NodePath("../Composition/RightSignalLane")
+[node name="ResumeCountdown" parent="." instance=ExtResource("Countdown")]
+z_index = 6
+visible = false
+[node name="ResultLayer" parent="." instance=ExtResource("Result")]
+z_index = 7
+visible = false
+[node name="SettingsPopup" parent="." instance=ExtResource("Settings")]
+visible = false
+[node name="InterferencePresenter" type="Node" parent="." node_paths=PackedStringArray("Effects")]
+script = ExtResource("Interference")
+Effects = NodePath("../Composition/InterferenceAnchor/Effects")
+
+[node name="GameOverLayer" parent="." instance=ExtResource("GameOver")]
+z_index = 7
+visible = false
+
+[node name="WorldSnapshot" type="BackBufferCopy" parent="."]
+z_index = 4
+copy_mode = 2
+[node name="WorldWaterTreatment" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+z_index = 4
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+material = SubResource("WorldWater")
+color = Color(1,1,1,1)
+[node name="UnavailableLayer" type="Control" parent="."]
+z_index = 7
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="Message" type="Label" parent="UnavailableLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_right = 360.0
+offset_top = -50.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 40
+theme_override_constants/outline_size = 0
+text = "곡 데이터 준비 중"
+horizontal_alignment = 1
+[node name="Back" type="Button" parent="UnavailableLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_right = 140.0
+offset_top = 40.0
+offset_bottom = 108.0
+theme_type_variation = &"SettingsAction"
+text = "곡 선택으로"
+
+[node name="FocusFeedback" type="Node" parent="UnavailableLayer/Back"]
+script = ExtResource("FocusFeedback")
+
+[node name="GameplayJuice" parent="." instance=ExtResource("Juice")]
+z_index = 3
+[node name="StagePresentation" parent="." instance=ExtResource("StagePresentation")]
+
+[node name="GameplayAudio" parent="." instance=ExtResource("AudioCues")]
+
+[node name="InterferenceIndicators" parent="." instance=ExtResource("Indicators")]

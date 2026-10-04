@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dfonu24i7snit"]
+
+[ext_resource type="Texture2D" uid="uid://e6la1quso1dg" path="res://game/title/setting/투명 배경 픽셀 기어 아이콘-2.png" id="Art"]
+[ext_resource type="Script" uid="uid://ndog3gjyb0tn" path="res://game/lobby/BackIconButton.cs" id="Behavior"]
+
+[sub_resource type="AtlasTexture" id="Gear"]
+atlas = ExtResource("Art")
+region = Rect2(299, 54, 974, 1079)
+
+[sub_resource type="StyleBoxEmpty" id="Empty"]
+
+[node name="SettingsIcon" type="Control" unique_id=767404853 node_paths=PackedStringArray("Icon", "HitButton")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+pivot_offset = Vector2(64, 64)
+mouse_filter = 2
+script = ExtResource("Behavior")
+Icon = NodePath("Icon")
+HitButton = NodePath("HitButton")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1782088042]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 120.0
+mouse_filter = 2
+texture = SubResource("Gear")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HitButton" type="Button" parent="." unique_id=167437864]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+tooltip_text = "설정"
+theme_override_styles/normal = SubResource("Empty")
+theme_override_styles/pressed = SubResource("Empty")
+theme_override_styles/hover = SubResource("Empty")
+theme_override_styles/disabled = SubResource("Empty")
+theme_override_styles/focus = SubResource("Empty")

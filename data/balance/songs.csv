@@ -1,0 +1,5 @@
+song_id,display_name,duration_seconds,drain_per_3_seconds,chart_path,status
+song_1,Hear the Tide,140.435944,126.63553499999999,res://data/charts/v5/stage1_hear_the_tide_chart_v5.csv,single_target_v5
+song_2,Hidden Current,138.5,101.65914599999999,res://data/charts/v5/stage2_hidden_current_chart_v5.csv,single_target_v5
+song_3,Predator's Pulse,188.34285,94.731483,res://data/charts/v5/stage3_predators_pulse_chart_v5.csv,single_target_v5
+song_4,Deep Current,131.683258,166.88073,res://data/charts/v5/stage4_deep_current_ex_chart_v5.csv,single_target_v5

@@ -1,0 +1,5 @@
+type,duration,zoom_delta,offset,level
+ship_horn,5,-0.10,120,HIGH
+whale,5,-0.10,140,HIGH
+fishing_float,3.5,0.07,110,MEDIUM
+sardine,5,0.06,80,MEDIUM

@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/charts/v5/stage2_hidden_current_chart_v5.csv"
+
+[params]

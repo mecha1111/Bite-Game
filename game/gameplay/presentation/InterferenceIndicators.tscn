@@ -1,0 +1,103 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/InterferenceIndicators.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/InterferenceIndicator.tscn" id="Bubble"]
+[ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/whale.tres" id="whaleFrames"]
+[ext_resource type="Texture2D" path="res://assets/고래 움1.png" id="whaleStill"]
+[ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/fishing_float.tres" id="fishing_floatFrames"]
+[ext_resource type="Texture2D" path="res://assets/낚시함1.png" id="fishing_floatStill"]
+[ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/ship_horn.tres" id="ship_hornFrames"]
+[ext_resource type="Texture2D" path="res://assets/배 옴1.png" id="ship_hornStill"]
+[ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/sardine.tres" id="sardineFrames"]
+[ext_resource type="Texture2D" path="res://assets/정어리 옴1.png" id="sardineStill"]
+[sub_resource type="AtlasTexture" id="whaleCrop"]
+atlas = ExtResource("whaleStill")
+region = Rect2(40.0, 150.0, 1210.0, 1070.0)
+filter_clip = true
+[sub_resource type="AtlasTexture" id="fishing_floatCrop"]
+atlas = ExtResource("fishing_floatStill")
+region = Rect2(40.0, 60.0, 1210.0, 1070.0)
+filter_clip = true
+[sub_resource type="AtlasTexture" id="ship_hornCrop"]
+atlas = ExtResource("ship_hornStill")
+region = Rect2(3.0, 6.0, 121.0, 107.0)
+filter_clip = true
+[sub_resource type="AtlasTexture" id="sardineCrop"]
+atlas = ExtResource("sardineStill")
+region = Rect2(30.0, 150.0, 1210.0, 1070.0)
+filter_clip = true
+[node name="InterferenceIndicators" type="CanvasLayer"]
+layer = 1
+script = ExtResource("Script")
+[node name="SafeArea" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture_filter = 1
+[node name="whale" parent="SafeArea" instance=ExtResource("Bubble")]
+visible = false
+EffectType = "whale"
+Frames = ExtResource("whaleFrames")
+StillTexture = SubResource("whaleCrop")
+Mirror = false
+[node name="Still" parent="SafeArea/whale" index="0"]
+texture = SubResource("whaleCrop")
+[node name="Animation" parent="SafeArea/whale" index="1"]
+sprite_frames = ExtResource("whaleFrames")
+[node name="fishing_float" parent="SafeArea" instance=ExtResource("Bubble")]
+visible = false
+EffectType = "fishing_float"
+Frames = ExtResource("fishing_floatFrames")
+StillTexture = SubResource("fishing_floatCrop")
+Mirror = true
+[node name="Still" parent="SafeArea/fishing_float" index="0"]
+texture = SubResource("fishing_floatCrop")
+[node name="Animation" parent="SafeArea/fishing_float" index="1"]
+sprite_frames = ExtResource("fishing_floatFrames")
+[node name="ship_horn" parent="SafeArea" instance=ExtResource("Bubble")]
+visible = false
+EffectType = "ship_horn"
+Frames = ExtResource("ship_hornFrames")
+StillTexture = SubResource("ship_hornCrop")
+Mirror = false
+[node name="Still" parent="SafeArea/ship_horn" index="0"]
+texture = SubResource("ship_hornCrop")
+[node name="Animation" parent="SafeArea/ship_horn" index="1"]
+sprite_frames = ExtResource("ship_hornFrames")
+[node name="sardine" parent="SafeArea" instance=ExtResource("Bubble")]
+visible = false
+EffectType = "sardine"
+Frames = ExtResource("sardineFrames")
+StillTexture = SubResource("sardineCrop")
+Mirror = false
+[node name="Still" parent="SafeArea/sardine" index="0"]
+texture = SubResource("sardineCrop")
+[node name="Animation" parent="SafeArea/sardine" index="1"]
+sprite_frames = ExtResource("sardineFrames")
+[node name="SafeZones" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="TopLeftInterferenceSafe" type="Control" parent="SafeZones"]
+anchor_right = 0.24
+anchor_bottom = 0.50
+mouse_filter = 2
+[node name="Primary" type="Control" parent="SafeZones/TopLeftInterferenceSafe"]
+anchor_right = 1.0
+anchor_bottom = 0.50
+mouse_filter = 2
+[node name="Secondary" type="Control" parent="SafeZones/TopLeftInterferenceSafe"]
+anchor_right = 1.0
+anchor_top = 0.50
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="LeftSafe" type="Control" parent="SafeZones"]
+anchor_right = 0.24
+anchor_top = 0.55
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="RightSafe" type="Control" parent="SafeZones"]
+anchor_left = 0.76
+anchor_right = 1.0
+anchor_top = 0.55
+anchor_bottom = 1.0
+mouse_filter = 2

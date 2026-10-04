@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ddbcntthbkwje"
+
+[deps]
+
+files=["res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.phrase.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.phrase.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.phrase.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.pattern.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.wave.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.separate.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.is.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.accent.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.accent.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.source.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.gameplay.translation"]
+
+source_file="res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.csv"
+dest_files=["res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.phrase.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.phrase.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.phrase.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.pattern.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.target.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.wave.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.separate.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.is.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.accent.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.accent.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.source.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/ALL_STAGES_integrated_chart_v4.gameplay.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bk5ti2q8onwf4"]
+
+[ext_resource type="Script" uid="uid://cn5ueju3bqk8r" path="res://game/gameplay/ResumeCountdown.cs" id="Script"]
+[ext_resource type="PackedScene" uid="uid://bopyl8odtri6i" path="res://game/gameplay/WavePulse.tscn" id="Sonar"]
+[ext_resource type="Theme" uid="uid://c85qicd3ooe8f" path="res://game/ui/BiteTheme.tres" id="Theme"]
+
+[node name="ResumeCountdown" type="Control" unique_id=1987972127 node_paths=PackedStringArray("Sonar", "Number", "Shade")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+Sonar = NodePath("SonarAnchor/Sonar")
+Number = NodePath("Number")
+Shade = NodePath("Shade")
+
+[node name="Shade" type="ColorRect" parent="." unique_id=432943558]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.005, 0.035, 0.075, 0.32)
+
+[node name="SonarAnchor" type="Control" parent="." unique_id=1827896296]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+mouse_filter = 2
+
+[node name="Sonar" parent="SonarAnchor" unique_id=591658164 instance=ExtResource("Sonar")]
+MediumDiameter = 650.0
+DurationSeconds = 0.85
+RingThickness = 3.0
+PeakOpacity = 0.2
+
+[node name="Number" type="Label" parent="." unique_id=1703966507]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -230.0
+offset_right = 260.0
+offset_bottom = 230.0
+pivot_offset = Vector2(260, 230)
+theme_override_colors/font_color = Color(0.9, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.1, 0.24, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 320
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1

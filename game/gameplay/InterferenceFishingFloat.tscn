@@ -1,0 +1,15 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/InterferenceEffect.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WaveLarge.tscn" id="Wave"]
+[node name="InterferenceFishingFloat" type="Node2D"]
+script = ExtResource("Script")
+EffectType = "fishing_float"
+[node name="Pulse01" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-540,90)
+[node name="Pulse02" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-380,90)
+[node name="Pulse03" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-540,90)

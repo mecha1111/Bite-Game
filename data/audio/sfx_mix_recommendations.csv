@@ -1,0 +1,10 @@
+﻿file,usage,bus,runtime_volume_db,notes
+wave_note_ping.wav,Prey pulse cue,SFX,-7.0,Use same family; pitch variants for small/medium/large
+bite_miss.wav,MISS / empty bite,SFX,-4.0,Distinct dry whiff; no gulp layer
+interference_ship_horn.wav,Ship Horn,SFX,-1.0,Major warning/interference; intentionally prominent
+interference_whale.wav,Whale,SFX,-0.5,Broad low-frequency pressure cue; prominent but keep music audible
+interference_fishing_float.wav,Fishing Float single emission,SFX,-3.0,"One-shot only; schedule repeats in chart, not baked audio"
+interference_sardine_school.wav,Sardine School,SFX,-3.5,Full ~4s texture; start with lower level and tune under music
+ui_click.wav,Menu click,SFX,-10.0,Quiet UI feedback
+result_jingle.wav,Result entrance,SFX,-6.0,Short result cue
+result_gauge_fill.wav,Final satiety fill,SFX,-7.0,Play during result shark-gauge fill

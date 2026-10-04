@@ -1,0 +1,10 @@
+﻿label,source,output,original_duration_ms,trim_start_ms,trim_end_ms,processed_duration_ms,processed_dBFS,peak_dBFS,gain_applied_dB,mode
+Wave note ping,노트음.mp3,sfx/wave_note_ping.wav,484,160,258,98,-17.9,-1.03,3.06,trim
+Bite miss,미스음.mp3,sfx/bite_miss.wav,936,323,594,271,-17.2,-1.0,-1.0,trim
+Ship horn,뱃고둥.mp3,sfx/interference_ship_horn.wav,8448,2123,7263,5140,-10.93,-1.0,-0.06,trim
+Whale,고래 소리.mp3,sfx/interference_whale.wav,3720,444,3172,2728,-15.59,-1.0,7.76,trim
+Fishing float,낚시찌 소리.mp3,sfx/interference_fishing_float.wav,7813,324,462,138,-19.34,-1.0,1.58,first_event
+Sardine school,정어리때.mp3,sfx/interference_sardine_school.wav,4392,130,4147,4017,-21.37,-1.0,0.04,trim
+UI click,버튼 클릭.mp3,sfx/ui_click.wav,484,0,179,179,-18.01,-6.7,-6.6,trim
+Result jingle,결과창.mp3,sfx/result_jingle.wav,5224,50,2796,2746,-23.73,-1.24,-1.0,trim
+Result gauge fill,최종결과 게이지.mp3,sfx/result_gauge_fill.wav,5160,14,5140,5126,-14.0,-1.42,4.14,trim

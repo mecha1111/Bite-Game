@@ -1,0 +1,78 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/CatchDebrisPiece.tscn" id="DebrisScene"]
+[ext_resource type="Script" path="res://game/gameplay/CatchBurstEffect.cs" id="Script"]
+[ext_resource type="Texture2D" path="res://assets/fish/catch_burst_frame_0.png" id="F0"]
+[ext_resource type="Texture2D" path="res://assets/fish/catch_burst_frame_1.png" id="F1"]
+[ext_resource type="Texture2D" path="res://assets/fish/catch_burst_frame_2.png" id="F2"]
+[ext_resource type="Texture2D" path="res://assets/fish/1.png" id="D1"]
+[ext_resource type="Texture2D" path="res://assets/fish/2.png" id="D2"]
+[ext_resource type="Texture2D" path="res://assets/fish/3.png" id="D3"]
+[ext_resource type="Texture2D" path="res://assets/fish/4.png" id="D4"]
+[ext_resource type="Texture2D" path="res://assets/fish/5.png" id="D5"]
+[ext_resource type="Texture2D" path="res://assets/fish/6.png" id="D6"]
+[ext_resource type="Texture2D" path="res://assets/fish/7.png" id="D7"]
+[ext_resource type="Texture2D" path="res://assets/fish/8.png" id="D8"]
+[ext_resource type="Texture2D" path="res://assets/fish/9.png" id="D9"]
+[ext_resource type="Texture2D" path="res://assets/fish/10.png" id="D10"]
+[ext_resource type="Texture2D" path="res://assets/fish/11.png" id="D11"]
+[ext_resource type="Texture2D" path="res://assets/fish/12.png" id="D12"]
+[ext_resource type="Texture2D" path="res://assets/fish/13.png" id="D13"]
+[ext_resource type="Texture2D" path="res://assets/fish/14.png" id="D14"]
+[ext_resource type="Texture2D" path="res://assets/fish/피 펑펑.png" id="Blood"]
+[sub_resource type="AtlasTexture" id="A1"]
+atlas = ExtResource("D1")
+region = Rect2(30,60,9,13)
+[sub_resource type="AtlasTexture" id="A2"]
+atlas = ExtResource("D2")
+region = Rect2(37,62,9,9)
+[sub_resource type="AtlasTexture" id="A3"]
+atlas = ExtResource("D3")
+region = Rect2(37,50,11,10)
+[sub_resource type="AtlasTexture" id="A4"]
+atlas = ExtResource("D4")
+region = Rect2(39,72,14,11)
+[sub_resource type="AtlasTexture" id="A5"]
+atlas = ExtResource("D5")
+region = Rect2(45,63,12,9)
+[sub_resource type="AtlasTexture" id="A6"]
+atlas = ExtResource("D6")
+region = Rect2(54,69,15,13)
+[sub_resource type="AtlasTexture" id="A7"]
+atlas = ExtResource("D7")
+region = Rect2(49,51,16,9)
+[sub_resource type="AtlasTexture" id="A8"]
+atlas = ExtResource("D8")
+region = Rect2(46,41,18,12)
+[sub_resource type="AtlasTexture" id="A9"]
+atlas = ExtResource("D9")
+region = Rect2(58,59,13,10)
+[sub_resource type="AtlasTexture" id="A10"]
+atlas = ExtResource("D10")
+region = Rect2(70,75,14,7)
+[sub_resource type="AtlasTexture" id="A11"]
+atlas = ExtResource("D11")
+region = Rect2(71,63,16,12)
+[sub_resource type="AtlasTexture" id="A12"]
+atlas = ExtResource("D12")
+region = Rect2(64,43,16,14)
+[sub_resource type="AtlasTexture" id="A13"]
+atlas = ExtResource("D13")
+region = Rect2(82,46,15,15)
+[sub_resource type="AtlasTexture" id="A14"]
+atlas = ExtResource("D14")
+region = Rect2(89,67,12,13)
+[sub_resource type="SpriteFrames" id="Frames"]
+animations = [{"frames": [{"duration":1.0,"texture":ExtResource("F0")},{"duration":1.0,"texture":ExtResource("F1")},{"duration":1.0,"texture":ExtResource("F2")}],"loop":false,"name":&"burst","speed":25.0}]
+[node name="CatchBurstEffect" type="Node2D" node_paths=PackedStringArray("FishBurst","DebrisRoot")]
+texture_filter = 1
+script = ExtResource("Script")
+DebrisScene = ExtResource("DebrisScene")
+FishBurst = NodePath("FishBurstAnimatedSprite")
+DebrisRoot = NodePath("DebrisRoot")
+DebrisTextures = Array[Texture2D]([SubResource("A1"),SubResource("A2"),SubResource("A3"),SubResource("A4"),SubResource("A5"),SubResource("A6"),SubResource("A7"),SubResource("A8"),SubResource("A9"),SubResource("A10"),SubResource("A11"),SubResource("A12"),SubResource("A13"),SubResource("A14")])
+BloodTexture = ExtResource("Blood")
+[node name="FishBurstAnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("Frames")
+animation = &"burst"
+modulate = Color(0.9,1,1,1)
+[node name="DebrisRoot" type="Node2D" parent="."]

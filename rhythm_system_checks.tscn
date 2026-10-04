@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b7llabjjk1hf2"]
+
+[ext_resource type="Script" path="res://tests/RhythmSystemChecks.cs" id="1_42ywe"]
+
+[node name="RhythmSystemChecks" type="Node" unique_id=379044401]
+script = ExtResource("1_42ywe")

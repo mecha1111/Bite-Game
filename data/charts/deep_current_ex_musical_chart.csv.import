@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/charts/deep_current_ex_musical_chart.csv"
+
+[params]

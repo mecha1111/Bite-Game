@@ -1,0 +1,8 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/StagePresentation.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/SharkJumpBubbleEffect.tscn" id="Particles"]
+[node name="StagePresentation" type="Node" node_paths=PackedStringArray("AccentParticles")]
+script = ExtResource("Script")
+AccentParticles = NodePath("AccentParticles")
+[node name="AccentParticles" parent="." instance=ExtResource("Particles")]
+MaximumLive = 96

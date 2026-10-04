@@ -1,0 +1,26 @@
+song_id,time_sec,event_type,strength,duration,parameter,optional_target,zoom_delta,position_x,position_y,ease,notes
+custom_part_of_your_world,2.049,ZOOM_TO_SHARK,0.9388,2.0,cyan,left,0.025,-8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,8.551,ZOOM_TO_SHARK,0.94405,2.0,cyan,left,0.025,-8,-4,smooth,v3 beat_accent
+custom_part_of_your_world,13.891,ZOOM_TO_SHARK,1.0417,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,21.089000000000002,ZOOM_TO_SHARK,1.10225,2.0,cyan,left,0.025,-8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,28.984,ZOOM_TO_SHARK,0.99025,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,38.272,ZOOM_TO_SHARK,0.93775,2.0,cyan,left,0.025,-8,-4,smooth,v3 beat_accent
+custom_part_of_your_world,42.452,ZOOM_TO_SHARK,1.09245,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,48.024,ZOOM_TO_SHARK,1.0893,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,56.384,ZOOM_TO_SHARK,1.09105,2.0,cyan,left,0.025,-8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,66.136,ZOOM_TO_SHARK,1.0192999999999999,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,70.54799999999999,ZOOM_TO_SHARK,0.9136,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,74.96,ZOOM_TO_SHARK,1.1029499999999999,2.0,cyan,left,0.025,-8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,83.31899999999999,ZOOM_TO_SHARK,0.98535,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,88.892,ZOOM_TO_SHARK,0.9884999999999999,2.0,cyan,left,0.025,-8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,95.393,ZOOM_TO_SHARK,0.92445,2.0,cyan,right,0.025,8,-4,smooth,v3 beat_accent
+custom_part_of_your_world,100.502,ZOOM_TO_SHARK,0.9409,2.0,cyan,left,0.025,-8,-4,smooth,v3 beat_accent
+custom_part_of_your_world,106.53899999999999,ZOOM_TO_SHARK,1.0396,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,116.988,ZOOM_TO_SHARK,1.0619999999999998,2.0,cyan,left,0.025,-8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,129.52599999999998,ZOOM_TO_SHARK,1.0431,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,135.564,ZOOM_TO_SHARK,0.9416,2.0,cyan,left,0.025,-8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,141.601,ZOOM_TO_SHARK,1.0403,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,153.67499999999998,ZOOM_TO_SHARK,0.99935,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,174.805,ZOOM_TO_SHARK,1.0795,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,191.524,ZOOM_TO_SHARK,1.0073999999999999,2.0,cyan,right,0.025,8,-4,smooth,v3 strong_percussion
+custom_part_of_your_world,199.41899999999998,ZOOM_TO_SHARK,0.9100999999999999,2.0,cyan,left,0.025,-8,-4,smooth,v3 beat_accent

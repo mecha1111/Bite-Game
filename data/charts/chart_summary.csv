@@ -1,0 +1,5 @@
+song_id,chart_path,encounter_count,musical_bpm,gameplay_pulse_bpm,listening_approved,status
+song_1,res://data/charts/hear_the_tide_musical_chart.csv,43,100.0,200.0,0,candidate_not_final
+song_2,res://data/charts/hidden_current_musical_chart.csv,32,143.554688,143.554688,0,candidate_not_final
+song_3,res://data/charts/predators_pulse_musical_chart.csv,49,130.0,130.0,0,candidate_not_final
+song_4,res://data/charts/deep_current_ex_musical_chart.csv,46,112.3471465,224.694293,0,candidate_not_final

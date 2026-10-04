@@ -1,0 +1,19 @@
+song_id,time_sec,event_type,strength,duration,parameter,optional_target,zoom_delta,position_x,position_y,ease,level,priority,budget_group,notes,entry_sec,hold_sec,exit_sec
+song_1,13.793,FOCUS_WAVE,1,4.5,cyan,right,0.12,0,0,smooth,HIGH,88,v4_song1_shot0,Selected v4 phrase; camera only; target timestamps unchanged,1.0,2.0,1.5
+song_1,14.992,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,MEDIUM,50,song_1_accent_0,current v3 musical landmark; presentation only,,,
+song_1,19.822,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,MEDIUM,50,song_1_accent_2,current v3 musical landmark; presentation only,,,
+song_1,36.575,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_3,current v3 musical landmark; presentation only,,,
+song_1,38.156,ZOOM_TO_SHARK,1,4.5,cyan,right,0.15,0,0,smooth,HIGH,88,v4_song1_shot1,Selected v4 phrase; camera only; target timestamps unchanged,1.0,2.0,1.5
+song_1,41.405,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_5,current v3 musical landmark; presentation only,,,
+song_1,45.933,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_7,current v3 musical landmark; presentation only,,,
+song_1,64.044,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,MEDIUM,50,song_1_accent_9,current v3 musical landmark; presentation only,,,
+song_1,64.505,PULL_BACK,1,4.5,cyan,right,-0.09,0,0,smooth,HIGH,88,v4_song1_shot2,Selected v4 phrase; camera only; target timestamps unchanged,1.0,2.0,1.5
+song_1,70.232,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,MEDIUM,50,song_1_accent_10,current v3 musical landmark; presentation only,,,
+song_1,86.986,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_12,current v3 musical landmark; presentation only,,,
+song_1,88.189,FOLLOW_WAVE,1,4.5,cyan,right,0.14,0,0,smooth,HIGH,88,v4_song1_shot3,Selected v4 phrase; camera only; target timestamps unchanged,1.0,2.0,1.5
+song_1,91.815,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_14,current v3 musical landmark; presentation only,,,
+song_1,96.041,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_15,current v3 musical landmark; presentation only,,,
+song_1,110.983,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_17,current v3 musical landmark; presentation only,,,
+song_1,128.642,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,CLIMAX,95,song_1_accent_22,current v3 musical landmark; presentation only,,,
+song_1,131.03,PULL_BACK,1,4.5,cyan,right,-0.1,0,0,smooth,HIGH,88,v4_song1_shot4,Selected v4 phrase; camera only; target timestamps unchanged,1.0,2.0,1.5
+song_1,133.17,LIGHT_PULSE,0.012,0.65,cyan,world,0,0,0,smooth,HIGH,50,song_1_accent_23,current v3 musical landmark; presentation only,,,

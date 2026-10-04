@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dbytd2edk46fb"
+
+[deps]
+
+files=["res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.event.translation", "res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.strength.translation", "res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.duration.translation", "res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.note.translation"]
+
+source_file="res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.csv"
+dest_files=["res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.event.translation", "res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.strength.translation", "res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.duration.translation", "res://assets/BITE_CustomMaps_v1/custom_under_the_sea_camera_fx_v1.note.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

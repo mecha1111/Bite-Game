@@ -1,0 +1,2 @@
+miss_streak_penalty_start,miss_streak_penalty_2,miss_streak_penalty_3_plus,hardware_debounce_seconds
+2,5,10,0.05

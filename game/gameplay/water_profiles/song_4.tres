@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WorldWaterProfile" format=3]
+[ext_resource type="Script" path="res://game/gameplay/WorldWaterProfile.cs" id="Script"]
+[resource]
+script = ExtResource("Script")
+SharkTintStrength = 0.3
+WhiteReduction = 0.04
+
+RefractionStrength = 0.000875
+RefractionSpeed = 0.28
+CausticScale = 0.9
+FogStrength = 0.1
+Saturation = 0.91
+
+CausticSpeed = 0.30

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bopyl8odtri6i"]
+
+[ext_resource type="Script" uid="uid://d3vpoey3v4rae" path="res://game/gameplay/WavePulse.cs" id="Script"]
+[ext_resource type="Shader" uid="uid://b3k8uf4oxxm8e" path="res://game/gameplay/wave_ring.gdshader" id="Shader"]
+
+[sub_resource type="ShaderMaterial" id="Ring"]
+resource_local_to_scene = true
+shader = ExtResource("Shader")
+shader_parameter/bound_radius = 140.0
+shader_parameter/radius = 60.0
+shader_parameter/thickness = 4.0
+shader_parameter/pixel_size = 2.0
+shader_parameter/core_flash = 0.0
+shader_parameter/opacity = 0.9
+shader_parameter/current_strength = 0.0
+shader_parameter/ring_color = Color(0.82, 0.98, 1, 1)
+shader_parameter/edge_color = Color(0.01, 0.1, 0.22, 1)
+
+[sub_resource type="Gradient" id="White"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="Quad"]
+gradient = SubResource("White")
+width = 2
+height = 2
+
+[node name="WavePulse" type="Node2D" unique_id=1727370596 node_paths=PackedStringArray("Art")]
+texture_filter = 1
+script = ExtResource("Script")
+Art = NodePath("Art")
+
+[node name="Art" type="Sprite2D" parent="." unique_id=2007814359]
+material = SubResource("Ring")
+scale = Vector2(140, 140)
+texture = SubResource("Quad")

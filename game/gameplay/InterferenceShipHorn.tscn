@@ -1,0 +1,29 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/InterferenceEffect.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WaveLarge.tscn" id="Wave"]
+[node name="InterferenceShipHorn" type="Node2D"]
+script = ExtResource("Script")
+EffectType = "ship_horn"
+[node name="Pulse01" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-760,-100)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse02" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-660,-70)
+[node name="Pulse03" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-440,-20)
+[node name="Pulse04" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-180,10)
+[node name="Pulse05" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(160,-30)
+[node name="Pulse06" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(440,-70)
+[node name="Pulse07" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(700,-10)

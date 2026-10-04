@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="TutorialProfile" format=3]
+[ext_resource type="Script" path="res://game/tutorial/TutorialProfile.cs" id="Script"]
+[resource]
+script = ExtResource("Script")
+Bpm = 125.0
+BeatOffsetSeconds = 0.07

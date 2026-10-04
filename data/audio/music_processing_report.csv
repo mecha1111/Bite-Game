@@ -1,0 +1,5 @@
+﻿title,source,output,original_duration_ms,processed_duration_ms,timing_shift_ms,original_dBFS,processed_dBFS,gain_applied_dB,peak_after_dBFS,note
+Hear the Tide,1 수정.mp3,music/hear_the_tide.ogg,142222,142222,0,-14.24,-15.24,-1.0,-1.0,No leading/trailing trim; timeline preserved for chart sync.
+Hidden Current,2.mp3,music/hidden_current.ogg,120000,120000,0,-13.81,-14.7,-0.89,-1.0,No leading/trailing trim; timeline preserved for chart sync.
+Predator's Pulse,3.mp3,music/predators_pulse.ogg,188343,188343,0,-9.35,-14.0,-4.65,-4.65,No leading/trailing trim; timeline preserved for chart sync.
+Deep Current / EX,4.mp3,music/deep_current_ex.ogg,131683,131683,0,-10.39,-14.0,-3.61,-3.61,No leading/trailing trim; timeline preserved for chart sync.

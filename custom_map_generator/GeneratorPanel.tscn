@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://custom_map_generator/GeneratorPanel.cs" id="1"]
+[node name="CustomMapGenerator" type="CanvasLayer"]
+layer = 30
+script = ExtResource("1")

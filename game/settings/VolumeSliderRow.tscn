@@ -1,0 +1,34 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/ui/UiFocusFeedback.cs" id="FocusFeedback"]
+[ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
+[node name="VolumeSliderRow" type="HBoxContainer"]
+theme = ExtResource("Theme")
+custom_minimum_size = Vector2(0,64)
+theme_override_constants/separation = 8
+[node name="Caption" type="Label" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(192,0)
+vertical_alignment = 1
+mouse_filter = 2
+theme_type_variation = &"SettingsLabel"
+text = "전체 음량"
+[node name="Slider" type="HSlider" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(140,48)
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"SettingsVolume"
+max_value = 100.0
+step = 1.0
+value = 100.0
+[node name="Amount" type="Label" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(86,0)
+vertical_alignment = 1
+horizontal_alignment = 2
+mouse_filter = 2
+theme_type_variation = &"SettingsValue"
+text = "100%"
+
+[node name="FocusFeedback" type="Node" parent="Slider"]
+script = ExtResource("FocusFeedback")

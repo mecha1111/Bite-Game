@@ -1,0 +1,1549 @@
+[
+  {
+    "song_id": "song_1",
+    "filename": "hear_the_tide_musical_chart.csv",
+    "sections": [
+      {
+        "id": "opening_space",
+        "start": 0,
+        "end": 1.7,
+        "character": "track opening",
+        "pacing": "rest",
+        "events": []
+      },
+      {
+        "id": "groove_a",
+        "start": 1.7,
+        "end": 37.8,
+        "character": "sustained bass/percussion energy; repeated motif candidates",
+        "pacing": "call-and-response with repeated side",
+        "events": [
+          [
+            2.98,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            4.78,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            7.18,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            9.58,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            11.98,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            13.78,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            16.78,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            19.18,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            21.58,
+            "m1",
+            "R",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            23.38,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            25.78,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            28.78,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            31.18,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            32.98,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            35.38,
+            "s1",
+            "R",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            37.18,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "low_energy_break",
+        "start": 37.8,
+        "end": 77.5,
+        "character": "large measured drop in all bands; sparse periodic bass attacks",
+        "pacing": "long rests with three isolated callbacks",
+        "events": [
+          [
+            46.18,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            58.18,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            70.18,
+            "m1",
+            "R",
+            "low",
+            "straight anticipation"
+          ]
+        ]
+      },
+      {
+        "id": "groove_return",
+        "start": 77.5,
+        "end": 116.2,
+        "character": "abrupt energy return followed by repeated full-band rhythm",
+        "pacing": "active motif reprise and response variation",
+        "events": [
+          [
+            78.0,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            79.8,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            82.2,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            84.6,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            86.4,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            89.4,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            91.8,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            94.2,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            96.0,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            98.4,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            100.8,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            102.6,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            105.0,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            108.0,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            110.4,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            112.2,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            114.6,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "breath",
+        "start": 116.2,
+        "end": 123.7,
+        "character": "short measured full-band dip",
+        "pacing": "rest",
+        "events": []
+      },
+      {
+        "id": "closing_reprise",
+        "start": 123.7,
+        "end": 139,
+        "character": "return of full-band groove then decay",
+        "pacing": "learned motifs; sparse final punctuation",
+        "events": [
+          [
+            124.2,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            126.0,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            128.4,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            130.8,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            132.6,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            135.0,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            137.4,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "tail",
+        "start": 139,
+        "end": 140.435944,
+        "character": "ending decay",
+        "pacing": "rest",
+        "events": []
+      }
+    ],
+    "interference": [
+      [
+        77.98,
+        "ship_horn",
+        "energy-return entrance after long low-energy break"
+      ],
+      [
+        114.58,
+        "ship_horn",
+        "last high-energy phrase before short breath"
+      ]
+    ]
+  },
+  {
+    "song_id": "song_2",
+    "filename": "hidden_current_musical_chart.csv",
+    "sections": [
+      {
+        "id": "atmospheric_open",
+        "start": 0,
+        "end": 28.2,
+        "character": "lower bass level; upper-band movement and gradual rise",
+        "pacing": "three isolated anchors; no continuous filling",
+        "events": [
+          [
+            7.3,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            14.0,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            22.8,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ]
+        ]
+      },
+      {
+        "id": "first_rise",
+        "start": 28.2,
+        "end": 59,
+        "character": "percussion energy rises; repeated phrase candidates",
+        "pacing": "paired calls/responses with punctuation",
+        "events": [
+          [
+            28.6,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            31.1,
+            "s1",
+            "L",
+            "high",
+            "quick percussion motif"
+          ],
+          [
+            34.5,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            37.5,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            40.4,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            43.3,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            46.3,
+            "m1",
+            "R",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            49.2,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            52.1,
+            "s1",
+            "L",
+            "high",
+            "quick percussion motif"
+          ],
+          [
+            55.5,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            58.5,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "lower_bridge",
+        "start": 59,
+        "end": 83,
+        "character": "bass falls away and mid/high levels ease",
+        "pacing": "isolated long accents and breathing room",
+        "events": [
+          [
+            63.5,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            70.2,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            78.4,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "main_return",
+        "start": 83,
+        "end": 114.5,
+        "character": "clear measured sustained full-band energy increase",
+        "pacing": "active repeated motif and offbeat responses",
+        "events": [
+          [
+            84.1,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            86.6,
+            "s1",
+            "L",
+            "high",
+            "quick percussion motif"
+          ],
+          [
+            89.5,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            92.4,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            95.0,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            98.3,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            101.2,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            104.1,
+            "s1",
+            "R",
+            "high",
+            "quick percussion motif"
+          ],
+          [
+            107.0,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            109.9,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            113.3,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "late_punctuation",
+        "start": 114.5,
+        "end": 135.5,
+        "character": "lower sustained energy with isolated bass/percussion peaks",
+        "pacing": "four phrase punctuation targets",
+        "events": [
+          [
+            117.0,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            122.0,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            126.2,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            132.6,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "tail",
+        "start": 135.5,
+        "end": 138.5,
+        "character": "fade",
+        "pacing": "rest",
+        "events": []
+      }
+    ],
+    "interference": [
+      [
+        28.6,
+        "fishing_float",
+        "repeating artificial 3-second signal contrasts with first rhythmic rise"
+      ],
+      [
+        49.2,
+        "sardine",
+        "first active motif cluster"
+      ],
+      [
+        101.2,
+        "sardine",
+        "strong reprise motif cluster"
+      ]
+    ]
+  },
+  {
+    "song_id": "song_3",
+    "filename": "predators_pulse_musical_chart.csv",
+    "sections": [
+      {
+        "id": "opening_space",
+        "start": 0,
+        "end": 13,
+        "character": "low measured opening energy",
+        "pacing": "rest",
+        "events": []
+      },
+      {
+        "id": "rise",
+        "start": 13,
+        "end": 35,
+        "character": "increasing bass/percussion energy",
+        "pacing": "straight anticipation to broken response",
+        "events": [
+          [
+            16.2,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            20.8,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            25.4,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            30.0,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            34.6,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "drive_a",
+        "start": 35,
+        "end": 89,
+        "character": "strong sustained percussion energy",
+        "pacing": "compact syncopated call-and-response",
+        "events": [
+          [
+            37.8,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            40.1,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            42.9,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            45.2,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            48.4,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            50.7,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            53.5,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            56.3,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            58.6,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            61.8,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            64.1,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            66.9,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            69.2,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            72.4,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            74.7,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            77.5,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            80.3,
+            "s1",
+            "R",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            82.6,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            85.4,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            88.2,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "bridge",
+        "start": 89,
+        "end": 111,
+        "character": "measured energy drop then gradual return",
+        "pacing": "three spaced punctuations",
+        "events": [
+          [
+            93.3,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            99.8,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            106.2,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ]
+        ]
+      },
+      {
+        "id": "drive_b",
+        "start": 111,
+        "end": 160.5,
+        "character": "full-band sustained return and dense percussion candidates",
+        "pacing": "syncopated reprise with heavier phrase endings",
+        "events": [
+          [
+            112.7,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            115.5,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            117.8,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            120.6,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            123.4,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            125.7,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            128.5,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            131.3,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            133.6,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            136.4,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            139.2,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            141.5,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            144.3,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            147.1,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            149.4,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            152.2,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            155.0,
+            "s1",
+            "R",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            157.8,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "outro_hits",
+        "start": 160.5,
+        "end": 182,
+        "character": "major full-band fall with isolated remaining attacks",
+        "pacing": "sparse closing weight",
+        "events": [
+          [
+            166.4,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            174.2,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            179.8,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "tail",
+        "start": 182,
+        "end": 188.34285,
+        "character": "quiet tail",
+        "pacing": "rest",
+        "events": []
+      }
+    ],
+    "interference": [
+      [
+        89.3,
+        "whale",
+        "bridge entry after sustained first drive"
+      ],
+      [
+        125.7,
+        "ship_horn",
+        "heavy punctuation inside second drive"
+      ],
+      [
+        143.9,
+        "fishing_float",
+        "steady fake pulse against late syncopated responses"
+      ],
+      [
+        152.2,
+        "sardine",
+        "late high-energy rhythm cluster before ending"
+      ]
+    ]
+  },
+  {
+    "song_id": "song_4",
+    "filename": "deep_current_ex_musical_chart.csv",
+    "sections": [
+      {
+        "id": "opening_space",
+        "start": 0,
+        "end": 12,
+        "character": "rising layered introduction",
+        "pacing": "one isolated callback",
+        "events": [
+          [
+            7.6,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "callback_a",
+        "start": 12,
+        "end": 36,
+        "character": "full-band groove arrives; shallow-language callback",
+        "pacing": "straight call then quick response",
+        "events": [
+          [
+            12.6,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            15.0,
+            "s1",
+            "L",
+            "high",
+            "quick percussion motif"
+          ],
+          [
+            17.9,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ],
+          [
+            20.1,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            22.3,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            24.4,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            27.1,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            29.3,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            31.8,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            34.2,
+            "m2",
+            "R",
+            "high",
+            "offbeat response"
+          ]
+        ]
+      },
+      {
+        "id": "callback_b",
+        "start": 36,
+        "end": 60,
+        "character": "continuing rhythmic layer with upper-band phrases",
+        "pacing": "learned syncopation and phrase weight",
+        "events": [
+          [
+            37.2,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            39.2,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            41.6,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            44.0,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            46.2,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            48.3,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            50.4,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            52.8,
+            "s2",
+            "R",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            55.2,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            58.2,
+            "b1",
+            "R",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "pivot",
+        "start": 60,
+        "end": 68,
+        "character": "reduced and irregular energy around section change",
+        "pacing": "two measured punctuation targets",
+        "events": [
+          [
+            62.1,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ],
+          [
+            66.4,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ]
+        ]
+      },
+      {
+        "id": "pressure_drive",
+        "start": 68,
+        "end": 92.3,
+        "character": "strong rhythmic return; callback variations",
+        "pacing": "shorter spacing and EX responses",
+        "events": [
+          [
+            69.0,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            71.2,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            73.3,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            75.3,
+            "ex1",
+            "R",
+            "high",
+            "final-stage subdivision callback"
+          ],
+          [
+            77.7,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            79.8,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            81.6,
+            "ex1",
+            "R",
+            "high",
+            "final-stage subdivision callback"
+          ],
+          [
+            83.5,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            85.8,
+            "m3",
+            "R",
+            "high",
+            "broken response"
+          ],
+          [
+            87.7,
+            "ex1",
+            "R",
+            "high",
+            "final-stage subdivision callback"
+          ],
+          [
+            90.2,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "breath",
+        "start": 92.3,
+        "end": 104,
+        "character": "major full-band dip; lower bass texture",
+        "pacing": "one sparse learned callback",
+        "events": [
+          [
+            98.1,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "final_remix",
+        "start": 104,
+        "end": 127.5,
+        "character": "rhythmic return ending in large upper-band punctuation",
+        "pacing": "EX responses to familiar calls; no continuous ex1 cycling",
+        "events": [
+          [
+            104.6,
+            "m1",
+            "L",
+            "low",
+            "straight anticipation"
+          ],
+          [
+            106.5,
+            "ex1",
+            "R",
+            "high",
+            "final-stage subdivision callback"
+          ],
+          [
+            108.6,
+            "s2",
+            "L",
+            "high",
+            "paired percussion motif"
+          ],
+          [
+            110.7,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            112.8,
+            "ex1",
+            "R",
+            "high",
+            "final-stage subdivision callback"
+          ],
+          [
+            114.9,
+            "m2",
+            "L",
+            "high",
+            "offbeat response"
+          ],
+          [
+            117.1,
+            "s1",
+            "L",
+            "low",
+            "quick percussion motif"
+          ],
+          [
+            119.2,
+            "ex1",
+            "R",
+            "high",
+            "final-stage subdivision callback"
+          ],
+          [
+            121.3,
+            "m3",
+            "L",
+            "high",
+            "broken response"
+          ],
+          [
+            123.4,
+            "ex1",
+            "R",
+            "high",
+            "final-stage subdivision callback"
+          ],
+          [
+            126.1,
+            "b1",
+            "L",
+            "low",
+            "isolated phrase weight"
+          ]
+        ]
+      },
+      {
+        "id": "tail",
+        "start": 127.5,
+        "end": 131.683258,
+        "character": "rapid ending decay",
+        "pacing": "rest",
+        "events": []
+      }
+    ],
+    "interference": [
+      [
+        29.3,
+        "ship_horn",
+        "heavy end of first learned callback phrase"
+      ],
+      [
+        52.8,
+        "sardine",
+        "active callback cluster"
+      ],
+      [
+        68.9,
+        "fishing_float",
+        "pressure-drive return; false 3-second metronome"
+      ],
+      [
+        92.1,
+        "whale",
+        "large full-band drop into breath"
+      ],
+      [
+        106.5,
+        "ship_horn",
+        "first EX answer of final reprise"
+      ],
+      [
+        114.9,
+        "sardine",
+        "dense familiar-to-EX exchange"
+      ],
+      [
+        117.1,
+        "fishing_float",
+        "late fake metronome under final exam responses"
+      ]
+    ]
+  }
+]

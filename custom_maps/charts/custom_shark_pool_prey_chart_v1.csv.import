@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://custom_maps/charts/custom_shark_pool_prey_chart_v1.csv"
+
+[params]

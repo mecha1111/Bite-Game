@@ -1,0 +1,36 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/calibration/CalibrationIndicator.cs" id="1"]
+[ext_resource type="Texture2D" path="res://game/calibration/timing_pulse.png" id="2"]
+[ext_resource type="Texture2D" path="res://game/calibration/sync_core.png" id="3"]
+
+[node name="RhythmIndicator" type="Control" node_paths=PackedStringArray("PulseRing", "CoreDot")]
+custom_minimum_size = Vector2(280, 240)
+mouse_filter = 2
+texture_filter = 1
+script = ExtResource("1")
+PulseRing = NodePath("PulseRing")
+CoreDot = NodePath("CoreDot")
+
+[node name="PulseRing" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 52.0
+offset_right = 208.0
+offset_bottom = 188.0
+mouse_filter = 2
+pivot_offset = Vector2(68.0, 68.0)
+texture = ExtResource("2")
+expand_mode = 1
+modulate = Color(1, 1, 1, 0.7)
+
+[node name="CoreDot" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 110.0
+offset_right = 150.0
+offset_bottom = 130.0
+mouse_filter = 2
+pivot_offset = Vector2(10.0, 10.0)
+texture = ExtResource("3")
+expand_mode = 1
+modulate = Color(1, 1, 1, 1)

@@ -1,0 +1,575 @@
+[gd_scene format=3 uid="uid://b6y2xrnckgvt8"]
+
+[ext_resource type="Script" path="res://game/ui/UiFocusFeedback.cs" id="FocusFeedback"]
+[ext_resource type="PackedScene" path="res://game/settings/SectionDivider.tscn" id="Divider"]
+[ext_resource type="PackedScene" path="res://game/settings/OffsetControl.tscn" id="Offset"]
+[ext_resource type="Script" uid="uid://dgqbcy6yctq6x" path="res://game/settings/SettingsPopup.cs" id="Script"]
+[ext_resource type="Theme" uid="uid://c85qicd3ooe8f" path="res://game/ui/BiteTheme.tres" id="Theme"]
+[ext_resource type="PackedScene" path="res://game/settings/VolumeSliderRow.tscn" id="VolumeRow"]
+
+[sub_resource type="StyleBoxFlat" id="ConfirmationPanel"]
+bg_color = Color(0.012,0.07,0.13,1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.18,0.62,0.7,1)
+
+[node name="SettingsPopup" type="Control" unique_id=2023416340 node_paths=PackedStringArray("MasterSlider", "MusicSlider", "EffectsSlider", "MasterAmount", "MusicAmount", "EffectsAmount", "InputOffset", "VisualOffset", "RecalibrateButton", "TutorialButton", "CloseButton", "DisplayMode", "ResolutionChoice", "Drawer", "DimOverlay", "EdgeStreak", "Scroll", "SongHeader", "SongTitle", "LeaveButton", "ExitConfirmation", "CancelExitButton", "ConfirmExitButton")]
+z_index = 20
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+MasterSlider = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Master/Slider")
+MusicSlider = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Music/Slider")
+EffectsSlider = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Effects/Slider")
+MasterAmount = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Master/Amount")
+MusicAmount = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Music/Amount")
+EffectsAmount = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Effects/Amount")
+InputOffset = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Input/Value")
+VisualOffset = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Visual/Value")
+TutorialButton = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Tutorial/ReplayButton")
+RecalibrateButton = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Sync/RecalibrateButton")
+CloseButton = NodePath("Drawer/Margins/Layout/Footer/CloseButton")
+DisplayMode = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Mode/Value")
+ResolutionChoice = NodePath("Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Resolution/Value")
+Drawer = NodePath("Drawer")
+DimOverlay = NodePath("DimOverlay")
+EdgeStreak = NodePath("Drawer/EdgeStreak")
+Scroll = NodePath("Drawer/Margins/Layout/ScrollContainer")
+SongHeader = NodePath("Drawer/Margins/Layout/Header/SongHeader")
+SongTitle = NodePath("Drawer/Margins/Layout/Header/SongHeader/SongTitle")
+LeaveButton = NodePath("Drawer/Margins/Layout/Footer/LeaveButton")
+ExitConfirmation = NodePath("ExitConfirmation")
+CancelExitButton = NodePath("ExitConfirmation/Panel/Margins/Content/Actions/Cancel")
+ConfirmExitButton = NodePath("ExitConfirmation/Panel/Margins/Content/Actions/Confirm")
+
+[node name="DimOverlay" type="ColorRect" parent="." unique_id=714448913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.01, 0.025, 0.56)
+
+[node name="Drawer" type="Control" parent="." unique_id=2016511369]
+layout_mode = 1
+anchor_right = 0.36458334
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Panel" type="ColorRect" parent="Drawer" unique_id=1178082816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.008, 0.045, 0.1, 0.98)
+
+[node name="WaterInset" type="ColorRect" parent="Drawer" unique_id=1388315370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_right = -12.0
+mouse_filter = 2
+color = Color(0.02, 0.16, 0.23, 0.12)
+
+[node name="LeftEdge" type="ColorRect" parent="Drawer" unique_id=585801943]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 6.0
+mouse_filter = 2
+color = Color(0, 0.1, 0.24, 1)
+
+[node name="BottomStep" type="ColorRect" parent="Drawer" unique_id=998725458]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -8.0
+offset_right = -8.0
+mouse_filter = 2
+color = Color(0.13, 0.47, 0.56, 1)
+
+[node name="RightBorder" type="ColorRect" parent="Drawer" unique_id=744837251]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+mouse_filter = 2
+color = Color(0, 0.1, 0.24, 1)
+
+[node name="InnerEdge" type="ColorRect" parent="Drawer" unique_id=1390506232]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = -5.0
+mouse_filter = 2
+color = Color(0.33, 0.9, 0.94, 0.65)
+
+[node name="TopStep" type="ColorRect" parent="Drawer" unique_id=646404192]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_right = -8.0
+offset_bottom = 8.0
+mouse_filter = 2
+color = Color(0.13, 0.47, 0.56, 1)
+
+[node name="EdgeStreak" type="ColorRect" parent="Drawer" unique_id=319847877]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+mouse_filter = 2
+color = Color(0.6, 0.96, 1, 0.35)
+
+[node name="Margins" type="MarginContainer" parent="Drawer" unique_id=1945540223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 28
+
+[node name="Layout" type="VBoxContainer" parent="Drawer/Margins" unique_id=2064993983]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="VBoxContainer" parent="Drawer/Margins/Layout" unique_id=770913913]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Drawer/Margins/Layout/Header" unique_id=235083511]
+layout_mode = 2
+theme_type_variation = &"SettingsHeading"
+text = "설정"
+
+[node name="SongHeader" type="VBoxContainer" parent="Drawer/Margins/Layout/Header"]
+visible = false
+layout_mode = 2
+[node name="SongTitle" type="Label" parent="Drawer/Margins/Layout/Header/SongHeader"]
+layout_mode = 2
+theme_type_variation = &"SettingsSongTitle"
+theme_override_font_sizes/font_size = 36
+modulate = Color(0.76,0.91,0.98,1)
+text = "곡 이름"
+clip_text = true
+[node name="Underline" type="ColorRect" parent="Drawer/Margins/Layout/Header"]
+layout_mode = 2
+custom_minimum_size = Vector2(0,4)
+mouse_filter = 2
+color = Color(0.18,0.62,0.7,0.7)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Drawer/Margins/Layout" unique_id=1477819868]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="SettingsContent" type="VBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer" unique_id=1584011182]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="DisplaySection" type="VBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent" unique_id=1620405913]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Divider" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection" unique_id=422501154 instance=ExtResource("Divider")]
+CaptionText = "화면"
+layout_mode = 2
+
+[node name="Mode" type="HBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection" unique_id=976456286]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Mode" unique_id=579031098]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_type_variation = &"SettingsLabel"
+text = "화면 모드"
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Mode" unique_id=989546144]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsOption"
+selected = 0
+item_count = 2
+popup/item_0/text = "창 모드"
+popup/item_0/id = 0
+popup/item_1/text = "전체 화면"
+popup/item_1/id = 1
+
+[node name="Resolution" type="HBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection" unique_id=1139619715]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Resolution" unique_id=1349405766]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_type_variation = &"SettingsLabel"
+text = "해상도"
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Resolution" unique_id=962835511]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsOption"
+selected = 0
+item_count = 3
+popup/item_0/text = "1280 × 720"
+popup/item_0/id = 0
+popup/item_1/text = "1600 × 900"
+popup/item_1/id = 1
+popup/item_2/text = "1920 × 1080"
+popup/item_2/id = 2
+
+[node name="AudioSection" type="VBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent" unique_id=1188963337]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Divider" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection" unique_id=1237484734 instance=ExtResource("Divider")]
+CaptionText = "소리"
+layout_mode = 2
+
+[node name="Master" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection" unique_id=327937353 instance=ExtResource("VolumeRow")]
+layout_mode = 2
+
+[node name="Music" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection" unique_id=1567390093 instance=ExtResource("VolumeRow")]
+layout_mode = 2
+
+[node name="Effects" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection" unique_id=854527714 instance=ExtResource("VolumeRow")]
+layout_mode = 2
+
+[node name="RhythmSection" type="VBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent" unique_id=1554448456]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Divider" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection" unique_id=565848 instance=ExtResource("Divider")]
+CaptionText = "리듬"
+layout_mode = 2
+
+[node name="Sync" type="HBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection" unique_id=1005791130]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Sync" unique_id=1219744402]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_type_variation = &"SettingsLabel"
+text = "싱크 조정"
+vertical_alignment = 1
+
+[node name="RecalibrateButton" type="Button" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Sync" unique_id=1908490039]
+custom_minimum_size = Vector2(246, 64)
+layout_mode = 2
+theme_type_variation = &"SettingsAction"
+text = "다시 조정"
+
+[node name="Tutorial" type="HBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection"]
+custom_minimum_size = Vector2(0,64)
+layout_mode = 2
+theme_override_constants/separation = 8
+[node name="Caption" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Tutorial"]
+custom_minimum_size = Vector2(192,0)
+layout_mode = 2
+theme_type_variation = &"SettingsLabel"
+text = "튜토리얼"
+vertical_alignment = 1
+[node name="ReplayButton" type="Button" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Tutorial"]
+custom_minimum_size = Vector2(246,64)
+layout_mode = 2
+theme_type_variation = &"SettingsAction"
+text = "다시 하기"
+[node name="FocusFeedback" type="Node" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Tutorial/ReplayButton"]
+script = ExtResource("FocusFeedback")
+
+[node name="Input" type="HBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection" unique_id=88915996]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Input" unique_id=777173946]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_type_variation = &"SettingsLabel"
+text = "입력 보정"
+vertical_alignment = 1
+
+[node name="Value" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Input" unique_id=722089032 instance=ExtResource("Offset")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Visual" type="HBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection" unique_id=14552040]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Visual" unique_id=491333639]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_type_variation = &"SettingsLabel"
+text = "화면 보정"
+vertical_alignment = 1
+
+[node name="Value" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Visual" unique_id=546789089 instance=ExtResource("Offset")]
+layout_mode = 2
+size_flags_horizontal = 3
+Minimum = -200.0
+Maximum = 200.0
+
+[node name="DataSection" type="VBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent"]
+layout_mode = 2
+theme_override_constants/separation = 16
+[node name="Divider" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DataSection" instance=ExtResource("Divider")]
+CaptionText = "데이터"
+[node name="Title" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DataSection/Divider" index="1"]
+text = "데이터"
+[node name="Reset" type="HBoxContainer" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DataSection"]
+layout_mode = 2
+[node name="Caption" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DataSection/Reset"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsLabel"
+text = "진행도 초기화"
+[node name="ResetButton" type="Button" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DataSection/Reset"]
+layout_mode = 2
+custom_minimum_size = Vector2(160,64)
+theme_type_variation = &"SettingsAction"
+text = "초기화"
+[node name="FocusFeedback" type="Node" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DataSection/Reset/ResetButton"]
+script = ExtResource("FocusFeedback")
+[node name="Feedback" type="Label" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DataSection"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"SettingsHint"
+text = "진행도가 초기화되었습니다."
+
+[node name="FooterDivider" type="ColorRect" parent="Drawer/Margins/Layout"]
+layout_mode = 2
+custom_minimum_size = Vector2(0,4)
+mouse_filter = 2
+color = Color(0.18,0.62,0.7,0.55)
+
+[node name="Footer" type="HBoxContainer" parent="Drawer/Margins/Layout" unique_id=331389768]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LeaveButton" type="Button" parent="Drawer/Margins/Layout/Footer"]
+visible = false
+custom_minimum_size = Vector2(260,64)
+layout_mode = 2
+theme_type_variation = &"SettingsAction"
+text = "메뉴로 나가기"
+[node name="Spacer" type="Control" parent="Drawer/Margins/Layout/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="CloseButton" type="Button" parent="Drawer/Margins/Layout/Footer" unique_id=855110171]
+custom_minimum_size = Vector2(164, 64)
+layout_mode = 2
+theme_type_variation = &"SettingsAction"
+text = "닫기"
+
+[node name="Title" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Divider" index="1"]
+text = "소리"
+[node name="Title" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Divider" index="1"]
+text = "리듬"
+[node name="Caption" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Music" index="0"]
+text = "음악"
+[node name="Caption" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Effects" index="0"]
+text = "효과음"
+
+[node name="ExitConfirmation" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+[node name="Dim" type="ColorRect" parent="ExitConfirmation"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.005,0.025,0.06,0.5)
+[node name="Panel" type="PanelContainer" parent="ExitConfirmation"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_right = 390.0
+offset_top = -140.0
+offset_bottom = 140.0
+theme_override_styles/panel = SubResource("ConfirmationPanel")
+[node name="Margins" type="MarginContainer" parent="ExitConfirmation/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
+[node name="Content" type="VBoxContainer" parent="ExitConfirmation/Panel/Margins"]
+layout_mode = 2
+theme_override_constants/separation = 32
+[node name="Question" type="Label" parent="ExitConfirmation/Panel/Margins/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"SettingsLabel"
+text = "현재 플레이를 종료하고
+곡 선택 화면으로 돌아갈까요?"
+horizontal_alignment = 1
+vertical_alignment = 1
+[node name="Actions" type="HBoxContainer" parent="ExitConfirmation/Panel/Margins/Content"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 24
+[node name="Cancel" type="Button" parent="ExitConfirmation/Panel/Margins/Content/Actions"]
+layout_mode = 2
+custom_minimum_size = Vector2(220,64)
+theme_type_variation = &"SettingsAction"
+text = "취소"
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../Confirm")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+[node name="Confirm" type="Button" parent="ExitConfirmation/Panel/Margins/Content/Actions"]
+layout_mode = 2
+custom_minimum_size = Vector2(220,64)
+theme_type_variation = &"SettingsAction"
+text = "나가기"
+focus_neighbor_left = NodePath("../Cancel")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+
+[editable path="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Divider"]
+[editable path="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Divider"]
+[editable path="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Music"]
+[editable path="Drawer/Margins/Layout/ScrollContainer/SettingsContent/AudioSection/Effects"]
+
+[node name="FocusFeedback" type="Node" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Mode/Value"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/DisplaySection/Resolution/Value"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="Drawer/Margins/Layout/ScrollContainer/SettingsContent/RhythmSection/Sync/RecalibrateButton"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="Drawer/Margins/Layout/Footer/LeaveButton"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="Drawer/Margins/Layout/Footer/CloseButton"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="ExitConfirmation/Panel/Margins/Content/Actions/Cancel"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="ExitConfirmation/Panel/Margins/Content/Actions/Confirm"]
+script = ExtResource("FocusFeedback")
+
+[node name="ResetConfirmation" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+[node name="Dim" type="ColorRect" parent="ResetConfirmation"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.005,0.025,0.06,0.5)
+[node name="Panel" type="PanelContainer" parent="ResetConfirmation"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_right = 390.0
+offset_top = -140.0
+offset_bottom = 140.0
+theme_override_styles/panel = SubResource("ConfirmationPanel")
+[node name="Margins" type="MarginContainer" parent="ResetConfirmation/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
+[node name="Content" type="VBoxContainer" parent="ResetConfirmation/Panel/Margins"]
+layout_mode = 2
+theme_override_constants/separation = 32
+[node name="Question" type="Label" parent="ResetConfirmation/Panel/Margins/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"SettingsLabel"
+text = "모든 진행도를 초기화할까요?"
+horizontal_alignment = 1
+vertical_alignment = 1
+[node name="Warning" type="Label" parent="ResetConfirmation/Panel/Margins/Content"]
+layout_mode = 2
+theme_type_variation = &"SettingsHint"
+theme_override_colors/font_color = Color(0.87,0.73,0.65,1)
+text = "스테이지 해금과 클리어 기록이 삭제됩니다."
+horizontal_alignment = 1
+[node name="Actions" type="HBoxContainer" parent="ResetConfirmation/Panel/Margins/Content"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 24
+[node name="Cancel" type="Button" parent="ResetConfirmation/Panel/Margins/Content/Actions"]
+layout_mode = 2
+custom_minimum_size = Vector2(220,64)
+theme_type_variation = &"SettingsAction"
+text = "취소"
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../Confirm")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+[node name="Confirm" type="Button" parent="ResetConfirmation/Panel/Margins/Content/Actions"]
+layout_mode = 2
+custom_minimum_size = Vector2(220,64)
+theme_type_variation = &"SettingsAction"
+text = "초기화"
+focus_neighbor_left = NodePath("../Cancel")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+
+
+[node name="FocusFeedback" type="Node" parent="ResetConfirmation/Panel/Margins/Content/Actions/Cancel"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="ResetConfirmation/Panel/Margins/Content/Actions/Confirm"]
+script = ExtResource("FocusFeedback")

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cno01mll00rm0"]
+
+[ext_resource type="Shader" uid="uid://moanmhg07l3i" path="res://game/gameplay/result_shark_body_fill.gdshader" id="5_v4uls"]
+[ext_resource type="Texture2D" path="res://game/gameplay/result_shark_interior.res" id="6_f26be"]
+[ext_resource type="PackedScene" path="res://game/gameplay/ResultActions.tscn" id="Actions"]
+[ext_resource type="PackedScene" path="res://game/gameplay/ResultSharkGauge.tscn" id="Gauge"]
+[ext_resource type="Script" uid="uid://dkoa6f4cvygwl" path="res://game/gameplay/GameOverScreen.cs" id="Script"]
+[ext_resource type="Shader" uid="uid://bqvwj4e4gpx2x" path="res://game/gameplay/starvation_dim.gdshader" id="StarvationDim"]
+[ext_resource type="Theme" uid="uid://c85qicd3ooe8f" path="res://game/ui/BiteTheme.tres" id="Theme"]
+
+[sub_resource type="ShaderMaterial" id="StarvationDim"]
+shader = ExtResource("StarvationDim")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvsyq"]
+resource_local_to_scene = true
+shader = ExtResource("5_v4uls")
+shader_parameter/interior_mask = ExtResource("6_f26be")
+shader_parameter/fill_ratio = 0.88
+shader_parameter/overfill_strength = 0.0
+shader_parameter/fill_tint = Color(0.32, 0.86, 0.94, 1)
+shader_parameter/empty_tint = Color(0.025, 0.09, 0.15, 1)
+shader_parameter/body_x_range = Vector2(0.16816, 0.76029)
+
+[node name="GameOverScreen" type="Control" unique_id=537043665 node_paths=PackedStringArray("Content", "BackgroundDim", "Headline", "Gauge", "Actions")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+Content = NodePath("Content")
+BackgroundDim = NodePath("BackgroundDim")
+Headline = NodePath("Content/Headline")
+Gauge = NodePath("Content/SharkGauge")
+Actions = NodePath("Content/Actions")
+
+[node name="BackgroundDim" type="ColorRect" parent="." unique_id=2078142323]
+material = SubResource("StarvationDim")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.005, 0.03, 0.085, 0.56)
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=675602364]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -245.0
+offset_right = 360.0
+offset_bottom = 245.0
+theme_override_constants/separation = 24
+
+[node name="UpperRule" type="ColorRect" parent="Content" unique_id=427823540]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.3, 0.65, 0.75, 0.5)
+
+[node name="Headline" type="VBoxContainer" parent="Content" unique_id=622241878]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Content/Headline" unique_id=1933241435]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.67, 0.64, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="Content/Headline" unique_id=1278604613]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.84, 0.9, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 32
+text = "상어가 굶주렸습니다"
+horizontal_alignment = 1
+
+[node name="SharkGauge" parent="Content" unique_id=826867692 instance=ExtResource("Gauge")]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+
+[node name="SharkImage" parent="Content/SharkGauge" index="0"]
+material = SubResource("ShaderMaterial_kvsyq")
+anchors_preset = 15
+
+[node name="Percentage" parent="Content/SharkGauge" index="1"]
+anchors_preset = 12
+text = "0%"
+
+[node name="LowerRule" type="ColorRect" parent="Content" unique_id=743835236]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.3, 0.65, 0.75, 0.5)
+
+[node name="Actions" parent="Content" unique_id=1457883595 instance=ExtResource("Actions")]
+layout_mode = 2
+
+[editable path="Content/SharkGauge"]

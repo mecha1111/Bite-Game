@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/audio/song_timing_before_target_first.csv"
+
+[params]

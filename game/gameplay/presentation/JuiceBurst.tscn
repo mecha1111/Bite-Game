@@ -1,0 +1,24 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/JuiceBurst.cs" id="Script"]
+[ext_resource type="Texture2D" path="res://game/title/bubble.png" id="Bubble"]
+[node name="JuiceBurst" type="Node2D"]
+texture_filter = 1
+script = ExtResource("Script")
+[node name="Bubble1" type="Sprite2D" parent="."]
+texture = ExtResource("Bubble")
+scale = Vector2(0.5,0.5)
+[node name="Bubble2" type="Sprite2D" parent="."]
+texture = ExtResource("Bubble")
+scale = Vector2(0.75,0.75)
+[node name="Bubble3" type="Sprite2D" parent="."]
+texture = ExtResource("Bubble")
+scale = Vector2(0.5,0.5)
+[node name="Bubble4" type="Sprite2D" parent="."]
+texture = ExtResource("Bubble")
+scale = Vector2(0.75,0.75)
+[node name="Bubble5" type="Sprite2D" parent="."]
+texture = ExtResource("Bubble")
+scale = Vector2(0.5,0.5)
+[node name="Bubble6" type="Sprite2D" parent="."]
+texture = ExtResource("Bubble")
+scale = Vector2(0.75,0.75)

@@ -1,0 +1,9 @@
+time_seconds,pattern_id,side
+0,s1,left
+3,s1,right
+6,m1,left
+9,m2,right
+12,b1,left
+15,m1,right
+18,m2,left
+21,b1,right

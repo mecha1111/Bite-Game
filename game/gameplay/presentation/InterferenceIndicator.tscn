@@ -1,0 +1,16 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/InterferenceBubble.cs" id="Script"]
+[node name="InterferenceIndicator" type="Control" node_paths=PackedStringArray("Still","Animation")]
+mouse_filter = 2
+texture_filter = 1
+script = ExtResource("Script")
+Still = NodePath("Still")
+Animation = NodePath("Animation")
+TargetVisualHeight = 192.0
+[node name="Still" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+[node name="Animation" type="AnimatedSprite2D" parent="."]

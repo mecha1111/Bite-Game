@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cgk0c32ixg1ci"]
+
+[ext_resource type="PackedScene" uid="uid://bopyl8odtri6i" path="res://game/gameplay/WavePulse.tscn" id="Accent"]
+[ext_resource type="Script" uid="uid://cmkap3c2fs7jf" path="res://game/gameplay/ComboFeedback.cs" id="Script"]
+[ext_resource type="Theme" uid="uid://c85qicd3ooe8f" path="res://game/ui/BiteTheme.tres" id="Theme"]
+
+[node name="Combo" type="Control" unique_id=207940337 node_paths=PackedStringArray("Accent", "Number")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -110.0
+offset_right = 110.0
+offset_bottom = 150.0
+pivot_offset = Vector2(110, 75)
+mouse_filter = 2
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+Accent = NodePath("Accent")
+Number = NodePath("Number")
+
+[node name="Number" type="Label" parent="." unique_id=58673831]
+layout_mode = 0
+anchor_right = 1.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.96, 0.99, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.005, 0.025, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 96
+text = "18"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Caption" type="Label" parent="." unique_id=109967053]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 108.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0.7, 0.91, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.005, 0.025, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "COMBO"
+horizontal_alignment = 1
+
+[node name="Accent" parent="." unique_id=2017776634 instance=ExtResource("Accent")]
+visible = false
+show_behind_parent = true
+position = Vector2(110, 65)
+MediumDiameter = 190.0
+DurationSeconds = 0.35
+RingThickness = 2.0
+PixelSize = 1.0
+PeakOpacity = 0.3

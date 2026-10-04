@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StageData" format=3]
+[ext_resource type="Script" path="res://game/lobby/StageData.cs" id="Data"]
+[resource]
+script = ExtResource("Data")
+StageId = "stage_4"
+SongId = "song_4"
+DisplayName = "Deep Current"
+UnlockRequirement = "stage_3"
+OptionalDescription = "세 바다의 리믹스"
+CoverType = "ex_composite"
+SecondaryTag = "EX"
+
+ScenePath = "res://game/gameplay/Gameplay.tscn"

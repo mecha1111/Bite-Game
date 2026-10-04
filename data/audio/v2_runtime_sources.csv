@@ -1,0 +1,5 @@
+song_id,source_path,sha256,chart_path
+song_1,res://assets/MUSIC/1_edited.mp3,a333d9475ea704af60a7648457f08bda3f28e0298319a85993c4ddef38eeca41,res://assets/BITE_Recharted_v2/hear_the_tide_chart_v2.csv
+song_2,res://assets/MUSIC/2-2.mp3,79340f2249d1fff48c4ce1c74bda0aa712212f654ace548035b82b57a463b09b,res://assets/BITE_Recharted_v2/hidden_current_chart_v2.csv
+song_3,res://assets/MUSIC/3.mp3,fe8eb7701fdf65020e24e7698f66510641a58dabc60b2caa2236d04a7f581316,res://assets/BITE_Recharted_v2/predators_pulse_chart_v2.csv
+song_4,res://assets/MUSIC/4.mp3,487a119618f5901e88029b78edcd1239756d60584526b20dbdccaa1647c057fa,res://assets/BITE_Recharted_v2/deep_current_ex_chart_v2.csv

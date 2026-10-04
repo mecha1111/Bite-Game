@@ -1,0 +1,5 @@
+judgment,impact_wave_diameter,impact_wave_opacity,impact_duration_sec,bubble_count,screen_pulse_strength,combo_pop_scale,satiety_pulse_strength,bite_sfx_volume_modifier
+perfect,240,0.70,0.18,5,0.045,1.20,1.0,0
+good,160,0.50,0.18,2,0.022,1.18,0.65,-2
+bad,96,0.50,0.18,0,0.018,1.08,0.30,-6
+miss,0,0,0.18,0,0,1.0,0,0

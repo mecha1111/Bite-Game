@@ -1,0 +1,5 @@
+type,delay_seconds,interval_seconds,emissions,duration_seconds
+ship_horn,1,0.25,6,2.6
+fishing_float,0,3,4,9.42
+whale,0,0.2,10,2
+sardine,0,0.5,10,5

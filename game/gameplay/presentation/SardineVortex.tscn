@@ -1,0 +1,20 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/SardineVortex.cs" id="Script"]
+[ext_resource type="Shader" path="res://game/gameplay/presentation/sardine_vortex.gdshader" id="Shader"]
+[sub_resource type="Gradient" id="White"]
+colors = PackedColorArray(1,1,1,1,1,1,1,1)
+[sub_resource type="GradientTexture2D" id="Quad"]
+gradient = SubResource("White")
+width = 2
+height = 2
+[sub_resource type="ShaderMaterial" id="Vortex"]
+resource_local_to_scene = true
+shader = ExtResource("Shader")
+[node name="SardineVortex" type="Node2D" node_paths=PackedStringArray("Art")]
+visible = false
+script = ExtResource("Script")
+Art = NodePath("Art")
+[node name="Art" type="Sprite2D" parent="."]
+texture = SubResource("Quad")
+material = SubResource("Vortex")
+scale = Vector2(220,160)

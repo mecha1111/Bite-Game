@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cqd71o6l8wmtx"
+
+[deps]
+
+files=["res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.phrases.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.targets.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.multi.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.single.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.source.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.gameplay.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.first.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.last.translation"]
+
+source_file="res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.csv"
+dest_files=["res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.phrases.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.targets.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.multi.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.single.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.source.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.gameplay.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.first.translation", "res://assets/BITE_Integrated_Musical_Charts_v4/chart_summary_v4.last.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,5 @@
+song_id,entries,music_bpm,game_bpm,beat_offset_sec,first_target,last_target,source_file,human_verified
+hear_the_tide,64,100.0,200.0,0.5775,2.978232,138.255783,1_edited.mp3,false
+hidden_current,64,143.554688,143.554688,0.25599999910835375,2.758730,136.923810,2-2.mp3,false
+predators_pulse,68,130.0,130.0,0.028846153846153848,2.075284,185.802721,3.mp3,false
+deep_current_ex,68,112.3471465,224.694293,0.06675736975660526,3.252608,129.041724,4.mp3,false

@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/charts/hear_the_tide_musical_chart.csv"
+
+[params]

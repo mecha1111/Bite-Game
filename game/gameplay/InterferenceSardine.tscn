@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/InterferenceEffect.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WaveSmall.tscn" id="Wave"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/SardineVortex.tscn" id="Vortex"]
+[node name="InterferenceSardine" type="Node2D"]
+script = ExtResource("Script")
+EffectType = "sardine"
+z_index = 1
+[node name="AudioOrigin" parent="." instance=ExtResource("Wave")]
+visible = false
+[node name="Current" parent="." instance=ExtResource("Vortex")]

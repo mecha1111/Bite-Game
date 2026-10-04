@@ -1,0 +1,171 @@
+song_id,event_index,section_id,planned_payoff_sec,target_time_sec,attack_band,reason,human_listened
+song_1,0,groove_a,2.98,2.983214,low,straight anticipation,false
+song_1,1,groove_a,4.78,4.784121,low,straight anticipation,false
+song_1,2,groove_a,7.18,7.183668,high,offbeat response,false
+song_1,3,groove_a,9.58,9.583214,low,quick percussion motif,false
+song_1,4,groove_a,11.98,11.982761,low,quick percussion motif,false
+song_1,5,groove_a,13.78,13.778679,high,paired percussion motif,false
+song_1,6,groove_a,16.78,16.781854,low,straight anticipation,false
+song_1,7,groove_a,19.18,19.181400,high,offbeat response,false
+song_1,8,groove_a,21.58,21.585935,low,straight anticipation,false
+song_1,9,groove_a,23.38,23.376865,high,paired percussion motif,false
+song_1,10,groove_a,25.78,25.721536,low,quick percussion motif,false
+song_1,11,groove_a,28.78,28.784575,high,broken response,false
+song_1,12,groove_a,31.18,31.184121,low,straight anticipation,false
+song_1,13,groove_a,32.98,32.975051,high,offbeat response,false
+song_1,14,groove_a,35.38,35.309745,low,quick percussion motif,false
+song_1,15,groove_a,37.18,37.175505,low,isolated phrase weight,false
+song_1,16,low_energy_break,46.18,46.195006,low,isolated phrase weight,false
+song_1,17,low_energy_break,58.18,58.217681,low,isolated phrase weight,false
+song_1,18,low_energy_break,70.18,70.210425,low,straight anticipation,false
+song_1,19,groove_return,78.0,77.982761,low,straight anticipation,false
+song_1,20,groove_return,79.8,79.783668,low,quick percussion motif,false
+song_1,21,groove_return,82.2,82.178226,high,offbeat response,false
+song_1,22,groove_return,84.6,84.577772,low,quick percussion motif,false
+song_1,23,groove_return,86.4,86.383668,high,paired percussion motif,false
+song_1,24,groove_return,89.4,89.376865,low,straight anticipation,false
+song_1,25,groove_return,91.8,91.776412,high,offbeat response,false
+song_1,26,groove_return,94.2,94.175958,high,broken response,false
+song_1,27,groove_return,96.0,95.981854,high,paired percussion motif,false
+song_1,28,groove_return,98.4,98.386389,low,quick percussion motif,false
+song_1,29,groove_return,100.8,100.780947,high,offbeat response,false
+song_1,30,groove_return,102.6,102.576865,high,paired percussion motif,false
+song_1,31,groove_return,105.0,104.961446,low,straight anticipation,false
+song_1,32,groove_return,108.0,107.984575,high,broken response,false
+song_1,33,groove_return,110.4,110.389110,low,quick percussion motif,false
+song_1,34,groove_return,112.2,112.175051,high,paired percussion motif,false
+song_1,35,groove_return,114.6,114.534688,low,isolated phrase weight,false
+song_1,36,closing_reprise,124.2,124.132874,low,straight anticipation,false
+song_1,37,closing_reprise,126.0,125.918815,low,quick percussion motif,false
+song_1,38,closing_reprise,128.4,128.318362,high,offbeat response,false
+song_1,39,closing_reprise,130.8,130.712920,high,paired percussion motif,false
+song_1,40,closing_reprise,132.6,132.593645,low,straight anticipation,false
+song_1,41,closing_reprise,135.0,134.918362,high,broken response,false
+song_1,42,closing_reprise,137.4,137.327885,low,isolated phrase weight,false
+song_2,0,atmospheric_open,7.3,7.283441,low,straight anticipation,false
+song_2,1,atmospheric_open,14.0,13.973237,low,straight anticipation,false
+song_2,2,atmospheric_open,22.8,22.912920,high,offbeat response,false
+song_2,3,first_rise,28.6,28.555096,low,straight anticipation,false
+song_2,4,first_rise,31.1,31.054416,high,quick percussion motif,false
+song_2,5,first_rise,34.5,34.486616,high,offbeat response,false
+song_2,6,first_rise,37.5,37.494779,low,straight anticipation,false
+song_2,7,first_rise,40.4,40.482988,high,paired percussion motif,false
+song_2,8,first_rise,43.3,43.266661,high,broken response,false
+song_2,9,first_rise,46.3,46.259858,low,straight anticipation,false
+song_2,10,first_rise,49.2,49.268022,high,offbeat response,false
+song_2,11,first_rise,52.1,52.056684,high,quick percussion motif,false
+song_2,12,first_rise,55.5,55.483895,high,broken response,false
+song_2,13,first_rise,58.5,58.512012,low,isolated phrase weight,false
+song_2,14,lower_bridge,63.5,63.505663,low,isolated phrase weight,false
+song_2,15,lower_bridge,70.2,70.265300,high,offbeat response,false
+song_2,16,lower_bridge,78.4,78.406797,low,isolated phrase weight,false
+song_2,17,main_return,84.1,84.088883,low,straight anticipation,false
+song_2,18,main_return,86.6,86.553282,high,quick percussion motif,false
+song_2,19,main_return,89.5,89.551468,high,offbeat response,false
+song_2,20,main_return,92.4,92.340130,high,broken response,false
+song_2,21,main_return,95.0,94.909291,high,paired percussion motif,false
+song_2,22,main_return,98.3,98.316548,low,straight anticipation,false
+song_2,23,main_return,101.2,101.130153,high,offbeat response,false
+song_2,24,main_return,104.1,104.123350,high,quick percussion motif,false
+song_2,25,main_return,107.0,106.912012,high,broken response,false
+song_2,26,main_return,109.9,109.915187,high,paired percussion motif,false
+song_2,27,main_return,113.3,113.347387,low,isolated phrase weight,false
+song_2,28,late_punctuation,117.0,116.984121,low,straight anticipation,false
+song_2,29,late_punctuation,122.0,121.972783,low,isolated phrase weight,false
+song_2,30,late_punctuation,126.2,126.193192,high,offbeat response,false
+song_2,31,late_punctuation,132.6,132.578679,low,isolated phrase weight,false
+song_3,0,rise,16.2,16.128339,low,straight anticipation,false
+song_3,1,rise,20.8,20.772783,low,straight anticipation,false
+song_3,2,rise,25.4,25.437183,high,offbeat response,false
+song_3,3,rise,30.0,30.026752,high,broken response,false
+song_3,4,rise,34.6,34.641264,low,isolated phrase weight,false
+song_3,5,drive_a,37.8,37.883895,low,quick percussion motif,false
+song_3,6,drive_a,40.1,40.183668,high,offbeat response,false
+song_3,7,drive_a,42.9,42.947387,high,broken response,false
+song_3,8,drive_a,45.2,45.257137,high,paired percussion motif,false
+song_3,9,drive_a,48.4,48.335142,low,quick percussion motif,false
+song_3,10,drive_a,50.7,50.794552,high,offbeat response,false
+song_3,11,drive_a,53.5,53.563260,high,broken response,false
+song_3,12,drive_a,56.3,56.331967,high,paired percussion motif,false
+song_3,13,drive_a,58.6,58.641718,high,offbeat response,false
+song_3,14,drive_a,61.8,61.779586,low,isolated phrase weight,false
+song_3,15,drive_a,64.1,64.189110,low,quick percussion motif,false
+song_3,16,drive_a,66.9,66.952829,high,broken response,false
+song_3,17,drive_a,69.2,69.252602,high,offbeat response,false
+song_3,18,drive_a,72.4,72.490244,high,paired percussion motif,false
+song_3,19,drive_a,74.7,74.795006,high,broken response,false
+song_3,20,drive_a,77.5,77.573690,low,isolated phrase weight,false
+song_3,21,drive_a,80.3,80.297500,low,quick percussion motif,false
+song_3,22,drive_a,82.6,82.642171,high,offbeat response,false
+song_3,23,drive_a,85.4,85.410879,high,broken response,false
+song_3,24,drive_a,88.2,88.194552,low,isolated phrase weight,false
+song_3,25,bridge,93.3,93.312920,low,isolated phrase weight,false
+song_3,26,bridge,99.8,99.703396,high,offbeat response,false
+song_3,27,bridge,106.2,106.218588,low,straight anticipation,false
+song_3,28,drive_b,112.7,112.643985,high,paired percussion motif,false
+song_3,29,drive_b,115.5,115.412693,high,offbeat response,false
+song_3,30,drive_b,117.8,117.722443,high,broken response,false
+song_3,31,drive_b,120.6,120.645799,low,quick percussion motif,false
+song_3,32,drive_b,123.4,123.489337,high,paired percussion motif,false
+song_3,33,drive_b,125.7,125.754189,low,isolated phrase weight,false
+song_3,34,drive_b,128.5,128.562806,high,broken response,false
+song_3,35,drive_b,131.3,131.336502,high,offbeat response,false
+song_3,36,drive_b,133.6,133.641264,high,paired percussion motif,false
+song_3,37,drive_b,136.4,136.409972,high,broken response,false
+song_3,38,drive_b,139.2,139.213600,low,quick percussion motif,false
+song_3,39,drive_b,141.5,141.488430,high,offbeat response,false
+song_3,40,drive_b,144.3,144.257137,high,broken response,false
+song_3,41,drive_b,147.1,147.060765,high,paired percussion motif,false
+song_3,42,drive_b,149.4,149.335595,high,offbeat response,false
+song_3,43,drive_b,152.2,152.333781,high,broken response,false
+song_3,44,drive_b,155.0,155.112466,low,quick percussion motif,false
+song_3,45,drive_b,157.8,157.796366,low,isolated phrase weight,false
+song_3,46,outro_hits,166.4,166.401808,low,isolated phrase weight,false
+song_3,47,outro_hits,174.2,174.114280,high,offbeat response,false
+song_3,48,outro_hits,179.8,179.781400,low,isolated phrase weight,false
+song_4,0,opening_space,7.6,7.672557,low,isolated phrase weight,false
+song_4,1,callback_a,12.6,12.571423,low,straight anticipation,false
+song_4,2,callback_a,15.0,15.025845,high,quick percussion motif,false
+song_4,3,callback_a,17.9,17.849427,high,offbeat response,false
+song_4,4,callback_a,20.1,19.964620,high,paired percussion motif,false
+song_4,5,callback_a,22.3,22.274371,low,straight anticipation,false
+song_4,6,callback_a,24.4,24.394552,low,quick percussion motif,false
+song_4,7,callback_a,27.1,27.203169,high,broken response,false
+song_4,8,callback_a,29.3,29.193645,low,isolated phrase weight,false
+song_4,9,callback_a,31.8,31.787749,high,paired percussion motif,false
+song_4,10,callback_a,34.2,34.222217,high,offbeat response,false
+song_4,11,callback_b,37.2,37.260312,high,offbeat response,false
+song_4,12,callback_b,39.2,39.205890,high,broken response,false
+song_4,13,callback_b,41.6,41.675278,high,paired percussion motif,false
+song_4,14,callback_b,44.0,43.960085,low,straight anticipation,false
+song_4,15,callback_b,46.2,46.135142,low,isolated phrase weight,false
+song_4,16,callback_b,48.3,48.200448,high,offbeat response,false
+song_4,17,callback_b,50.4,50.495232,high,broken response,false
+song_4,18,callback_b,52.8,52.795006,high,paired percussion motif,false
+song_4,19,callback_b,55.2,55.169609,low,quick percussion motif,false
+song_4,20,callback_b,58.2,58.317455,low,isolated phrase weight,false
+song_4,21,pivot,62.1,62.153736,low,isolated phrase weight,false
+song_4,22,pivot,66.4,66.379133,high,broken response,false
+song_4,23,pressure_drive,69.0,69.028112,high,offbeat response,false
+song_4,24,pressure_drive,71.2,71.317908,high,paired percussion motif,false
+song_4,25,pressure_drive,73.3,73.258498,high,broken response,false
+song_4,26,pressure_drive,75.3,75.378679,high,final-stage subdivision callback,false
+song_4,27,pressure_drive,77.7,77.688430,low,straight anticipation,false
+song_4,28,pressure_drive,79.8,79.798634,low,quick percussion motif,false
+song_4,29,pressure_drive,81.6,81.554643,high,final-stage subdivision callback,false
+song_4,30,pressure_drive,83.5,83.500221,high,offbeat response,false
+song_4,31,pressure_drive,85.8,85.795006,high,broken response,false
+song_4,32,pressure_drive,87.7,87.730607,high,final-stage subdivision callback,false
+song_4,33,pressure_drive,90.2,90.244892,low,isolated phrase weight,false
+song_4,34,breath,98.1,98.012239,low,isolated phrase weight,false
+song_4,35,final_remix,104.6,104.687069,low,straight anticipation,false
+song_4,36,final_remix,106.5,106.612693,high,final-stage subdivision callback,false
+song_4,37,final_remix,108.6,108.553282,high,paired percussion motif,false
+song_4,38,final_remix,110.7,110.668475,high,broken response,false
+song_4,39,final_remix,112.8,112.788656,high,final-stage subdivision callback,false
+song_4,40,final_remix,114.9,114.908838,high,offbeat response,false
+song_4,41,final_remix,117.1,117.088883,low,quick percussion motif,false
+song_4,42,final_remix,119.2,119.313827,high,final-stage subdivision callback,false
+song_4,43,final_remix,121.3,121.259405,high,broken response,false
+song_4,44,final_remix,123.4,123.384575,high,final-stage subdivision callback,false
+song_4,45,final_remix,126.1,126.058498,low,isolated phrase weight,false

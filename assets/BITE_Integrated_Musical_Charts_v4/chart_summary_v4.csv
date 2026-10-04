@@ -1,0 +1,8 @@
+﻿song_id,phrases,targets,multi_target_phrases,single_target_phrases,source_bpm,gameplay_bpm,first_target_sec,last_target_sec
+stage1_hear_the_tide,64,75,11,53,99.384014,198.768029,0.604,137.95
+stage2_hidden_current,73,77,4,69,143.554688,143.554688,0.07,136.301
+stage3_predators_pulse,95,140,27,68,129.199219,129.199219,0.07,177.308
+stage4_deep_current_ex,73,104,20,53,112.347147,224.694293,3.065,125.527
+custom_shark_in_a_pool,136,180,28,108,117.453835,234.90767,1.602,216.526
+custom_part_of_your_world,77,93,16,61,129.199219,129.199219,2.972,203.059
+custom_under_the_sea,139,200,33,106,135.999178,271.998355,0.348,189.777

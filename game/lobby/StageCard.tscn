@@ -1,0 +1,330 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/lobby/StageCard.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/lobby/ExStageCover.tscn" id="ExCover"]
+[ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
+[ext_resource type="Resource" path="res://game/lobby/stage_1.tres" id="Preview"]
+[ext_resource type="Texture2D" path="res://game/lobby/lock.png" id="Lock"]
+[ext_resource type="Shader" path="res://game/lobby/card_color.gdshader" id="CardColor"]
+[ext_resource type="PackedScene" path="res://game/lobby/SwimmingMedalShark.tscn" id="Medal"]
+[sub_resource type="ShaderMaterial" id="CardMaterial"]
+resource_local_to_scene = true
+shader = ExtResource("CardColor")
+shader_parameter/saturation = 1.0
+[sub_resource type="StyleBoxEmpty" id="Hit"]
+[sub_resource type="StyleBoxFlat" id="Frame"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.33, 0.90, 0.94, 1)
+
+[node name="StageCard" type="Control" node_paths=PackedStringArray("Background","NameLabel","StateLabel","DescriptionLabel","SelectButton","LockOverlay","SelectionFrame","DarkOverlay","CompositeCover","ExBadge","MedalShark")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1120.0
+offset_bottom = 630.0
+mouse_filter = 2
+custom_minimum_size = Vector2(1120, 630)
+pivot_offset = Vector2(560, 315)
+texture_filter = 1
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+Data = ExtResource("Preview")
+Background = NodePath("Background")
+NameLabel = NodePath("TitleBand/SongTitle")
+StateLabel = NodePath("TitleBand/State")
+DescriptionLabel = NodePath("TitleBand/Description")
+SelectButton = NodePath("SelectButton")
+LockOverlay = NodePath("LockOverlay")
+SelectionFrame = NodePath("SelectionFrame")
+DarkOverlay = NodePath("DarkOverlay")
+CompositeCover = NodePath("ExCover")
+ExBadge = NodePath("TitleBand/ExBadge")
+MedalShark = NodePath("MedalWater/SwimmingMedalShark")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("CardMaterial")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ExCover" parent="." instance=ExtResource("ExCover")]
+visible = false
+
+[node name="MedalWater" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.72
+mouse_filter = 2
+clip_contents = true
+[node name="SwimmingMedalShark" parent="MedalWater" instance=ExtResource("Medal")]
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.025, 0.06, 0.08)
+
+[node name="TitleBand" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0
+anchor_right = 1
+anchor_top = 1
+anchor_bottom = 1
+offset_left = 0.00000
+offset_top = -178.00000
+offset_right = 0.0
+offset_bottom = 0.00000
+mouse_filter = 2
+
+[node name="Backdrop" type="ColorRect" parent="TitleBand"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.025, 0.07, 0.8)
+
+[node name="TextBacking0" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 34.0
+offset_top = 28.0
+offset_right = -46.0
+offset_bottom = 98.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="TextBacking1" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 46.0
+offset_top = 28.0
+offset_right = -34.0
+offset_bottom = 98.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="TextBacking2" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 22.0
+offset_right = -40.0
+offset_bottom = 92.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="TextBacking3" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 34.0
+offset_right = -40.0
+offset_bottom = 104.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="TextBacking4" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 34.0
+offset_top = 22.0
+offset_right = -46.0
+offset_bottom = 92.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="TextBacking5" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 46.0
+offset_top = 22.0
+offset_right = -34.0
+offset_bottom = 92.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="TextBacking6" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 34.0
+offset_top = 34.0
+offset_right = -46.0
+offset_bottom = 104.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="TextBacking7" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 46.0
+offset_top = 34.0
+offset_right = -34.0
+offset_bottom = 104.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+
+[node name="SongTitle" type="Label" parent="TitleBand"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 28.0
+offset_right = -40.0
+offset_bottom = 98.0
+mouse_filter = 2
+theme_type_variation = &"TitleMenuText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="TitleBand"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 108.0
+offset_right = 1080.0
+offset_bottom = 142.0
+mouse_filter = 2
+theme_type_variation = &"SecondaryText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExBadge" type="Label" parent="TitleBand"]
+visible = false
+layout_mode = 1
+offset_left = 32.0
+offset_top = 30.0
+offset_right = 130.0
+offset_bottom = 78.0
+mouse_filter = 2
+theme_type_variation = &"SecondaryText"
+theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0.62,0.96,1,1)
+text = "EX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="State" type="Label" parent="TitleBand"]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 144.0
+offset_right = 1090.0
+offset_bottom = 172.0
+mouse_filter = 2
+theme_type_variation = &"SmallText"
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockOverlay" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+visible = false
+
+[node name="LockIcon" type="TextureRect" parent="LockOverlay"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 230.0
+offset_right = 584.0
+offset_bottom = 286.0
+mouse_filter = 2
+texture = ExtResource("Lock")
+expand_mode = 1
+
+[node name="LockHint" type="Label" parent="LockOverlay"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 304.0
+offset_right = 760.0
+offset_bottom = 354.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+text = "잠김"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectionFrame" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Frame")
+
+[node name="SelectButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Hit")
+theme_override_styles/hover = SubResource("Hit")
+theme_override_styles/pressed = SubResource("Hit")
+theme_override_styles/disabled = SubResource("Hit")
+theme_override_styles/focus = SubResource("Hit")

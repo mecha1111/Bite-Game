@@ -1,0 +1,56 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/InterferenceEffect.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WaveLarge.tscn" id="Wave"]
+[node name="InterferenceWhale" type="Node2D"]
+script = ExtResource("Script")
+EffectType = "whale"
+[node name="Pulse01" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-100,-40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse02" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(0,40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse03" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(100,-40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse04" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-100,40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse05" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(0,-40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse06" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(100,40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse07" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-100,-40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse08" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(0,40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse09" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(100,-40)
+PeakOpacity = 1.0
+FullyOpaque = true
+[node name="Pulse10" parent="." instance=ExtResource("Wave")]
+visible = false
+position = Vector2(-100,40)
+PeakOpacity = 1.0
+FullyOpaque = true

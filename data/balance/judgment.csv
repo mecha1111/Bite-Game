@@ -1,0 +1,2 @@
+perfect_seconds,good_seconds,bad_seconds,perfect_multiplier,good_multiplier,bad_multiplier,miss_multiplier,perfect_score_reward,good_score_reward,bad_score_reward,miss_score_reward
+0.070,0.140,0.200,1.00,0.5333333333333333,0.2666666666666667,0.00,1000,500,0,0

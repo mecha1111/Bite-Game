@@ -1,0 +1,8 @@
+pattern_id,prey_class,wave_kind,pulse_count,cue_slots,target_slot,source_notation,mapping_status
+s1,small,medium,1,0;2;3;5;6,8,● · ● ● · ● ● · ◆,authored
+s2,small,medium,1,0;1;3;5;6,8,●● · ● · ●● · · ◆,provisional_double_dot_slots
+m1,medium,large,1,0;2;4;6,8,● · ● · ● · ● · ◆,authored
+m2,medium,large,1,0;2;5;7,8,● · ● · · ● · ● ◆,authored
+m3,medium,large,1,0;2;3;5;7,8,● · ●● · ● · · ● ◆,provisional_double_dot_slots
+b1,large,large,2,0;4;6,8,● · · · ● · ● · ◆,authored
+ex1,ex,large,2,0;2;3;5;6;7,8,● · ●● · · ●● · ● ◆,provisional_double_dot_slots

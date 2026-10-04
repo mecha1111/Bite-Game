@@ -1,0 +1,40 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/settings/SectionDivider.cs" id="Script"]
+[node name="SectionDivider" type="HBoxContainer"]
+script = ExtResource("Script")
+custom_minimum_size = Vector2(0,44)
+mouse_filter = 2
+theme_override_constants/separation = 10
+[node name="Lead" type="ColorRect" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(24,8)
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0,0.10,0.24,1)
+[node name="Edge" type="ColorRect" parent="Lead"]
+layout_mode = 1
+anchor_right = 1.0
+offset_top = 2.0
+offset_bottom = 5.0
+mouse_filter = 2
+color = Color(0.18,0.62,0.7,1)
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"SettingsCategory"
+text = "화면"
+[node name="Line" type="ColorRect" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(0,8)
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0,0.10,0.24,1)
+[node name="Edge" type="ColorRect" parent="Line"]
+layout_mode = 1
+anchor_right = 1.0
+offset_right = -6.0
+offset_top = 2.0
+offset_bottom = 5.0
+mouse_filter = 2
+color = Color(0.18,0.62,0.7,1)

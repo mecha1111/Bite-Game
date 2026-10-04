@@ -1,0 +1,8 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/lobby/SwimmingMedalShark.cs" id="Script"]
+[node name="SwimmingMedalShark" type="Node2D" node_paths=PackedStringArray("Art")]
+visible = false
+texture_filter = 1
+script = ExtResource("Script")
+Art = NodePath("Art")
+[node name="Art" type="Sprite2D" parent="."]

@@ -1,0 +1,5 @@
+song_id,bpm,beat_offset_sec,audio_path,preview_start_sec,preview_length_sec,preview_db,crossfade_sec,music_bpm
+song_1,198.768029,0.5775,res://assets/MUSIC/1_edited.mp3,20,20,-15,0.75,99.384014
+song_2,143.554688,0.25599999910835375,res://assets/MUSIC/2-2.mp3,20,20,-15,0.75,143.554688
+song_3,129.199219,0.028846153846153848,res://assets/MUSIC/3.mp3,32,20,-15,0.75,129.199219
+song_4,224.694293,0.06675736975660526,res://assets/MUSIC/4.mp3,16,20,-15,0.75,112.347147

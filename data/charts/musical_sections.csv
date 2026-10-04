@@ -1,0 +1,29 @@
+song_id,section_id,start_time_sec,end_time_sec,character,pacing,listening_status
+song_1,opening_space,0,1.7,track opening,rest,pending
+song_1,groove_a,1.7,37.8,sustained bass/percussion energy; repeated motif candidates,call-and-response with repeated side,pending
+song_1,low_energy_break,37.8,77.5,large measured drop in all bands; sparse periodic bass attacks,long rests with three isolated callbacks,pending
+song_1,groove_return,77.5,116.2,abrupt energy return followed by repeated full-band rhythm,active motif reprise and response variation,pending
+song_1,breath,116.2,123.7,short measured full-band dip,rest,pending
+song_1,closing_reprise,123.7,139,return of full-band groove then decay,learned motifs; sparse final punctuation,pending
+song_1,tail,139,140.435944,ending decay,rest,pending
+song_2,atmospheric_open,0,28.2,lower bass level; upper-band movement and gradual rise,three isolated anchors; no continuous filling,pending
+song_2,first_rise,28.2,59,percussion energy rises; repeated phrase candidates,paired calls/responses with punctuation,pending
+song_2,lower_bridge,59,83,bass falls away and mid/high levels ease,isolated long accents and breathing room,pending
+song_2,main_return,83,114.5,clear measured sustained full-band energy increase,active repeated motif and offbeat responses,pending
+song_2,late_punctuation,114.5,135.5,lower sustained energy with isolated bass/percussion peaks,four phrase punctuation targets,pending
+song_2,tail,135.5,138.5,fade,rest,pending
+song_3,opening_space,0,13,low measured opening energy,rest,pending
+song_3,rise,13,35,increasing bass/percussion energy,straight anticipation to broken response,pending
+song_3,drive_a,35,89,strong sustained percussion energy,compact syncopated call-and-response,pending
+song_3,bridge,89,111,measured energy drop then gradual return,three spaced punctuations,pending
+song_3,drive_b,111,160.5,full-band sustained return and dense percussion candidates,syncopated reprise with heavier phrase endings,pending
+song_3,outro_hits,160.5,182,major full-band fall with isolated remaining attacks,sparse closing weight,pending
+song_3,tail,182,188.34285,quiet tail,rest,pending
+song_4,opening_space,0,12,rising layered introduction,one isolated callback,pending
+song_4,callback_a,12,36,full-band groove arrives; shallow-language callback,straight call then quick response,pending
+song_4,callback_b,36,60,continuing rhythmic layer with upper-band phrases,learned syncopation and phrase weight,pending
+song_4,pivot,60,68,reduced and irregular energy around section change,two measured punctuation targets,pending
+song_4,pressure_drive,68,92.3,strong rhythmic return; callback variations,shorter spacing and EX responses,pending
+song_4,breath,92.3,104,major full-band dip; lower bass texture,one sparse learned callback,pending
+song_4,final_remix,104,127.5,rhythmic return ending in large upper-band punctuation,EX responses to familiar calls; no continuous ex1 cycling,pending
+song_4,tail,127.5,131.683258,rapid ending decay,rest,pending

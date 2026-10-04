@@ -1,0 +1,220 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://game/gameplay/Gameplay.tscn" id="Gameplay"]
+[ext_resource type="Script" path="res://game/tutorial/TutorialGameplayScreen.cs" id="Controller"]
+[ext_resource type="Script" path="res://game/tutorial/TutorialVision.cs" id="Vision"]
+[ext_resource type="Resource" path="res://game/tutorial/TutorialProfile.tres" id="Profile"]
+[ext_resource type="Texture2D" path="res://assets/fish/catch_burst_frame_0.png" id="Fish"]
+[ext_resource type="AudioStream" path="res://assets/audio/bite_snap.wav" id="AttackSound"]
+[ext_resource type="Script" path="res://game/ui/UiFocusFeedback.cs" id="FocusFeedback"]
+[ext_resource type="Shader" path="res://game/tutorial/tutorial_vision.gdshader" id="VisionShader"]
+[sub_resource type="ShaderMaterial" id="VisionMaterial"]
+resource_local_to_scene = true
+shader = ExtResource("VisionShader")
+shader_parameter/left_visibility = 1.0
+shader_parameter/right_visibility = 1.0
+shader_parameter/feather_width = 0.18
+shader_parameter/left_darkness = 0.90
+shader_parameter/right_darkness = 0.96
+shader_parameter/vignette_strength = 0.12
+[sub_resource type="StyleBoxFlat" id="MessageFrame"]
+bg_color = Color(0.015,0.04,0.08,0.86)
+border_width_bottom = 2
+border_color = Color(0.24,0.8,0.9,0.65)
+content_margin_left = 32.0
+content_margin_right = 32.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
+bg_color = Color(0.015,0.07,0.12,0.94)
+border_color = Color(0.18,0.6,0.68,0.8)
+border_width_left = 2
+border_width_right = 2
+border_width_top = 2
+border_width_bottom = 2
+[sub_resource type="StyleBoxFlat" id="ButtonHover"]
+bg_color = Color(0.03,0.18,0.24,1)
+border_color = Color(0.4,0.94,1,1)
+border_width_left = 2
+border_width_right = 2
+border_width_top = 2
+border_width_bottom = 2
+[sub_resource type="StyleBoxFlat" id="ButtonPressed"]
+bg_color = Color(0.02,0.26,0.3,1)
+border_color = Color(0.4,0.94,1,1)
+border_width_left = 2
+border_width_right = 2
+border_width_top = 2
+border_width_bottom = 2
+[sub_resource type="StyleBoxFlat" id="ButtonFocus"]
+bg_color = Color(0,0,0,0)
+border_color = Color(0.4,0.94,1,1)
+border_width_left = 3
+border_width_right = 3
+border_width_top = 3
+border_width_bottom = 3
+[node name="TutorialGameplay" node_paths=PackedStringArray("Message","Mastery","ModeLabel","SkipButton","SkipConfirmation","ContinueButton","ConfirmSkipButton","Fish","Vision","Attack","AttackSound") instance=ExtResource("Gameplay")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("Controller")
+Profile = ExtResource("Profile")
+Message = NodePath("TutorialHud/MessageArea/Content/Message")
+Mastery = NodePath("TutorialHud/MessageArea/Content/Mastery")
+ModeLabel = NodePath("TutorialHud/MessageArea/Content/ModeLabel")
+SkipButton = NodePath("TutorialHud/SkipButton")
+SkipConfirmation = NodePath("TutorialHud/SkipConfirmation")
+ContinueButton = NodePath("TutorialHud/SkipConfirmation/Panel/Content/Buttons/ContinueButton")
+ConfirmSkipButton = NodePath("TutorialHud/SkipConfirmation/Panel/Content/Buttons/ConfirmSkipButton")
+Fish = NodePath("TutorialFish")
+Vision = NodePath("VisionMask")
+Attack = NodePath("AttackLayer")
+AttackSound = NodePath("AttackSound")
+[node name="VisionMask" type="Control" parent="."]
+z_index = 0
+material = SubResource("VisionMaterial")
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("Vision")
+[node name="TutorialFish" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("Fish")
+scale = Vector2(2,2)
+[node name="TutorialHud" type="Control" parent="."]
+z_index = 5
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="MessageArea" type="PanelContainer" parent="TutorialHud"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.035
+anchor_bottom = 0.035
+offset_left = -530.0
+offset_right = 530.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("MessageFrame")
+[node name="Content" type="VBoxContainer" parent="TutorialHud/MessageArea"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+[node name="ModeLabel" type="Label" parent="TutorialHud/MessageArea/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+theme_override_constants/outline_size = 0
+horizontal_alignment = 1
+text = "시연 중"
+[node name="Message" type="Label" parent="TutorialHud/MessageArea/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.87,0.98,1,1)
+theme_override_font_sizes/font_size = 40
+theme_override_constants/outline_size = 0
+horizontal_alignment = 1
+text = "초록 파동에 맞춰 물어보세요."
+[node name="Mastery" type="Label" parent="TutorialHud/MessageArea/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.35,0.9,1,1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+text = "○ ○ ○"
+[node name="AttackLayer" type="Control" parent="."]
+z_index = 4
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("Vision")
+AttackLayer = true
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("AttackSound")
+bus = &"SFX"
+volume_db = -6.0
+pitch_scale = 0.7
+
+[node name="SkipButton" type="Button" parent="TutorialHud"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -362.0
+offset_right = -32.0
+offset_top = -88.0
+offset_bottom = -32.0
+theme_override_font_sizes/font_size = 24
+text = "튜토리얼 건너뛰기"
+theme_override_styles/normal = SubResource("ButtonNormal")
+theme_override_styles/hover = SubResource("ButtonHover")
+theme_override_styles/pressed = SubResource("ButtonPressed")
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_colors/font_color = Color(0.88,0.98,1,1)
+theme_override_colors/font_hover_color = Color(1,1,1,1)
+[node name="SkipConfirmation" type="Control" parent="TutorialHud"]
+visible = false
+z_index = 8
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="Dim" type="ColorRect" parent="TutorialHud/SkipConfirmation"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.003,0.009,0.025,0.8)
+[node name="Panel" type="PanelContainer" parent="TutorialHud/SkipConfirmation"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_right = 510.0
+offset_top = -110.0
+offset_bottom = 110.0
+theme_override_styles/panel = SubResource("MessageFrame")
+[node name="Content" type="VBoxContainer" parent="TutorialHud/SkipConfirmation/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+[node name="Prompt" type="Label" parent="TutorialHud/SkipConfirmation/Panel/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 0
+horizontal_alignment = 1
+text = "튜토리얼을 건너뛰고 곡 선택 화면으로 이동할까요?"
+[node name="Buttons" type="HBoxContainer" parent="TutorialHud/SkipConfirmation/Panel/Content"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 32
+[node name="ContinueButton" type="Button" parent="TutorialHud/SkipConfirmation/Panel/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(240,64)
+theme_override_font_sizes/font_size = 28
+text = "계속하기"
+theme_override_styles/normal = SubResource("ButtonNormal")
+theme_override_styles/hover = SubResource("ButtonHover")
+theme_override_styles/pressed = SubResource("ButtonPressed")
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_colors/font_color = Color(0.88,0.98,1,1)
+theme_override_colors/font_hover_color = Color(1,1,1,1)
+[node name="ConfirmSkipButton" type="Button" parent="TutorialHud/SkipConfirmation/Panel/Content/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(240,64)
+theme_override_font_sizes/font_size = 28
+text = "건너뛰기"
+theme_override_styles/normal = SubResource("ButtonNormal")
+theme_override_styles/hover = SubResource("ButtonHover")
+theme_override_styles/pressed = SubResource("ButtonPressed")
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_colors/font_color = Color(0.88,0.98,1,1)
+theme_override_colors/font_hover_color = Color(1,1,1,1)
+[node name="FocusFeedback" type="Node" parent="TutorialHud/SkipButton"]
+script = ExtResource("FocusFeedback")
+[node name="FocusFeedback" type="Node" parent="TutorialHud/SkipConfirmation/Panel/Content/Buttons/ContinueButton"]
+script = ExtResource("FocusFeedback")
+[node name="FocusFeedback" type="Node" parent="TutorialHud/SkipConfirmation/Panel/Content/Buttons/ConfirmSkipButton"]
+script = ExtResource("FocusFeedback")
+
+[node name="GameplayAudio" parent="."]
+LookaheadFrames = 4608

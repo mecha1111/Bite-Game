@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3]
+[ext_resource type="Resource" path="res://game/rhythm/InputCaptureWindows.tres" id="CapturePolicy"]
+[ext_resource type="Script" path="res://game/debug/RhythmVerification.cs" id="1"]
+[ext_resource type="Script" path="res://game/rhythm/RhythmController.cs" id="2"]
+[ext_resource type="Script" path="res://game/rhythm/RhythmChart.cs" id="3"]
+[ext_resource type="PackedScene" path="res://game/debug/rhythm_debug_overlay.tscn" id="4"]
+[sub_resource type="Resource" id="EmptyChart"]
+script = ExtResource("3")
+[node name="RhythmVerification" type="Node"]
+script = ExtResource("1")
+[node name="RhythmController" type="Node" parent="." node_paths=PackedStringArray("MusicPlayer")]
+script = ExtResource("2")
+MusicPlayer = NodePath("../MusicPlayer")
+Chart = SubResource("EmptyChart")
+AllowSilentPreview = false
+CaptureWindows = ExtResource("CapturePolicy")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+[node name="Display" type="CanvasLayer" parent="."]
+[node name="Status" type="Label" parent="Display"]
+offset_left = 24.0
+offset_top = 24.0
+text = "개발 전용 리듬 검증"
+[node name="RhythmDebugOverlay" parent="." instance=ExtResource("4")]

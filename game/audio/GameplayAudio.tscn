@@ -1,0 +1,29 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/audio/GameplayAudio.cs" id="Script"]
+[sub_resource type="AudioStreamGenerator" id="Generator"]
+mix_rate = 48000.0
+buffer_length = 0.12
+[node name="GameplayAudio" type="Node" node_paths=PackedStringArray("CuePlayer","FeedbackVoices")]
+script = ExtResource("Script")
+CuePlayer = NodePath("ChartCues")
+FeedbackVoices = NodePath("FeedbackVoices")
+[node name="ChartCues" type="AudioStreamPlayer" parent="."]
+stream = SubResource("Generator")
+bus = &"SFX"
+[node name="FeedbackVoices" type="Node" parent="."]
+[node name="Voice01" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"
+[node name="Voice02" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"
+[node name="Voice03" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"
+[node name="Voice04" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"
+[node name="Voice05" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"
+[node name="Voice06" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"
+[node name="Voice07" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"
+[node name="Voice08" type="AudioStreamPlayer" parent="FeedbackVoices"]
+bus = &"SFX"

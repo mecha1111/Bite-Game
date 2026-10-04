@@ -1,0 +1,40 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/ui/UiFocusFeedback.cs" id="FocusFeedback"]
+[ext_resource type="Script" path="res://game/gameplay/ResultActions.cs" id="Script"]
+[ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
+[node name="Actions" type="HBoxContainer" node_paths=PackedStringArray("RetryButton","SongSelectButton")]
+custom_minimum_size = Vector2(0,68)
+alignment = 1
+theme = ExtResource("Theme")
+theme_override_constants/separation = 24
+script = ExtResource("Script")
+RetryButton = NodePath("Retry")
+SongSelectButton = NodePath("SongSelect")
+[node name="Retry" type="Button" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(260,68)
+theme_type_variation = &"SettingsAction"
+theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 0
+text = "다시 도전"
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../SongSelect")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+[node name="SongSelect" type="Button" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(260,68)
+theme_type_variation = &"SettingsAction"
+theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 0
+text = "곡 선택으로"
+focus_neighbor_left = NodePath("../Retry")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+
+[node name="FocusFeedback" type="Node" parent="Retry"]
+script = ExtResource("FocusFeedback")
+
+[node name="FocusFeedback" type="Node" parent="SongSelect"]
+script = ExtResource("FocusFeedback")

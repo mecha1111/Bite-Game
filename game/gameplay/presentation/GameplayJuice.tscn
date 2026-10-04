@@ -1,0 +1,52 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/CatchBurstEffect.tscn" id="CatchBurst"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/CatchConfirmation.tscn" id="Catch"]
+[ext_resource type="Script" path="res://game/gameplay/GameplayJuice.cs" id="Script"]
+[ext_resource type="Resource" path="res://game/gameplay/presentation/GameplayJuice.tres" id="Profile"]
+[ext_resource type="Shader" path="res://game/gameplay/presentation/direction_cue.gdshader" id="Cue"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WavePulse.tscn" id="Wave"]
+[ext_resource type="PackedScene" path="res://game/gameplay/presentation/SharkJumpBubbleEffect.tscn" id="JumpBubbles"]
+[sub_resource type="ShaderMaterial" id="Left"]
+resource_local_to_scene = true
+shader = ExtResource("Cue")
+[sub_resource type="ShaderMaterial" id="Right"]
+resource_local_to_scene = true
+shader = ExtResource("Cue")
+shader_parameter/from_right = true
+[node name="GameplayJuice" type="Control" node_paths=PackedStringArray("LeftCue","RightCue","ImpactTemplate","CatchSeal","JumpBubbles")]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture_filter = 1
+script = ExtResource("Script")
+CatchBurstScene = ExtResource("CatchBurst")
+CatchSeal = NodePath("CatchConfirmation")
+JumpBubbles = NodePath("JumpBubbles")
+Profile = ExtResource("Profile")
+LeftCue = NodePath("LeftCue")
+RightCue = NodePath("RightCue")
+ImpactTemplate = NodePath("ImpactTemplate")
+[node name="LeftCue" type="ColorRect" parent="."]
+anchor_top = 0.3
+anchor_bottom = 0.8
+offset_right = 180.0
+mouse_filter = 2
+material = SubResource("Left")
+[node name="RightCue" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_top = 0.3
+anchor_bottom = 0.8
+offset_left = -180.0
+mouse_filter = 2
+material = SubResource("Right")
+[node name="ImpactTemplate" parent="." instance=ExtResource("Wave")]
+visible = false
+DurationSeconds = 0.24
+RingThickness = 2.0
+PixelSize = 1.0
+PeakOpacity = 0.3
+
+[node name="CatchConfirmation" parent="." instance=ExtResource("Catch")]
+visible = false
+[node name="JumpBubbles" parent="." instance=ExtResource("JumpBubbles")]

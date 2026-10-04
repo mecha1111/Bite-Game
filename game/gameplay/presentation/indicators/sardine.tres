@@ -1,0 +1,123 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cjy40cr602b4u"]
+
+[ext_resource type="Texture2D" uid="uid://cufkkmvjfbo3h" path="res://assets/정어리 옴.png" id="Sheet"]
+
+[sub_resource type="AtlasTexture" id="F0"]
+atlas = ExtResource("Sheet")
+region = Rect2(3, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F1"]
+atlas = ExtResource("Sheet")
+region = Rect2(131, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F2"]
+atlas = ExtResource("Sheet")
+region = Rect2(259, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F3"]
+atlas = ExtResource("Sheet")
+region = Rect2(387, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F4"]
+atlas = ExtResource("Sheet")
+region = Rect2(515, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F5"]
+atlas = ExtResource("Sheet")
+region = Rect2(643, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F6"]
+atlas = ExtResource("Sheet")
+region = Rect2(771, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F7"]
+atlas = ExtResource("Sheet")
+region = Rect2(899, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F8"]
+atlas = ExtResource("Sheet")
+region = Rect2(1027, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F9"]
+atlas = ExtResource("Sheet")
+region = Rect2(1155, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F10"]
+atlas = ExtResource("Sheet")
+region = Rect2(1283, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F11"]
+atlas = ExtResource("Sheet")
+region = Rect2(1411, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F12"]
+atlas = ExtResource("Sheet")
+region = Rect2(1539, 15, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F13"]
+atlas = ExtResource("Sheet")
+region = Rect2(1667, 15, 121, 107)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.25,
+"texture": SubResource("F0")
+}, {
+"duration": 1.25,
+"texture": SubResource("F1")
+}, {
+"duration": 1.25,
+"texture": SubResource("F2")
+}, {
+"duration": 1.25,
+"texture": SubResource("F3")
+}, {
+"duration": 1.25,
+"texture": SubResource("F4")
+}, {
+"duration": 1.25,
+"texture": SubResource("F5")
+}, {
+"duration": 1.25,
+"texture": SubResource("F6")
+}, {
+"duration": 1.25,
+"texture": SubResource("F7")
+}, {
+"duration": 1.25,
+"texture": SubResource("F8")
+}, {
+"duration": 1.25,
+"texture": SubResource("F9")
+}, {
+"duration": 1.25,
+"texture": SubResource("F10")
+}, {
+"duration": 1.25,
+"texture": SubResource("F11")
+}, {
+"duration": 1.25,
+"texture": SubResource("F12")
+}, {
+"duration": 1.25,
+"texture": SubResource("F13")
+}],
+"loop": 1,
+"name": &"active",
+"speed": 12.5
+}]

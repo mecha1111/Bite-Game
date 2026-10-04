@@ -1,0 +1,32 @@
+song_id,type,time_seconds,optional_notes
+custom_part_of_your_world,ship_horn,59.534,v3 selected phrase
+custom_part_of_your_world,fishing_float,106.439,v3 selected phrase
+custom_part_of_your_world,whale,151.485,v3 selected phrase
+custom_part_of_your_world,sardine,167.275,v3 selected phrase
+custom_shark_pool,ship_horn,51.922,v3 selected phrase
+custom_shark_pool,fishing_float,107.859,v3 selected phrase
+custom_shark_pool,whale,159.453,v3 selected phrase
+custom_shark_pool,sardine,194.19,v3 selected phrase
+custom_under_the_sea,ship_horn,45.815,v3 selected phrase
+custom_under_the_sea,fishing_float,93.793,v3 selected phrase
+custom_under_the_sea,whale,140.779,v3 selected phrase
+custom_under_the_sea,sardine,173.978,v3 selected phrase
+song_1,ship_horn,77.477,current v3 phrase accent; shared Song Clock presentation response
+song_1,ship_horn,115.209,current v3 phrase accent; shared Song Clock presentation response
+song_1,fishing_float,128.642,current v3 phrase accent; shared Song Clock presentation response
+song_2,fishing_float,27.655,current v3 phrase accent; shared Song Clock presentation response
+song_2,sardine,49.18,current v3 phrase accent; shared Song Clock presentation response
+song_2,fishing_float,78.437,current v3 phrase accent; shared Song Clock presentation response
+song_2,sardine,100.589,current v3 phrase accent; shared Song Clock presentation response
+song_3,whale,40.453,current v3 phrase accent; shared Song Clock presentation response
+song_3,whale,87.589,current v3 phrase accent; shared Song Clock presentation response
+song_3,ship_horn,126.134,current v3 phrase accent; shared Song Clock presentation response
+song_3,fishing_float,142.621,current v3 phrase accent; shared Song Clock presentation response
+song_3,sardine,152.837,current v3 phrase accent; shared Song Clock presentation response
+song_4,ship_horn,29.182,current v3 phrase accent; shared Song Clock presentation response
+song_4,sardine,53.348,current v3 phrase accent; shared Song Clock presentation response
+song_4,fishing_float,69.637,current v3 phrase accent; shared Song Clock presentation response
+song_4,whale,92.201,current v3 phrase accent; shared Song Clock presentation response
+song_4,ship_horn,105.953,current v3 phrase accent; shared Song Clock presentation response
+song_4,sardine,114.765,current v3 phrase accent; shared Song Clock presentation response
+song_4,fishing_float,116.901,current v3 phrase accent; shared Song Clock presentation response

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://idiyhgj6hx3h"]
+
+[ext_resource type="Texture2D" uid="uid://8shicsylxp1a" path="res://assets/고요한 얕은 산호초 바다-1.png" id="Art0"]
+[ext_resource type="Texture2D" uid="uid://da28vd1c6r6io" path="res://assets/깊은 바다의 고요한 여백-2.png" id="Art1"]
+[ext_resource type="Texture2D" uid="uid://o01wi8xuuh0t" path="res://assets/심해 화산 분화구와 열수구-3.png" id="Art2"]
+[ext_resource type="Shader" uid="uid://0algvpgg45ns" path="res://game/lobby/card_color.gdshader" id="Grade"]
+
+[sub_resource type="ShaderMaterial" id="Grade"]
+resource_local_to_scene = true
+shader = ExtResource("Grade")
+shader_parameter/saturation = 0.94
+
+[node name="ExStageCover" type="Control" unique_id=702896664]
+modulate = Color(0.94, 0.98, 1, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(1120, 630)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="LeftCrop" type="Control" parent="." unique_id=1484548838]
+clip_contents = true
+layout_mode = 1
+anchor_right = 0.33333334
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="EnvironmentTexture" type="TextureRect" parent="LeftCrop" unique_id=1037870075]
+material = SubResource("Grade")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("Art0")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterCrop" type="Control" parent="." unique_id=1567978598]
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.33333334
+anchor_right = 0.6666667
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="EnvironmentTexture" type="TextureRect" parent="CenterCrop" unique_id=1370081278]
+material = SubResource("Grade")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0
+anchor_right = 2.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("Art1")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="RightCrop" type="Control" parent="." unique_id=1047683119]
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.6666667
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="EnvironmentTexture" type="TextureRect" parent="RightCrop" unique_id=372949156]
+material = SubResource("Grade")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("Art2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SharedWaterShade" type="ColorRect" parent="." unique_id=1403791142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.01, 0.055, 0.11, 0.08)

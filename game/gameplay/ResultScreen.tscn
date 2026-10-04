@@ -1,0 +1,372 @@
+[gd_scene format=3 uid="uid://dq48yacuaob4e"]
+
+[ext_resource type="Texture2D" uid="uid://b1yvlkgk43rk6" path="res://assets/투명한 게이지 픽셀 상어.png" id="AchievementShark"]
+[ext_resource type="PackedScene" path="res://game/gameplay/ResultActions.tscn" id="Actions"]
+[ext_resource type="Texture2D" uid="uid://dl5dnt4btx2fv" path="res://assets/BAD.png" id="Bad"]
+[ext_resource type="PackedScene" path="res://game/gameplay/ResultSharkGauge.tscn" id="Gauge"]
+[ext_resource type="Texture2D" uid="uid://bg20dxouo8g68" path="res://assets/GOOD.png" id="Good"]
+[ext_resource type="Texture2D" path="res://game/gameplay/result_shark_interior.res" id="InteriorMask"]
+[ext_resource type="Texture2D" uid="uid://dp674jmxlk6hl" path="res://assets/MISS.png" id="Miss"]
+[ext_resource type="Texture2D" uid="uid://di38pb2k6rvvv" path="res://assets/빈 남청색 픽셀 결과 패널.png" id="PanelArt"]
+[ext_resource type="Texture2D" uid="uid://bm6raknw15urj" path="res://assets/PERFECT.png" id="Perfect"]
+[ext_resource type="PackedScene" path="res://game/audio/ResultAudio.tscn" id="ResultAudio"]
+[ext_resource type="Script" uid="uid://dpc0uvi3i2vo4" path="res://game/gameplay/ResultScreen.cs" id="Script"]
+[ext_resource type="Shader" uid="uid://moanmhg07l3i" path="res://game/gameplay/result_shark_body_fill.gdshader" id="SharkFill"]
+[ext_resource type="Theme" uid="uid://c85qicd3ooe8f" path="res://game/ui/BiteTheme.tres" id="Theme"]
+
+[sub_resource type="AtlasTexture" id="PanelArt"]
+atlas = ExtResource("PanelArt")
+region = Rect2(125, 91, 1421, 760)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Perfect"]
+atlas = ExtResource("Perfect")
+region = Rect2(2, 18, 126, 25)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Good"]
+atlas = ExtResource("Good")
+region = Rect2(22, 18, 84, 27)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Bad"]
+atlas = ExtResource("Bad")
+region = Rect2(5, 20, 55, 22)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Miss"]
+atlas = ExtResource("Miss")
+region = Rect2(2, 19, 61, 22)
+filter_clip = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o418v"]
+resource_local_to_scene = true
+shader = ExtResource("SharkFill")
+shader_parameter/interior_mask = ExtResource("InteriorMask")
+shader_parameter/fill_ratio = 0.88
+shader_parameter/overfill_strength = 0.0
+shader_parameter/fill_tint = Color(0.32, 0.86, 0.94, 1)
+shader_parameter/empty_tint = Color(0.025, 0.09, 0.15, 1)
+shader_parameter/body_x_range = Vector2(0.16816, 0.76029)
+
+[sub_resource type="ShaderMaterial" id="AchievementMaterial"]
+resource_local_to_scene = true
+shader = ExtResource("SharkFill")
+shader_parameter/interior_mask = ExtResource("InteriorMask")
+shader_parameter/fill_ratio = 1.0
+shader_parameter/overfill_strength = 0.0
+shader_parameter/fill_tint = Color(0.32, 0.86, 0.94, 1)
+shader_parameter/empty_tint = Color(0.025, 0.09, 0.15, 1)
+shader_parameter/body_x_range = Vector2(0.16816, 0.76029)
+
+[node name="ResultScreen" type="Control" unique_id=2006957372 node_paths=PackedStringArray("Audio", "Panel", "BackgroundDim", "SongTitle", "Headline", "Perfect", "Good", "Bad", "Miss", "MaxCombo", "AchievementShark", "Achievement", "Rows", "Header", "ComboSection", "SatietySection", "StateSection", "Gauge", "Actions")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("Theme")
+script = ExtResource("Script")
+Audio = NodePath("ResultAudio")
+Panel = NodePath("ResultPanel")
+BackgroundDim = NodePath("BackgroundDim")
+SongTitle = NodePath("ResultPanel/Content/Header/SongTitle")
+Headline = NodePath("ResultPanel/Content/Body/RightColumn/StateSection/ResultState")
+Perfect = NodePath("ResultPanel/Content/Body/LeftColumn/JudgmentRows/PerfectRow/Count")
+Good = NodePath("ResultPanel/Content/Body/LeftColumn/JudgmentRows/GoodRow/Count")
+Bad = NodePath("ResultPanel/Content/Body/LeftColumn/JudgmentRows/BadRow/Count")
+Miss = NodePath("ResultPanel/Content/Body/LeftColumn/JudgmentRows/MissRow/Count")
+MaxCombo = NodePath("ResultPanel/Content/Body/LeftColumn/ComboSection/Value")
+AchievementShark = NodePath("ResultPanel/Content/Body/RightColumn/StateSection/AchievementRow/SharkAccent")
+Achievement = NodePath("ResultPanel/Content/Body/RightColumn/StateSection/AchievementRow/Achievement")
+Rows = NodePath("ResultPanel/Content/Body/LeftColumn/JudgmentRows")
+Header = NodePath("ResultPanel/Content/Header")
+ComboSection = NodePath("ResultPanel/Content/Body/LeftColumn/ComboSection")
+SatietySection = NodePath("ResultPanel/Content/Body/RightColumn/SatietySection")
+StateSection = NodePath("ResultPanel/Content/Body/RightColumn/StateSection")
+Gauge = NodePath("ResultPanel/Content/Body/RightColumn/SatietySection/SharkGauge")
+Actions = NodePath("Actions")
+
+[node name="BackgroundDim" type="ColorRect" parent="." unique_id=2122970803]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.005, 0.03, 0.075, 0.52)
+
+[node name="ResultPanel" type="Control" parent="." unique_id=651925119]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -660.0
+offset_top = -435.0
+offset_right = 660.0
+offset_bottom = 365.0
+pivot_offset = Vector2(660, 400)
+mouse_filter = 2
+
+[node name="Frame" type="NinePatchRect" parent="ResultPanel" unique_id=2135955744]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("PanelArt")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="Content" type="VBoxContainer" parent="ResultPanel" unique_id=1108762051]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 38.0
+offset_right = -68.0
+offset_bottom = -38.0
+theme_override_constants/separation = 22
+
+[node name="Header" type="VBoxContainer" parent="ResultPanel/Content" unique_id=202977812]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="ResultPanel/Content/Header" unique_id=1655616390]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 56
+text = "최종 평가"
+horizontal_alignment = 1
+
+[node name="SongTitle" type="Label" parent="ResultPanel/Content/Header" unique_id=2110739997]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
+text = "곡 이름"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="HeaderDivider" type="ColorRect" parent="ResultPanel/Content" unique_id=1879052360]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.25, 0.68, 0.75, 0.6)
+
+[node name="Body" type="HBoxContainer" parent="ResultPanel/Content" unique_id=2147456287]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 38
+
+[node name="LeftColumn" type="VBoxContainer" parent="ResultPanel/Content/Body" unique_id=1867158986]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="JudgmentRows" type="VBoxContainer" parent="ResultPanel/Content/Body/LeftColumn" unique_id=1814535130]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PerfectRow" type="HBoxContainer" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows" unique_id=273151326]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+
+[node name="PerfectImage" type="TextureRect" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/PerfectRow" unique_id=261555929]
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = SubResource("Perfect")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/PerfectRow" unique_id=50391803]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GoodRow" type="HBoxContainer" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows" unique_id=550603489]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+
+[node name="GoodImage" type="TextureRect" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/GoodRow" unique_id=834655344]
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = SubResource("Good")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/GoodRow" unique_id=1721520890]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BadRow" type="HBoxContainer" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows" unique_id=172918551]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+
+[node name="BadImage" type="TextureRect" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/BadRow" unique_id=252641717]
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = SubResource("Bad")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/BadRow" unique_id=1088389013]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MissRow" type="HBoxContainer" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows" unique_id=1890441064]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+
+[node name="MissImage" type="TextureRect" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/MissRow" unique_id=1647457502]
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = SubResource("Miss")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="ResultPanel/Content/Body/LeftColumn/JudgmentRows/MissRow" unique_id=97872573]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="JudgmentDivider" type="ColorRect" parent="ResultPanel/Content/Body/LeftColumn" unique_id=978571805]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.25, 0.68, 0.75, 0.6)
+
+[node name="ComboSection" type="VBoxContainer" parent="ResultPanel/Content/Body/LeftColumn" unique_id=823702855]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ResultPanel/Content/Body/LeftColumn/ComboSection" unique_id=161084448]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 32
+text = "최대 콤보"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="ResultPanel/Content/Body/LeftColumn/ComboSection" unique_id=1482242446]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 64
+text = "21"
+vertical_alignment = 1
+
+[node name="ColumnDivider" type="ColorRect" parent="ResultPanel/Content/Body" unique_id=1751416708]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.25, 0.68, 0.75, 0.4)
+
+[node name="RightColumn" type="VBoxContainer" parent="ResultPanel/Content/Body" unique_id=1787727536]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="SatietySection" type="VBoxContainer" parent="ResultPanel/Content/Body/RightColumn" unique_id=1880832583]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="ResultPanel/Content/Body/RightColumn/SatietySection" unique_id=1735964232]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "포만감"
+horizontal_alignment = 1
+
+[node name="SharkGauge" parent="ResultPanel/Content/Body/RightColumn/SatietySection" unique_id=1316152322 instance=ExtResource("Gauge")]
+layout_mode = 2
+
+[node name="SharkImage" parent="ResultPanel/Content/Body/RightColumn/SatietySection/SharkGauge" index="0"]
+material = SubResource("ShaderMaterial_o418v")
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -84.0
+
+[node name="Percentage" parent="ResultPanel/Content/Body/RightColumn/SatietySection/SharkGauge" index="1"]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -84.0
+
+[node name="StateSection" type="VBoxContainer" parent="ResultPanel/Content/Body/RightColumn" unique_id=314031065]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="ResultState" type="Label" parent="ResultPanel/Content/Body/RightColumn/StateSection" unique_id=1395916382]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 52
+text = "CLEAR"
+horizontal_alignment = 1
+
+[node name="AchievementRow" type="HBoxContainer" parent="ResultPanel/Content/Body/RightColumn/StateSection" unique_id=1935410305]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="SharkAccent" type="TextureRect" parent="ResultPanel/Content/Body/RightColumn/StateSection/AchievementRow" unique_id=1917070556]
+material = SubResource("AchievementMaterial")
+custom_minimum_size = Vector2(112, 34)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("AchievementShark")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Achievement" type="Label" parent="ResultPanel/Content/Body/RightColumn/StateSection/AchievementRow" unique_id=616870730]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 28
+text = "FULL COMBO"
+horizontal_alignment = 1
+
+[node name="Actions" parent="." unique_id=932914897 instance=ExtResource("Actions")]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = 400.0
+offset_right = 272.0
+offset_bottom = 468.0
+
+[node name="ResultAudio" parent="." unique_id=1312881602 instance=ExtResource("ResultAudio")]
+
+[editable path="ResultPanel/Content/Body/RightColumn/SatietySection/SharkGauge"]

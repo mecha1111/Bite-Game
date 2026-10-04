@@ -1,0 +1,4 @@
+judgment,snap_gain_db,gulp_gain_db,impact_gain_db,play_impact
+perfect,0,0,0,true
+good,0,-3,0,false
+bad,0,-8,0,false

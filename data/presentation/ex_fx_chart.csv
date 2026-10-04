@@ -1,0 +1,20 @@
+time_sec,environment_id,transition_type,camera_event,color_event,strength,duration,optional_target,notes
+0.000000,song_1,crossfade,camera_pan,cyan,4,0.8,left,current phrase/section accent; listening review pending
+12.492,song_3,pressure,camera_drop,vent,0.038,0.45,center,current phrase/section accent; listening review pending
+17.849427,,accent,camera_pulse,teal,0.025,0.28,right,selected real chart accent; no per-beat motion
+27.203169,,accent,camera_follow_wave,teal,5,0.6,right,selected real chart accent; no per-beat motion
+36.926,song_1,caustic_blend,camera_zoom,cyan,0.025,0.75,center,current phrase/section accent; listening review pending
+37.260312,,accent,camera_pulse,teal,0.025,0.28,left,selected real chart accent; no per-beat motion
+46.135142,,accent,camera_pulse,teal,0.025,0.28,right,selected real chart accent; no per-beat motion
+55.169609,,accent,camera_pulse,teal,0.025,0.28,left,selected real chart accent; no per-beat motion
+62.16,song_2,crossfade,camera_pan,teal,6,0.85,right,current phrase/section accent; listening review pending
+69.637,song_3,pressure,camera_drop,vent,0.04,0.45,center,current phrase/section accent; listening review pending
+71.317908,,accent,camera_follow_wave,cyan,5,0.6,left,selected real chart accent; no per-beat motion
+79.798634,,accent,camera_pulse,cyan,0.025,0.28,left,selected real chart accent; no per-beat motion
+87.730607,,accent,camera_pulse,cyan,0.025,0.28,right,selected real chart accent; no per-beat motion
+92.201,song_2,crossfade,camera_pan,teal,4,0.9,left,current phrase/section accent; listening review pending
+104.35,song_1,caustic_blend,camera_drop,cyan,0.034,0.65,center,current phrase/section accent; listening review pending
+106.612693,,accent,camera_pulse,cyan,0.025,0.28,right,selected real chart accent; no per-beat motion
+114.908838,,accent,camera_follow_wave,cyan,5,0.6,left,selected real chart accent; no per-beat motion
+121.259405,,accent,camera_pulse,teal,0.025,0.28,left,selected real chart accent; no per-beat motion
+126.058498,,accent,camera_pulse,teal,0.025,0.28,left,selected real chart accent; no per-beat motion

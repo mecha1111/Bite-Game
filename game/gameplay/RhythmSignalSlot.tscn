@@ -1,0 +1,18 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/gameplay/RhythmSignalSlot.cs" id="Script"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WaveSmall.tscn" id="Small"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WaveMedium.tscn" id="Medium"]
+[ext_resource type="PackedScene" path="res://game/gameplay/WaveLarge.tscn" id="Large"]
+[node name="RhythmSignalSlot" type="Control" node_paths=PackedStringArray("Small","Medium","Large")]
+mouse_filter = 2
+texture_filter = 1
+script = ExtResource("Script")
+Small = NodePath("SmallPulse")
+Medium = NodePath("MediumPulse")
+Large = NodePath("LargePulse")
+[node name="SmallPulse" parent="." instance=ExtResource("Small")]
+visible = false
+[node name="MediumPulse" parent="." instance=ExtResource("Medium")]
+visible = false
+[node name="LargePulse" parent="." instance=ExtResource("Large")]
+visible = false

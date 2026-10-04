@@ -1,0 +1,9 @@
+[remap]
+
+importer="keep"
+
+[deps]
+
+source_file="res://data/audio/v2_runtime_sources.csv"
+
+[params]

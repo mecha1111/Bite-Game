@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="InputCaptureWindows" format=3]
+[ext_resource type="Script" path="res://game/rhythm/InputCaptureWindows.cs" id="Script"]
+[resource]
+script = ExtResource("Script")
+EarlySeconds = 0.25
+LateSeconds = 0.25

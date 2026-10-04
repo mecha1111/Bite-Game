@@ -1,0 +1,91 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dh88ulhsol0cq"]
+
+[ext_resource type="Texture2D" uid="uid://bm642wqptmqpo" path="res://assets/배 옴.png" id="Sheet"]
+
+[sub_resource type="AtlasTexture" id="F0"]
+atlas = ExtResource("Sheet")
+region = Rect2(3, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F1"]
+atlas = ExtResource("Sheet")
+region = Rect2(131, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F2"]
+atlas = ExtResource("Sheet")
+region = Rect2(259, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F3"]
+atlas = ExtResource("Sheet")
+region = Rect2(387, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F4"]
+atlas = ExtResource("Sheet")
+region = Rect2(515, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F5"]
+atlas = ExtResource("Sheet")
+region = Rect2(643, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F6"]
+atlas = ExtResource("Sheet")
+region = Rect2(771, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F7"]
+atlas = ExtResource("Sheet")
+region = Rect2(899, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F8"]
+atlas = ExtResource("Sheet")
+region = Rect2(1027, 6, 121, 107)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F9"]
+atlas = ExtResource("Sheet")
+region = Rect2(1155, 6, 121, 107)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.25,
+"texture": SubResource("F0")
+}, {
+"duration": 1.25,
+"texture": SubResource("F1")
+}, {
+"duration": 1.25,
+"texture": SubResource("F2")
+}, {
+"duration": 1.25,
+"texture": SubResource("F3")
+}, {
+"duration": 1.25,
+"texture": SubResource("F4")
+}, {
+"duration": 1.25,
+"texture": SubResource("F5")
+}, {
+"duration": 1.25,
+"texture": SubResource("F6")
+}, {
+"duration": 1.25,
+"texture": SubResource("F7")
+}, {
+"duration": 1.25,
+"texture": SubResource("F8")
+}, {
+"duration": 1.25,
+"texture": SubResource("F9")
+}],
+"loop": 1,
+"name": &"active",
+"speed": 12.5
+}]

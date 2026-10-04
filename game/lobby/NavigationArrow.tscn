@@ -1,0 +1,32 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/lobby/NavigationArrow.cs" id="Script"]
+[ext_resource type="Texture2D" path="res://game/lobby/navigation_arrow.png" id="Art"]
+[sub_resource type="StyleBoxEmpty" id="Empty"]
+
+[node name="NavigationArrow" type="Button" node_paths=PackedStringArray("ArrowVisual")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 112.0
+offset_bottom = 112.0
+mouse_filter = 0
+pivot_offset = Vector2(56, 56)
+texture_filter = 1
+mouse_default_cursor_shape = 2
+script = ExtResource("Script")
+ArrowVisual = NodePath("Icon")
+theme_override_styles/normal = SubResource("Empty")
+theme_override_styles/hover = SubResource("Empty")
+theme_override_styles/pressed = SubResource("Empty")
+theme_override_styles/disabled = SubResource("Empty")
+theme_override_styles/focus = SubResource("Empty")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 104.0
+mouse_filter = 2
+texture = ExtResource("Art")
+expand_mode = 1

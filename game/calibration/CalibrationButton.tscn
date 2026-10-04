@@ -1,0 +1,166 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://game/calibration/CalibrationButton.cs" id="1"]
+[ext_resource type="Texture2D" path="res://game/title/가로형 청록 픽셀 버튼 배경-3.png" id="2"]
+[ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="3"]
+[sub_resource type="StyleBoxEmpty" id="Empty"]
+
+[node name="CalibrationButton" type="Control" node_paths=PackedStringArray("Background", "Caption", "HitButton")]
+custom_minimum_size = Vector2(340, 100)
+mouse_filter = 2
+texture_filter = 1
+pivot_offset = Vector2(170, 50)
+theme = ExtResource("3")
+script = ExtResource("1")
+Background = NodePath("Background")
+Caption = NodePath("Caption")
+HitButton = NodePath("HitButton")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="TextBacking0" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 0.0
+offset_right = 336.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBacking1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 0.0
+offset_right = 344.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBacking2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 0.0
+offset_top = -4.0
+offset_right = 340.0
+offset_bottom = 96.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBacking3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 4.0
+offset_right = 340.0
+offset_bottom = 104.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBacking4" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 336.0
+offset_bottom = 96.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBacking5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -4.0
+offset_right = 344.0
+offset_bottom = 96.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBacking6" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 4.0
+offset_right = 336.0
+offset_bottom = 104.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBacking7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 344.0
+offset_bottom = 104.0
+mouse_filter = 2
+theme_type_variation = &"CalibrationMenuText"
+theme_override_constants/outline_size = 0
+theme_override_colors/font_color = Color(0, 0.101961, 0.239216, 1)
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Caption" type="Label" parent="."]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 340.0
+offset_bottom = 100.0
+mouse_filter = 2
+text = "측정 시작"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_type_variation = &"CalibrationMenuText"
+
+
+[node name="HitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("Empty")
+theme_override_styles/hover = SubResource("Empty")
+theme_override_styles/pressed = SubResource("Empty")
+theme_override_styles/focus = SubResource("Empty")

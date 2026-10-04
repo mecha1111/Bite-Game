@@ -1,0 +1,15 @@
+sfx_id,sfx_path,volume_db,pitch_scale,stereo_strength,mode,max_duration_sec,fade_out_sec
+small,res://assets/audio/sfx/wave_note_ping.wav,0,1.08,0.30,cue,0,0
+medium,res://assets/audio/sfx/wave_note_ping.wav,0,1,0.30,cue,0,0
+large,res://assets/audio/sfx/wave_note_ping.wav,0,0.92,0.30,cue,0,0
+ship_horn,res://assets/audio/sfx/interference_ship_horn.wav,0,1,0.30,warning,0,0
+fishing_float,res://assets/audio/sfx/interference_fishing_float.wav,0,1,0.30,emission,0,0
+whale,res://assets/audio/sfx/interference_whale.wav,0,1,0.25,texture,2,0.12
+sardine,res://assets/audio/sfx/interference_sardine_school.wav,0,1,0.30,texture,3,0.15
+bite_success,res://assets/audio/bite_snap.wav,-5,1,0,cue,0,0
+bite_miss,res://assets/audio/sfx/bite_miss.wav,0,1,0,cue,0,0
+gulp,res://assets/audio/catch_gulp.wav,-5,1,0,cue,0,0
+perfect_impact,res://assets/audio/perfect_thump.wav,-6,1,0,cue,0,0
+ui_click,res://assets/audio/sfx/ui_click.wav,0,1,0,ui,0,0
+result_jingle,res://assets/audio/sfx/result_jingle.wav,0,1,0,ui,0,0
+result_gauge_fill,res://assets/audio/sfx/result_gauge_fill.wav,0,1,0,ui,0,0
