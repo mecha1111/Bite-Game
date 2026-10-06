@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" path="res://assets/fish/12.png" id="D12"]
 [ext_resource type="Texture2D" path="res://assets/fish/13.png" id="D13"]
 [ext_resource type="Texture2D" path="res://assets/fish/14.png" id="D14"]
-[ext_resource type="Texture2D" path="res://assets/fish/피 펑펑.png" id="Blood"]
+[ext_resource type="Texture2D" path="res://assets/fish/blood_burst.png" id="Blood"]
 [sub_resource type="AtlasTexture" id="A1"]
 atlas = ExtResource("D1")
 region = Rect2(30,60,9,13)

@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://c6q623onvbfex" path="res://assets/fonts/neodgm.ttf" id="Font"]
 [ext_resource type="Texture2D" uid="uid://dm2nccslya0ed" path="res://game/settings/dropdown_arrow.svg" id="SettingsArrow"]
-[ext_resource type="Texture2D" uid="uid://dloh4mhtm3l2v" path="res://game/title/가로형 청록 픽셀 버튼 배경-3.png" id="SettingsButtonArt"]
+[ext_resource type="Texture2D" uid="uid://dloh4mhtm3l2v" path="res://game/title/menu_button_background.png" id="SettingsButtonArt"]
 [ext_resource type="Texture2D" uid="uid://b3vv6d85x3v3p" path="res://game/settings/slider_knob.svg" id="SettingsKnob"]
 [ext_resource type="Texture2D" uid="uid://betkuwh1ki6j2" path="res://game/settings/slider_knob_active.svg" id="SettingsKnobActive"]
 

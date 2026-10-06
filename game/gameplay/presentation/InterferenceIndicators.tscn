@@ -2,13 +2,13 @@
 [ext_resource type="Script" path="res://game/gameplay/InterferenceIndicators.cs" id="Script"]
 [ext_resource type="PackedScene" path="res://game/gameplay/presentation/InterferenceIndicator.tscn" id="Bubble"]
 [ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/whale.tres" id="whaleFrames"]
-[ext_resource type="Texture2D" path="res://assets/고래 움1.png" id="whaleStill"]
+[ext_resource type="Texture2D" path="res://assets/whale_still.png" id="whaleStill"]
 [ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/fishing_float.tres" id="fishing_floatFrames"]
-[ext_resource type="Texture2D" path="res://assets/낚시함1.png" id="fishing_floatStill"]
+[ext_resource type="Texture2D" path="res://assets/fishing_float_still.png" id="fishing_floatStill"]
 [ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/ship_horn.tres" id="ship_hornFrames"]
-[ext_resource type="Texture2D" path="res://assets/배 옴1.png" id="ship_hornStill"]
+[ext_resource type="Texture2D" path="res://assets/ship_horn_still.png" id="ship_hornStill"]
 [ext_resource type="SpriteFrames" path="res://game/gameplay/presentation/indicators/sardine.tres" id="sardineFrames"]
-[ext_resource type="Texture2D" path="res://assets/정어리 옴1.png" id="sardineStill"]
+[ext_resource type="Texture2D" path="res://assets/sardine_vortex_still.png" id="sardineStill"]
 [sub_resource type="AtlasTexture" id="whaleCrop"]
 atlas = ExtResource("whaleStill")
 region = Rect2(40.0, 150.0, 1210.0, 1070.0)

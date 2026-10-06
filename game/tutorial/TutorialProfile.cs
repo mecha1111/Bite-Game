@@ -3,7 +3,7 @@ namespace Gamejam2.Tutorial;
 [GlobalClass]
 public partial class TutorialProfile : Resource
 {
-    [Export] public string AudioPath { get; set; }="res://assets/MUSIC/1-2.mp3";
+    [Export] public string AudioPath { get; set; }="res://assets/music/1-2.mp3";
     [Export] public string LessonsPath { get; set; }="res://data/tutorial/lessons.csv";
     [Export] public double Bpm { get; set; }=125;
     [Export] public double BeatOffsetSeconds { get; set; }=0;

@@ -1,4 +1,4 @@
 rank,priority,criterion,texture_path,natural_faces_left,width_fraction,swim_seconds
-bronze,1,800,res://assets/상어 동.png,true,0.16,18
-silver,2,1000,res://assets/상어 은.png,true,0.16,18
-gold,3,1100,res://assets/상어 금.png,true,0.16,18
+bronze,1,800,res://assets/shark_bronze.png,true,0.16,18
+silver,2,1000,res://assets/shark_silver.png,true,0.16,18
+gold,3,1100,res://assets/shark_gold.png,true,0.16,18

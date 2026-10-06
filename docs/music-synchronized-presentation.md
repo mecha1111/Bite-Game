@@ -119,7 +119,7 @@ EX 색 강도는 `min(.065, strength × 1.3)`이며 표의 강도는 카메라 �
 
 ## 11–14. 추진 물방울
 
-- 재사용 scene `game/gameplay/presentation/SharkJumpBubbleEffect.tscn`; 원본 **`res://assets/물방울.png`**, transparent padding만 AtlasTexture (190,190,260,260)로 잘라 사용한다.
+- 재사용 scene `game/gameplay/presentation/SharkJumpBubbleEffect.tscn`; 원본 **`res://assets/bubble.png`**, transparent padding만 AtlasTexture (190,190,260,260)로 잘라 사용한다.
 - Bite당 **24–36개**, 동시에 최대 **256개**. 따로 stage accent batch 최대 96개. 한 Node2D의 사전 할당 struct 배열과 texture draw를 사용하며 물방울별 노드/타이머는 없다.
 - 원점 `Shark.GlobalPosition + (0,-28)`; lower-body x ±140px, y -10…12px에서 시작. WORLD z2로 상어에 전부 가려지지 않게 한다. HUD/새 전체 화면 pass 없음.
 - scale 작은 .35–.60(50%), 중간 .65–1.00(40%), 큰 1.05–1.35(10%), 기본 표시 크기 9px. 원본의 640px 빈 여백 때문에 scale은 잘라낸 표시 크기에 상대적이다.
@@ -130,9 +130,9 @@ EX 색 강도는 `min(.065, strength × 1.3)`이며 표의 강도는 카메라 �
 
 | 최고 기록 | 원본 resource | 기준 |
 |---|---|---|
-| Bronze | `res://assets/상어 동.png` | 기존 `Result.Cleared` (포만감≥clear threshold) |
-| Silver | `res://assets/상어 은.png` | 기존 `Result.FullCombo` |
-| Gold | `res://assets/상어 금.png` | 기존 `Result.AllPerfect` |
+| Bronze | `res://assets/shark_bronze.png` | 기존 `Result.Cleared` (포만감≥clear threshold) |
+| Silver | `res://assets/shark_silver.png` | 기존 `Result.FullCombo` |
+| Gold | `res://assets/shark_gold.png` | 기존 `Result.AllPerfect` |
 
 - `data/presentation/medal_sharks.csv`: priority/criterion/texture/natural facing/width/swim seconds. Gold > Silver > Bronze > None. 최고 하나만 표시. 포만감 110%는 Gold 조건이 아니다.
 - 원본은 모두 **왼쪽 방향**. 오른쪽으로 수영할 때 `FlipH=true`, 왼쪽으로 돌아올 때 false. 폭은 opaque region 기준 카드 폭 **16%**, 한 방향 **18초**, 작은 8px bob. `StageCard.tscn/MedalWater/SwimmingMedalShark`는 환경 영역에 clip되며 제목 위를 가리지 않는다. 잠긴 카드에서는 숨기고 processing을 끈다.

@@ -1,5 +1,5 @@
 [gd_scene format=3]
-[ext_resource type="Texture2D" path="res://assets/투명한 게이지 픽셀 상어.png" id="Art"]
+[ext_resource type="Texture2D" path="res://assets/result_shark_gauge.png" id="Art"]
 [ext_resource type="Script" path="res://game/gameplay/SharkResultGauge.cs" id="Script"]
 [ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
 [ext_resource type="Shader" path="res://game/gameplay/result_shark_body_fill.gdshader" id="Fill"]

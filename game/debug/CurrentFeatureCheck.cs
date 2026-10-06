@@ -42,7 +42,7 @@ public partial class CurrentFeatureCheck:Node
             foreach(var (value,rank) in new[]{(799,"none"),(800,"bronze"),(1000,"silver"),(1100,"gold")})Check(MedalSharkCatalog.RankFor(value)==rank,"Satiety medal "+value+" = "+rank);
             Gamejam2.Save.ProgressService.RecordStageResult("song_1",true,false,false,1100);Gamejam2.Save.ProgressService.RecordStageResult("song_1",true,true,true,800);Check(Gamejam2.Save.ProgressService.BestStageRank("stage_1")=="gold","Medal cannot downgrade");
             router.GoToLobby();await Frame();
-            var map=await LocalMapGenerator.Generate(this,"res://assets/MUSIC/1_edited.mp3",status=>GD.Print("GEN "+status));generatedId=map.SongId;
+            var map=await LocalMapGenerator.Generate(this,"res://assets/music/1_edited.mp3",status=>GD.Print("GEN "+status));generatedId=map.SongId;
             Check(map.Generated&&map.AudioPath.StartsWith("user://custom_maps/"),"MP3 local generation committed");
             var data=GameplayData.Load(map.SongId);Check(data.TargetCount>0&&data.Phrases.All(p=>p.TargetEvents.Length==1)&&data.Phrases.Skip(1).Select((p,i)=>p.FromLeft!=data.Phrases[i].FromLeft).All(x=>x),"Generated single-target alternating chart loads");
             Check(StagePresentationChart.Load(map.SongId,map.Duration)!=null,"Generated separate camera data loads");

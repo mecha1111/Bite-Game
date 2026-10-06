@@ -9,7 +9,7 @@
 | # | 항목 | 구현/설정 |
 |---|---|---|
 | 1 | 모드 경로 | `res://game/tutorial/TutorialGameplay.tscn`, `TutorialGameplayScreen.cs`. `Gameplay.tscn`/`GameplayScreen` 상속. |
-| 2 | 음원 | `res://assets/MUSIC/1-2.mp3`, 실제 디코딩 길이 **101.825310초**. 다른 곡으로 대체하지 않음. |
+| 2 | 음원 | `res://assets/music/1-2.mp3`, 실제 디코딩 길이 **101.825310초**. 다른 곡으로 대체하지 않음. |
 | 3 | BPM / beat offset | **125 BPM / +0.070초**. `TutorialProfile.tres`에서 수정. 10ms 에너지 블록의 onset 자기상관으로 125 BPM 확인; 도입 강박 후보 1.51/5.35/7.75초에 맞춘 초기 오프셋. 정밀 청취 조정 가능. |
 | 4 | 저장 키 | 기존 `user://player_settings.cfg`의 `[progress] tutorial_completed` bool. 완주 시에만 true/Flush. |
 | 5 | 최초 진입 | Title → 필요한 Calibration → 미완료 Tutorial → Lobby. 이후 완료된 Tutorial 자동 생략. |

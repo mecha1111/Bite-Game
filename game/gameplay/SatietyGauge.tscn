@@ -1,5 +1,5 @@
 [gd_scene format=3 uid="uid://drumeoiq1yhgw"]
-[ext_resource type="Texture2D" path="res://assets/포만감 게이지.png" id="Art"]
+[ext_resource type="Texture2D" path="res://assets/satiety_gauge.png" id="Art"]
 [ext_resource type="Script" path="res://game/gameplay/SatietyGauge.cs" id="Script"]
 [ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="Theme"]
 [ext_resource type="Shader" path="res://game/gameplay/satiety_fill.gdshader" id="Fill"]

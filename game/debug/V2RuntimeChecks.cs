@@ -62,7 +62,7 @@ public partial class V2RuntimeChecks : Node
             for(int song=first;song<=last;song++)
             {
                 var lobby=_router.ScreenHost.GetChildren().OfType<LobbyScreen>().Single();lobby.Navigate(song-1-lobby.SelectedIndex);await Wait(.85);
-                var preview=lobby.GetNode<SongPreview>("SongPreview");string path=new[]{"res://assets/MUSIC/1_edited.mp3","res://assets/MUSIC/2-2.mp3","res://assets/MUSIC/3.mp3","res://assets/MUSIC/4.mp3"}[song-1];
+                var preview=lobby.GetNode<SongPreview>("SongPreview");string path=new[]{"res://assets/music/1_edited.mp3","res://assets/music/2-2.mp3","res://assets/music/3.mp3","res://assets/music/4.mp3"}[song-1];
                 Check(preview.SongId=="song_"+song&&(preview.PlayerA.Playing&&preview.PlayerA.Stream.ResourcePath==path||preview.PlayerB.Playing&&preview.PlayerB.Stream.ResourcePath==path),"actual Lobby current-source preview song "+song);
                 lobby.SelectCurrent();await Wait(.4);_game=_router.ScreenHost.GetChildren().OfType<GameplayScreen>().Single();
                 if(OS.GetCmdlineUserArgs().Contains("--musical-audit-driver"))_game.SetProcessInput(false);

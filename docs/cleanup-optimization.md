@@ -49,7 +49,7 @@ Godot Metal Forward+ / Apple M3 Pro / 1920×1080, 120 FPS cap. 최종 회귀 결
 
 ## F. 불확실성/범위
 
-`assets/MUSIC/1.mp3`, `2.mp3`, 미참조 GIF와 일부 artwork는 source/master 여부가 불명확해 보존했다. 제공 v2 chart와 과거 분석/스크린샷은 provenance로 보존하며 runtime fallback이 아니다. 분류/참조/해시 전체 목록은 `artifacts/cleanup/reviewed-inventory.json`이다. category E는 삭제하지 않았다.
+`assets/music/1.mp3`, `2.mp3`, 미참조 GIF와 일부 artwork는 source/master 여부가 불명확해 보존했다. 제공 v2 chart와 과거 분석/스크린샷은 provenance로 보존하며 runtime fallback이 아니다. 분류/참조/해시 전체 목록은 `artifacts/cleanup/reviewed-inventory.json`이다. category E는 삭제하지 않았다.
 
 프레임 tail은 반복 측정에서 변동하며 이 기기에서도 드물게 약 30ms까지 관측됐다. 안정적인 GPU frame-time 개선으로 주장하지 않는다. 모든 측정에서 SFX underrun=0이며 실제 네 곡의 최대 clock drift는 15.66–26.87ms였다.
 

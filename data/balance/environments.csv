@@ -1,5 +1,5 @@
 song_id,background_path,ambience,background_dim,ambient_tint,caustic_strength,light_ray_strength,particle_density,particle_opacity,vignette_strength,vent_strength
-song_1,res://assets/고요한 얕은 산호초 바다-1.png,reef,0.20,#CBEFFF,0.008,0.018,10,0.26,0.18,0
-song_2,res://assets/깊은 바다의 고요한 여백-2.png,deep,0.10,#BDDEFF,0.006,0.004,8,0.24,0.22,0
-song_3,res://assets/심해 화산 분화구와 열수구-3.png,vent,0.22,#A9CBEF,0.004,0.001,12,0.27,0.26,0.045
-song_4,res://assets/심해 화산 분화구와 열수구-3.png,vent,0.13,#DAE9FF,0.005,0.002,10,0.25,0.24,0.035
+song_1,res://assets/shallow_coral_reef_background.png,reef,0.20,#CBEFFF,0.008,0.018,10,0.26,0.18,0
+song_2,res://assets/deep_sea_background.png,deep,0.10,#BDDEFF,0.006,0.004,8,0.24,0.22,0
+song_3,res://assets/volcanic_vent_background.png,vent,0.22,#A9CBEF,0.004,0.001,12,0.27,0.26,0.045
+song_4,res://assets/volcanic_vent_background.png,vent,0.13,#DAE9FF,0.005,0.002,10,0.25,0.24,0.035

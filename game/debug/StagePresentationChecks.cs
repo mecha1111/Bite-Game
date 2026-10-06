@@ -83,7 +83,7 @@ public partial class StagePresentationChecks : Node
     private async Task BubbleAndHud(GameplayScreen game)
     {
         var bubbles=game.Juice.JumpBubbles;var atlas=(AtlasTexture)bubbles.BubbleTexture;
-        Check(atlas.Atlas.ResourcePath=="res://assets/물방울.png","bubble batch uses supplied texture, not generated circles");
+        Check(atlas.Atlas.ResourcePath=="res://assets/bubble.png","bubble batch uses supplied texture, not generated circles");
         double nodes=Performance.GetMonitor(Performance.Monitor.ObjectNodeCount);game.Juice.Bite(0);
         Check(bubbles.LastEmittedCount is >=24 and <=36&&bubbles.LastOrigin==game.Shark.GlobalPosition+new Vector2(0,-28),"24–36 bubbles originate under shark");
         var array=(Array)typeof(SharkJumpBubbleEffect).GetField("_bubbles",BindingFlags.NonPublic|BindingFlags.Instance)!.GetValue(bubbles)!;

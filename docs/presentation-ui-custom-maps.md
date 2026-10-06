@@ -9,7 +9,7 @@
 - 실제 캡처의 상어 이미지가 사라졌고 percentage가 왼쪽 위에 붙었다. 원인: `ResultScreen.tscn`의 inherited SharkImage/Percentage 자식에 **layout_mode=0 override**가 있어 base scene의 앵커 배치를 무효화했다. 두 자식에 layout_mode=1과 앵커를 명시했고 base gauge도 같은 모드로 고정했다. 숫자/Shader uniform만 보는 기존 테스트에 실제 nonzero 이미지/label 크기 검사도 추가했다.
 - 순서: world/dim 정착 .08초 → panel/dim .16 → header .12 → 4 rows/counts 각 .10 → max combo .08 → empty shark .08 → fill .80 → percent/state .12 → actions .12. 총 **1.96초**. Accept로 reveal을 끝내는 기존 기능/Retry focus/라우팅/FC/AP/최고 메달 저장은 유지.
 - 실제 계층: `ResultScreen → BackgroundDim + ResultPanel/Content(Header, Body/LeftColumn(JudgmentRows,ComboSection), Body/RightColumn(SatietySection/SharkGauge,StateSection)) + Actions + ResultAudio`.
-- 전용 `ResultSharkGauge.tscn` / `assets/투명한 게이지 픽셀 상어.png` / interior mask를 사용한다. PERFECT/GOOD/BAD/MISS PNG 그대로; GREAT 없음. 게임플레이 긴 게이지로 대체하지 않았다.
+- 전용 `ResultSharkGauge.tscn` / `assets/result_shark_gauge.png` / interior mask를 사용한다. PERFECT/GOOD/BAD/MISS PNG 그대로; GREAT 없음. 게임플레이 긴 게이지로 대체하지 않았다.
 
 ## 4–5. 픽셀 / 가독성
 
@@ -39,10 +39,10 @@ CustomMapRegistry now loads only generated metadata from `user://custom_maps/<Ma
 
 | Type | static pop PNG | GIF에서 제공된 동일 frame-strip resource | slot (viewport fraction) |
 |---|---|---|---|
-| Whale | assets/고래 움1.png | assets/고래 움.gif → 고래 움.png → indicators/whale.tres | right (.925,.57) |
-| Float | assets/낚시함1.png | 낚시함.gif → 낚시함.png → fishing_float.tres | top-right (.825,.13) |
-| Horn | assets/배 옴1.png | 배 옴.gif → 배 옴.png → ship_horn.tres | top-left (.145,.13) |
-| Current | assets/정어리 옴1.png | 정어리 옴.gif → 정어리 옴.png → sardine.tres | left (.075,.57) |
+| Whale | assets/whale_still.png | assets/whale.gif → 고래 움.png → indicators/whale.tres | right (.925,.57) |
+| Float | assets/fishing_float_still.png | 낚시함.gif → 낚시함.png → fishing_float.tres | top-right (.825,.13) |
+| Horn | assets/ship_horn_still.png | 배 옴.gif → 배 옴.png → ship_horn.tres | top-left (.145,.13) |
+| Current | assets/sardine_vortex_still.png | 정어리 옴.gif → 정어리 옴.png → sardine.tres | left (.075,.57) |
 
 - 제공 strip은 128px tile, 12/14/10/14 frames; 원본 GIF duration을 SpriteFrames에 반영. 런타임 GIF decode/별도 애니메이션 timer 없이 presentation Song time으로 frame 선택.
 - static PNG pop **.35 → 1.12 (.14초) → 1.00 (.10초)**. 첫 .24초 static, 이후 animated strip. 종료 **.18초 shrink .9 + alpha fade**.

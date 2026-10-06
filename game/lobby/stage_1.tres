@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StageData" format=3]
 [ext_resource type="Script" path="res://game/lobby/StageData.cs" id="Data"]
-[ext_resource type="Texture2D" path="res://assets/고요한 얕은 산호초 바다-1.png" id="Art"]
+[ext_resource type="Texture2D" path="res://assets/shallow_coral_reef_background.png" id="Art"]
 [resource]
 script = ExtResource("Data")
 StageId = "stage_1"

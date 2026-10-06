@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cx8ho6gujno2g"]
 
 [ext_resource type="Script" uid="uid://ndog3gjyb0tn" path="res://game/lobby/BackIconButton.cs" id="Behavior"]
-[ext_resource type="Texture2D" uid="uid://cn3uqj7t0x0mt" path="res://game/title/exit/픽셀아트 출구문과 오른쪽 화살표-2.png" id="ExitIcon"]
+[ext_resource type="Texture2D" uid="uid://cn3uqj7t0x0mt" path="res://game/title/exit/exit_icon.png" id="ExitIcon"]
 
 [sub_resource type="AtlasTexture" id="IconCrop"]
 atlas = ExtResource("ExitIcon")

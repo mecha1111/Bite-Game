@@ -2,7 +2,7 @@ extends SceneTree
 # Development-only: regenerate the closed interior mask after editing gauge artwork.
 # Runtime uses the saved resource; image decoding/flood fill never runs in gameplay.
 func _initialize():
- var source=Image.load_from_file("res://assets/포만감 게이지.png")
+ var source=Image.load_from_file("res://assets/satiety_gauge.png")
  var mask=Image.create(source.get_width(),source.get_height(),false,Image.FORMAT_RGBA8)
  mask.fill(Color.TRANSPARENT)
  var queue:Array[Vector2i]=[Vector2i(1000,365)]

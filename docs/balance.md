@@ -19,7 +19,7 @@ Sheet/CSV 항목에 대응하는 숫자를 C# fallback·default·scene/resource 
 
 ## 현재 연결 상태
 
-현재 음악은 `assets/MUSIC/1_edited.mp3`, `2-2.mp3`, `3.mp3`, `4.mp3`이며 Gameplay/preview가 같은 song_timing 경로를 직접 읽는다. 교체된 runtime 음원은 정리됐다. 실제 경로 감사는 [musical-chart-review.md](musical-chart-review.md).
+현재 음악은 `assets/music/1_edited.mp3`, `2-2.mp3`, `3.mp3`, `4.mp3`이며 Gameplay/preview가 같은 song_timing 경로를 직접 읽는다. 교체된 runtime 음원은 정리됐다. 실제 경로 감사는 [musical-chart-review.md](musical-chart-review.md).
 
 - `songs.csv`: 표시명, 길이, 곡별 3초 drain, 차트 경로. BPM/오디오 경로는 중복하지 않는다.
 - `song_timing.csv`: BPM, 박자 기준 phase, 실제 음원 경로, preview 구간/음량/crossfade.

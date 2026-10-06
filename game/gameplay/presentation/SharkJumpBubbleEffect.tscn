@@ -1,6 +1,6 @@
 [gd_scene format=3]
 [ext_resource type="Script" path="res://game/gameplay/SharkJumpBubbleEffect.cs" id="Script"]
-[ext_resource type="Texture2D" path="res://assets/물방울.png" id="Bubble"]
+[ext_resource type="Texture2D" path="res://assets/bubble.png" id="Bubble"]
 [sub_resource type="AtlasTexture" id="Crop"]
 atlas = ExtResource("Bubble")
 region = Rect2(190, 190, 260, 260)

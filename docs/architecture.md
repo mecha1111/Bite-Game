@@ -27,7 +27,7 @@ Settings 재보정은 Title/Lobby 문맥 또는 일시 정지한 동일 Gameplay
 
 ## 실제 곡 소스
 
-| 곡 | MP3 (`assets/MUSIC/`) | 차트 (`data/charts/`) |
+| 곡 | MP3 (`assets/music/`) | 차트 (`data/charts/`) |
 |---|---|---|
 | Hear the Tide | 1_edited.mp3 | hear_the_tide_musical_chart.csv |
 | Hidden Current | 2-2.mp3 | hidden_current_musical_chart.csv |

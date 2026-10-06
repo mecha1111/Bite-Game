@@ -52,7 +52,7 @@ public partial class BuildPolicyChecks : Node
             s.CloseImmediately();router.GoToTitle();await Wait(.1);router.ScreenHost.GetChild<TitleScreen>(0).StartButton.EmitSignal(Button.SignalName.Pressed);await Wait(.1);
             Check(router.ScreenHost.GetChild(0) is LobbyScreen,"release next Start after reset skips Tutorial with saved calibration");
             router.GoToTutorial(true);Check(router.ScreenHost.GetChild(0) is LobbyScreen,"direct Tutorial route centrally disabled in exports");
-            Check(ProjectSettings.GetSetting("application/config/icon").AsString()=="res://assets/아이콘.png","official uploaded icon assigned");
+            Check(ProjectSettings.GetSetting("application/config/icon").AsString()=="res://assets/icon.png","official uploaded icon assigned");
             router.QueueFree();await Wait(.1);GD.Print("BUILD POLICY VERIFIED "+_checks);GetTree().Quit();
         }
         catch(Exception e){GD.PushError(e.ToString());GetTree().Quit(1);}

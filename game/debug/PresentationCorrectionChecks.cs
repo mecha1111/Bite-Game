@@ -63,8 +63,8 @@ public partial class PresentationCorrectionChecks : Node
             ship.Present(1.5);Check(ship.EmissionCount==4&&ship.ActivePulses.Select(w=>w.Origin).Distinct().Count()==4,"Ship Horn independent distinct origin events overlap");await Capture("ship-overlap");
             ship.Present(2.3);Check(ship.EmissionCount==7,"warning plus six CSV timed large events");ship.Present(2.7);Check(!ship.IsActive&&ship.ActivePulses.Count>0,"completed schedule does not truncate expanding rings");ship.Present(6);Check(ship.ActivePulses.Count==0,"all horn rings clear viewport and release");ship.QueueFree();host.QueueFree();
             var result=game.Result;result.ShowResult(new GameplayResult("Hear the Tide",880,800,20,7,6,0,21,33));await Wait(2.1);
-            Check(result.Gauge.SharkImage.Texture.ResourcePath=="res://assets/투명한 게이지 픽셀 상어.png","exact Result shark, no Gameplay HUD gauge");
-            var panel=(AtlasTexture)result.Panel.GetNode<NinePatchRect>("Frame").Texture;Check(panel.Atlas.ResourcePath=="res://assets/빈 남청색 픽셀 결과 패널.png","exact empty Result panel");
+            Check(result.Gauge.SharkImage.Texture.ResourcePath=="res://assets/result_shark_gauge.png","exact Result shark, no Gameplay HUD gauge");
+            var panel=(AtlasTexture)result.Panel.GetNode<NinePatchRect>("Frame").Texture;Check(panel.Atlas.ResourcePath=="res://assets/result_panel_empty.png","exact empty Result panel");
             Check(result.Rows.GlobalPosition.X<result.Gauge.GlobalPosition.X&&result.MaxCombo.GlobalPosition.Y>result.Rows.GetGlobalRect().End.Y,"whiteboard left judgment/combo, right dominant satiety");
             Check(result.Perfect.Text=="20"&&result.Good.Text=="7"&&result.Bad.Text=="6"&&result.Miss.Text=="0"&&result.MaxCombo.Text=="21","fixture counts and max combo");Check(result.Gauge.Percentage.Text=="88%"&&result.Headline.Text=="CLEAR","880=88%, CLEAR");
             var material=(ShaderMaterial)result.Gauge.SharkImage.Material;var mask=((Texture2D)material.GetShaderParameter("interior_mask")).GetImage();Check(mask.GetPixel(0,0).A==0&&mask.GetPixel(700,550).A==1,"shark interior mask excludes outside pixels");await Capture("result-880");

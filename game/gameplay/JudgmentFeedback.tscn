@@ -1,9 +1,9 @@
 [gd_scene format=3]
 [ext_resource type="Script" path="res://game/gameplay/JudgmentFeedback.cs" id="Script"]
-[ext_resource type="Texture2D" path="res://assets/PERFECT.png" id="Perfect"]
-[ext_resource type="Texture2D" path="res://assets/GOOD.png" id="Good"]
-[ext_resource type="Texture2D" path="res://assets/BAD.png" id="Bad"]
-[ext_resource type="Texture2D" path="res://assets/MISS.png" id="Miss"]
+[ext_resource type="Texture2D" path="res://assets/perfect.png" id="Perfect"]
+[ext_resource type="Texture2D" path="res://assets/good.png" id="Good"]
+[ext_resource type="Texture2D" path="res://assets/bad.png" id="Bad"]
+[ext_resource type="Texture2D" path="res://assets/miss.png" id="Miss"]
 [node name="JudgmentFeedback" type="Node2D" node_paths=PackedStringArray("Art")]
 texture_filter = 1
 script = ExtResource("Script")

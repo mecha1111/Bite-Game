@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfonu24i7snit"]
 
-[ext_resource type="Texture2D" uid="uid://e6la1quso1dg" path="res://game/title/setting/투명 배경 픽셀 기어 아이콘-2.png" id="Art"]
+[ext_resource type="Texture2D" uid="uid://e6la1quso1dg" path="res://game/title/setting/settings_icon.png" id="Art"]
 [ext_resource type="Script" uid="uid://ndog3gjyb0tn" path="res://game/lobby/BackIconButton.cs" id="Behavior"]
 
 [sub_resource type="AtlasTexture" id="Gear"]

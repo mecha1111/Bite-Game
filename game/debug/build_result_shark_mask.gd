@@ -2,7 +2,7 @@
 ## Run explicitly with Godot --headless --path . --script res://game/debug/build_result_shark_mask.gd
 extends SceneTree
 func _initialize():
-    var source=Image.load_from_file("res://assets/투명한 게이지 픽셀 상어.png")
+    var source=Image.load_from_file("res://assets/result_shark_gauge.png")
     var w=source.get_width()
     var h=source.get_height()
     var alpha=source.get_data()

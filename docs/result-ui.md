@@ -3,15 +3,15 @@
 ## Scene-authored presentation
 
 - `game/gameplay/ResultScreen.tscn`: horizontal hunting statement, not a vertical receipt/modal. ResultPanel → Content(Header + Body). Body has LeftColumn(JudgmentRows + MaxCombo), vertical divider, and a45:55 split with the wider RightColumn(SatietySection + StateSection). Shared Actions is a sibling below the board. Board1320×800, centered at(960,505), width68.75% of1920. Navy overlay52% preserves the frozen selected environment.
-- Judgment rows use `assets/PERFECT.png`, `GOOD.png`, `BAD.png`, `MISS.png` directly through AtlasTexture crops. Each TextureRect's visible height48, aspect retained, left edge aligned. Counts are actual right-aligned40px Labels. No second text judgment name.
+- Judgment rows use `assets/perfect.png`, `GOOD.png`, `BAD.png`, `MISS.png` directly through AtlasTexture crops. Each TextureRect's visible height48, aspect retained, left edge aligned. Counts are actual right-aligned40px Labels. No second text judgment name.
 - General text uses neodgm Labels: title56, song36, normal32, counts40, combo64, percentage72, state52, achievement28, action32. All result text has outline0.
 - Result entrance: panel/dim .16s → header .12s → four rows/counts .10s each → combo .08s → satiety .08s reveal +.8s fill → state .12s → actions .12s. Percentage reveals after the fill; state appears in parallel. Total1.96s (world settle .08s before panel). Accept skips reveal; another accept activates focused action. CLEAR has small1.04→1 scale accent.
-- Exact board frame: `assets/빈 남청색 픽셀 결과 패널.png`, transparent source padding cropped with AtlasTexture(125,91,1421,760), NinePatch corners64px. No Title-button fallback. Header centered; left performance and right shark summary remain separate. Compact actions are below the board.
+- Exact board frame: `assets/result_panel_empty.png`, transparent source padding cropped with AtlasTexture(125,91,1421,760), NinePatch corners64px. No Title-button fallback. Header centered; left performance and right shark summary remain separate. Compact actions are below the board.
 
 
 ## Shark gauge
 
-`ResultSharkGauge.tscn` uses the exact `assets/투명한 게이지 픽셀 상어.png` directly. The old long Gameplay HUD gauge is disconnected from ResultScreen (GameOver's existing separate gauge is unchanged). The right-side shark image is dominant;72px percentage appears below it.
+`ResultSharkGauge.tscn` uses the exact `assets/result_shark_gauge.png` directly. The old long Gameplay HUD gauge is disconnected from ResultScreen (GameOver's existing separate gauge is unchanged). The right-side shark image is dominant;72px percentage appears below it.
 
 `result_shark_body_fill.gdshader` fills only `result_shark_interior.res`, a39KB compressed Godot ImageTexture. Developer utility `game/debug/build_result_shark_mask.gd` flood-fills transparent pixels reachable from image borders;219805 enclosed transparent pixels become the body mask. Source frame/eye/fins remain untouched. Source PNG is never modified. Left→right fill maps to enclosed-body X range; exterior alpha remains transparent. Rebuild mask when source artwork changes with Godot `--headless --path . --script res://game/debug/build_result_shark_mask.gd`. This preprocessing tool is outside shipped player flow.
 

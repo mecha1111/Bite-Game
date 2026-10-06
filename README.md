@@ -15,7 +15,7 @@ Godot 4.7 C# 리듬 게임 기반 프로젝트. 정상 실행은 Startup → Tit
 
 UI 해상도/창 크기: 1920×1080 기준 `canvas_items + keep`. 검증 결과 및 에디터 미리보기 주의점은 [docs/responsive-ui.md](docs/responsive-ui.md)를 참고하세요.
 
-현재 Gameplay: 네 MP3(`assets/MUSIC/`)와 `data/charts/*_musical_chart.csv` 연결. 씬 `game/gameplay/Gameplay.tscn`. Lobby 미리듣기는 별도 Music-bus 플레이어이며 gameplay clock과 분리된다. 편집/CSV/검증: [현재 구조](docs/architecture.md), [밸런스](docs/balance.md), [처리 음원·타깃 검토](docs/processed-audio-target-first.md).
+현재 Gameplay: 네 MP3(`assets/music/`)와 `data/charts/*_musical_chart.csv` 연결. 씬 `game/gameplay/Gameplay.tscn`. Lobby 미리듣기는 별도 Music-bus 플레이어이며 gameplay clock과 분리된다. 편집/CSV/검증: [현재 구조](docs/architecture.md), [밸런스](docs/balance.md), [처리 음원·타깃 검토](docs/processed-audio-target-first.md).
 
 정리·성능·회귀 검증: [cleanup-optimization](docs/cleanup-optimization.md).
 

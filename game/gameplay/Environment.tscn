@@ -1,6 +1,6 @@
 [gd_scene format=3]
 [ext_resource type="Script" path="res://game/gameplay/GameplayEnvironment.cs" id="Script"]
-[ext_resource type="Texture2D" path="res://assets/고요한 얕은 산호초 바다-1.png" id="Reef"]
+[ext_resource type="Texture2D" path="res://assets/shallow_coral_reef_background.png" id="Reef"]
 [ext_resource type="Texture2D" path="res://game/title/bubble.png" id="Bubble"]
 [ext_resource type="Shader" path="res://game/gameplay/environment_light.gdshader" id="Light"]
 [sub_resource type="ShaderMaterial" id="Light"]

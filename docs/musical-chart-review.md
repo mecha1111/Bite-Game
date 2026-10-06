@@ -18,7 +18,7 @@ Approvals write `data/charts/listening_reviews.csv` with song, target, pattern, 
 
 ### Hear the Tide
 
-Audio `res://assets/MUSIC/1_edited.mp3`. Chart `res://data/charts/hear_the_tide_musical_chart.csv`.
+Audio `res://assets/music/1_edited.mp3`. Chart `res://data/charts/hear_the_tide_musical_chart.csv`.
 
 Music BPM **100.0**, gameplay pulse **200.0**. Phase **0.577500s** remains editable. Double-time/eighth-note lead-in interpretation. These tempo interpretations have not been re-certified by a listener.
 
@@ -52,7 +52,7 @@ Listening priorities: confirm band attacks are the intended kick/snare/bass or m
 
 ### Hidden Current
 
-Audio `res://assets/MUSIC/2-2.mp3`. Chart `res://data/charts/hidden_current_musical_chart.csv`.
+Audio `res://assets/music/2-2.mp3`. Chart `res://data/charts/hidden_current_musical_chart.csv`.
 
 Music BPM **143.554688**, gameplay pulse **143.554688**. Phase **0.256000s** remains editable. One gameplay pulse per musical beat candidate. These tempo interpretations have not been re-certified by a listener.
 
@@ -86,7 +86,7 @@ Listening priorities: confirm band attacks are the intended kick/snare/bass or m
 
 ### Predator's Pulse
 
-Audio `res://assets/MUSIC/3.mp3`. Chart `res://data/charts/predators_pulse_musical_chart.csv`.
+Audio `res://assets/music/3.mp3`. Chart `res://data/charts/predators_pulse_musical_chart.csv`.
 
 Music BPM **130.0**, gameplay pulse **130.0**. Phase **0.028846s** remains editable. One gameplay pulse per musical beat candidate. These tempo interpretations have not been re-certified by a listener.
 
@@ -122,7 +122,7 @@ Listening priorities: confirm band attacks are the intended kick/snare/bass or m
 
 ### Deep Current
 
-Audio `res://assets/MUSIC/4.mp3`. Chart `res://data/charts/deep_current_ex_musical_chart.csv`.
+Audio `res://assets/music/4.mp3`. Chart `res://data/charts/deep_current_ex_musical_chart.csv`.
 
 Music BPM **112.3471465**, gameplay pulse **224.694293**. Phase **0.066757s** remains editable. Double-time/eighth-note lead-in interpretation. These tempo interpretations have not been re-certified by a listener.
 

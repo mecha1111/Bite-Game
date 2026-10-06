@@ -60,7 +60,7 @@ public partial class ExStageChecks : Node
             Check(textures.All(t=>t.StretchMode==TextureRect.StretchModeEnum.KeepAspectCovered),"aspect-preserving cover crop for all three sources");
             Check(textures.Select(t=>t.Texture.ResourcePath).Distinct().Count()==3,"three distinct original environment resources");
             var preview=lobby.GetNode<SongPreview>("SongPreview");
-            Check(preview.SongId=="song_4"&&new[]{preview.PlayerA,preview.PlayerB}.Any(p=>p.Playing&&p.Stream.ResourcePath=="res://assets/MUSIC/4.mp3"),"EX previews own current MP3 through shared crossfade");
+            Check(preview.SongId=="song_4"&&new[]{preview.PlayerA,preview.PlayerB}.Any(p=>p.Playing&&p.Stream.ResourcePath=="res://assets/music/4.mp3"),"EX previews own current MP3 through shared crossfade");
             Capture("locked-cover");
             ProgressService.UnlockStage("stage_4");await Wait(.1);Check(!ex.SelectButton.Disabled&&!ex.LockOverlay.Visible,"configurable EX unlock enables selection");
             foreach(var size in new[]{new Vector2I(1920,1080),new Vector2I(1280,720),new Vector2I(1440,900)})

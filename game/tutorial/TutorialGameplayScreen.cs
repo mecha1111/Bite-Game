@@ -119,7 +119,7 @@ public partial class TutorialGameplayScreen : GameplayScreen
         Signals.Guidance=GuidanceColor;Signals.ShowResolvedTargets=true;
         base._Ready();
         if(Environment.Background.Texture==null)
-            GD.PushError("Tutorial background load failed: res://assets/고요한 얕은 산호초 바다-1.png");
+            GD.PushError("Tutorial background load failed: res://assets/shallow_coral_reef_background.png");
         StandaloneSettings.TutorialButton.Disabled=true;
         StandaloneSettings.LeaveGameplayRequested+=()=>RequestExit();
     }

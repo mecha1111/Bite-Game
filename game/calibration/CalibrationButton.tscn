@@ -1,6 +1,6 @@
 [gd_scene format=3]
 [ext_resource type="Script" path="res://game/calibration/CalibrationButton.cs" id="1"]
-[ext_resource type="Texture2D" path="res://game/title/가로형 청록 픽셀 버튼 배경-3.png" id="2"]
+[ext_resource type="Texture2D" path="res://game/title/menu_button_background.png" id="2"]
 [ext_resource type="Theme" path="res://game/ui/BiteTheme.tres" id="3"]
 [sub_resource type="StyleBoxEmpty" id="Empty"]
 
